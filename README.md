@@ -1,4 +1,4 @@
 WebScienceTermProject
 =====================
 
-Term Project for Web Science Project
+Term Project for Web Science
