@@ -1,4 +1,4 @@
-WebScienceTermProject
+Shirley's Scheduler
 =====================
 
 Term Project for Web Science
