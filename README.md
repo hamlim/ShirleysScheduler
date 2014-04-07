@@ -5,7 +5,6 @@ Term Project for Web Science
 
 -------
 
-Important sections:
 
 ### File Structure
 --------------------
@@ -15,5 +14,5 @@ The git repo is broken up into two files, the first of which handes the backend 
 #### A small todo list for features to add:
 
 
-- [ ] Notifications (?)
+- [ ] a task list item
 
