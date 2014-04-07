@@ -14,5 +14,5 @@ The git repo is broken up into two files, the first of which handes the backend 
 #### A small todo list for features to add:
 
 
-- [ ] a task list item
+* Notifications (?)
 
