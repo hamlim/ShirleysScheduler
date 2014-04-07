@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PACKAGES='python python-cherrypy python-sqlalchemy'
+PACKAGES='python python-cherrypy python-sqlalchemy python-openssl'
 MYSQL_PASSWORD='root'
 
 apt-get update
