@@ -15,4 +15,4 @@ The git repo is broken up into two files, the first of which handes the backend 
 
 
 * Notifications (?)
-
+* fix bugs with too many Doge in system files 
