@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-PACKAGES='python python-cherrypy python-sqlalchemy python-openssl'
+PACKAGES='python python-pip python-sqlalchemy python-openssl'
+PYTHON_PACKAGES='cherrypy'
 MYSQL_PASSWORD='root'
 
 apt-get update
@@ -12,3 +13,6 @@ apt-get install -y mysql-server
 
 echo "Installing $PACKAGES"
 apt-get install -y $PACKAGES
+
+echo "Installing Python modules $PYTHON_PACKAGES"
+pip install $PYTHON_PACKAGES

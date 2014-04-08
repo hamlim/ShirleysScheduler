@@ -1,15 +1,29 @@
 Shirley's Scheduler
 =====================
 
-Term Project for Web Science
+A group scheduler that doesn't suck.
+
+Originally developed as a term project for Web Science at RPI.
 
 -------
 
-
 ### File Structure
---------------------
 
-The git repo is broken up into two files, the first of which handes the backend code of the service and the second of which handles the front end code of the service.
+#### `api`
+
+The implementation of the backend API. See [here](http://goo.gl/xfPWdL) for API
+documentation.
+
+The API is implemented in CherryPy, which is also the static file server.
+
+##### `api/certs`
+
+SSL/TLS certificates (not checked into the repository). We expect the following
+layout:
+
+* TLS certificate: `ssl.crt`
+* Private key: `private.key`
+* Certificate chain: `ca.pem`
 
 #### A small todo list for features to add:
 
