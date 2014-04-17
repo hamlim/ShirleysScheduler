@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>add-meeting.html</title>
+    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+      
+      <header>
+       <!--Include your brand here-->
+        <a class="navbar-brand" href="#">Off Canvas Menu</a>
+        <div class="navbar-header pull-right">
+          <a id="nav-expander" class="nav-expander fixed">
+            MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+          </a>
+        </div>
+    </div>
+      
+          <nav>
+        <ul class="list-unstyled main-menu">
+          
+          <!--Include your navigation here-->
+          <li class="text-right"><a href="#" id="nav-close">X</a></li>
+          <li><a href="#">Menu One <span class="icon"></span></a></li>
+          <li><a href="#">Menu Two <span class="icon"></span></a></li>
+          <li><a href="#">Menu Three <span class="icon"></span></a></li>
+          <li><a href="#">Dropdown</a>
+            <ul class="list-unstyled">
+                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu Four <span class="icon"></span></a></li>
+          <li><a href="#">Menu Five <span class="icon"></span></a></li>
+        </ul>
+      </nav>
+      
+      </header>
+      
+      
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-8">
+              </div>
+          
+              <div class="col-lg-4">
+                 
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="" placeholder="Name of Meeting" id="meeting-name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="" placeholder="Location" id="meeting-location"/>
+                    </div>
+                  
+                    <div class="form-group">
+                        <!-- location url is for groups who want to host a GoogleHangouts/skype meeting" -->
+                        <input type="text" class="form-control" value="" placeholder="url" id="location-url" /> 
+                    </div>
+
+                    <div class="form-group">
+                      <!-- include a date picker -->
+                    </div>
+                  
+                    <div class="form-group">
+                      <!-- include people to invite -->
+                    </div>
+                  
+                  
+                    <!-- include repeat meeting option -->
+                  
+                    <div class="form-group">
+                      <label class="checkbox" for="checkbox1">
+                        <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">Repeat?</label>
+                    </div>
+                  
+                                      <div class="form-group">
+                      <!-- include a date picker -->
+                    </div>
+                  
+
+                    <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>
+                    <a class="login-link" href="#">Lost your password?</a>
+                  </div>
+              
+      </div>
+    </div>
+  
+    <div class="container">
+        Start doing your next awesomeness here.
+    </div>
+    <!-- /.container -->
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+      
+     
+    <!-- Javascript for off-canvas menu
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.navgoco.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+    $(document).ready(function(){												
+       
+       //Navigation Menu Slider
+        $('#nav-expander').on('click',function(e){
+      		e.preventDefault();
+      		$('body').toggleClass('nav-expanded');
+      	});
+      	$('#nav-close').on('click',function(e){
+      		e.preventDefault();
+      		$('body').removeClass('nav-expanded');
+      	});
+      	
+      	
+      	// Initialize navgoco with default options
+        $(".main-menu").navgoco({
+            caret: '<span class="caret"></span>',
+            accordion: false,
+            openClass: 'open',
+            save: true,
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+  
+        	
+      });
+      </script>
+  
+  </body>
+</html>
