@@ -10,3 +10,4 @@ server.ssl_certificate_chain: "certs/ca.pem"
 tools.staticdir.on: True
 tools.staticdir.root: "GLOBAL_PATH_TO_THIS_DIRECTORY"
 tools.staticdir.dir: "frontend"
+tools.staticdir.index: "home.html"
