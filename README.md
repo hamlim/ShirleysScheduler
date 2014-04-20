@@ -9,14 +9,14 @@ Originally developed as a term project for Web Science at RPI.
 
 ### File Structure
 
-#### `api`
+#### `[root]`
 
 The implementation of the backend API. See [here](http://goo.gl/xfPWdL) for API
 documentation.
 
 The API is implemented in CherryPy, which is also the static file server.
 
-##### `api/certs`
+##### `certs`
 
 SSL/TLS certificates (not checked into the repository). We expect the following
 layout:

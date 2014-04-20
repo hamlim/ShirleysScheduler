@@ -5,3 +5,8 @@ server.ssl_module: "pyopenssl"
 server.ssl_certificate: "certs/ssl.crt"
 server.ssl_private_key: "certs/private.key"
 server.ssl_certificate_chain: "certs/ca.pem"
+
+[/]
+tools.staticdir.on: True
+tools.staticdir.root: "GLOBAL_PATH_TO_THIS_DIRECTORY"
+tools.staticdir.dir: "frontend"
