@@ -4,3 +4,8 @@
 ------------
 
 File structure to come soon!
+
+
+------------
+
+[FullCalendar Documentation](www.arshaw.com/fullcalendar/docs)
