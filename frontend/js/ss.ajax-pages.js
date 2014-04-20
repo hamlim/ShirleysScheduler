@@ -27,9 +27,8 @@ $(function(){
     		error: function(xhr, err) {
     			alert("Error connecting to the server! Please try again!");
     		}
-    	}
     	});
-		//*/
+		*//
     	
 
     });
