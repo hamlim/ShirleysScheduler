@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
     <title>Dashboard.html</title>
     <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
@@ -21,13 +21,45 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  
-  <!--header -->
-  <header>
-        <div class="navbar navbar-inverse navbar-fixed-top">      
-       <!--Include your brand here-->
+     
+    <!-- include fullCalendar -->
+    <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href="css/calendar.css" rel="stylesheet" > <!-- custom styling for calendar -->
+    <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <script src='fullcalendar/lib/jquery.min.js'></script>
+    <script src='fullcalendar/lib/jquery-ui.custom.min.js'></script>
+    <script src='fullcalendar/fullcalendar.min.js'></script>
+    <script src="fullcalendar/js/calender.js"></script>
+    
+
+</head>
+<body>
+    
+<header>
+    <nav>
+    <ul class="list-unstyled main-menu">
+
+      <!--Include your navigation here-->
+      <li class="text-right"><a href="#" id="nav-close">X</a></li>
+      <li><a href="#">Menu One <span class="icon"></span></a></li>
+      <li><a href="#">Menu Two <span class="icon"></span></a></li>
+      <li><a href="#">Menu Three <span class="icon"></span></a></li>
+      <li><a href="#">Dropdown</a>
+        <ul class="list-unstyled">
+            <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu Four <span class="icon"></span></a></li>
+      <li><a href="#">Menu Five <span class="icon"></span></a></li>
+    </ul>
+  </nav>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">      
+        <!--Include your brand here-->
         <a class="navbar-brand" href="#">Off Canvas Menu</a>
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
@@ -35,53 +67,31 @@
           </a>
         </div>
     </div>
+</header>
       
-          <nav>
-        <ul class="list-unstyled main-menu">
-          
-          <!--Include your navigation here-->
-          <li class="text-right"><a href="#" id="nav-close">X</a></li>
-          <li><a href="#">Menu One <span class="icon"></span></a></li>
-          <li><a href="#">Menu Two <span class="icon"></span></a></li>
-          <li><a href="#">Menu Three <span class="icon"></span></a></li>
-          <li><a href="#">Dropdown</a>
-            <ul class="list-unstyled">
-                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
-            </ul>
-          </li>
-          <li><a href="#">Menu Four <span class="icon"></span></a></li>
-          <li><a href="#">Menu Five <span class="icon"></span></a></li>
-        </ul>
-      </nav>
-      </header>
-  <!-- ./header -->
       
     <!-- user profile -->
       
       <br><Br>
       
     <div class="container-fliud">
-      <div class="">
+    
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab">Today's Events</a></li>
-  <li><a href="#profile" data-toggle="tab">Message Invites</a></li>
-  <li><a href="#messages" data-toggle="tab">Calendar</a></li>
-  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+  <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+  <li><a href="#messages" data-toggle="tab">Message Invites</a></li>
+  <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane active" id="home">
+  <div class="tab-pane active" id="events">
      <!-- to-do lists -->
     <br><br>
       
             <!-- today's events -->
             <div class="col-xs-4">
+                <div id="today-events">
                     <div class="todo">
                      <h4>Today's Events</h4>
                       <ul>
@@ -123,14 +133,16 @@
                         </li>
                       </ul>
                     </div>
-            <!-- /to-do -->
                 </div>
+            <!-- /to-do -->
+            </div>
             
             
             
             
             <!-- next day events -->
             <div class="col-xs-4">
+                <div id="tomorrow-events">
                     <div class="todo">
                         <h4>Tomorrow's Meetings</h4>
                       <ul>
@@ -174,10 +186,12 @@
                     </div>
             <!-- /to-do -->
                 </div>
+            </div>
             
                 
                 <!-- outline for the week -->
                 <div class="col-xs-4">
+                    <div id="week-outline">
                     <div class="todo">
                       <h4>Week Outline</h4>
                       <ul>
@@ -221,71 +235,48 @@
                     </div>
             <!-- /to-do -->
                 </div>
+            </div>
          
     
     </div>
-  <div class="tab-pane" id="profile"><div class="container">
-   
-   </div></div>
+
     
   <div class="tab-pane" id="messages">
-      
+      <br>
       <div class="container-fluid">
-    <!-- tiles -->
-    <div class="row demo-tiles">
-          <div class="col-xs-3">
-            <div class="tile">
-              <img src="images/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration">
-              <h3 class="tile-title">Web Oriented</h3>
-              <p>100% convertable to HTML/CSS layout.</p>
-              <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
+          <div class="list-group">
+              <a href="#" class="list-group-item active">Lorem ipsum dolor</a>
+              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
+              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
+              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
+              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
             </div>
-          </div>
-  
-          <div class="col-xs-3">
-            <div class="tile">
-              <img src="images/icons/svg/loop.svg" alt="Infinity-Loop" class="tile-image">
-              <h3 class="tile-title">Easy to Customize</h3>
-              <p>Vector-based shapes and minimum of layer styles.</p>
-              <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
-            </div>
-          </div>
-  
-          <div class="col-xs-3">
-            <div class="tile">
-              <img src="images/icons/svg/pencils.svg" alt="Pensils" class="tile-image">
-              <h3 class="tile-title">Color Swatches</h3>
-              <p>Easy to add or change elements. </p>
-              <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
-            </div>
-          </div>
-  
-          <div class="col-xs-3">
-            <div class="tile tile-hot">
-              <img src="images/icons/svg/chat.svg" alt="Chat" class="tile-image">
-              <h3 class="tile-title">Free for Share</h3>
-              <p>Your likes, shares and comments helps us.</p>
-              <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a>
-            </div>
-  
-          </div>
-        </div> 
-        <!-- /tiles -->
-		</div>
-    </div>
-   </div>
+      
+      </div>
+      
     
     </div>
-</div>
+    
+    <div class="tab-pane" id="user-calendar">
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id='calendar'></div>
+                </div>
+        </div>  
         </div>
+    </div>
+        
+
       
-      </div>  
+    </div>  
   
   
    <Br><Br><br>
+    
+    <div class="clear"></div>
    
-   
-		<!-- footer -->
+      <!-- footer -->
     <footer>
       <div class="container">
         <div class="row">
@@ -295,7 +286,7 @@
               Subscribe to designmodo news and updates to stay tuned on great designs.<br/>
               Go to: <a href="http://designmodo.com/flat-free" target="_blank">designmodo.com/flat-free</a>
             </p>
-    
+
             <p class="pvl">
               <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://designmodo.com/flat-free/" data-text="Flat UI Free - PSD&amp;amp;HTML User Interface Kit" data-via="designmodo">Tweet</a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -303,12 +294,12 @@
               <iframe src="http://ghbtns.com/github-btn.html?user=designmodo&repo=Flat-UI&type=fork&count=true" height="20" width="107" frameborder="0" scrolling="0" style="width:105px; height: 20px;" allowTransparency="true"></iframe>
               <iframe src="http://ghbtns.com/github-btn.html?user=designmodo&type=follow&count=true" height="20" width="195" frameborder="0" scrolling="0" style="width:195px; height: 20px;" allowTransparency="true"></iframe>
             </p>
-    
+
             <a class="footer-brand" href="http://designmodo.com" target="_blank">
               <img src="images/footer/logo.png" alt="Designmodo.com" />
             </a>
           </div> <!-- /col-xs-7 -->
-    
+
           <div class="col-xs-5">
             <div class="footer-banner">
               <h3 class="footer-title">Get Flat UI Pro</h3>
@@ -326,10 +317,10 @@
       </div>
     </footer>
     <!--/.footer -->
-        
-        
+    
+    
     <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -339,12 +330,13 @@
     <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
-
-
-    <!-- Javascript for off-canvas menu
+    
+    <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <!--<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>-->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="js/jquery.navgoco.js"></script>
     <script src="js/main.js"></script>
     
@@ -381,5 +373,8 @@
   
         	
       });
+      </script>
+
+
   </body>
 </html>
