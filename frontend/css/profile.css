@@ -1,0 +1,27 @@
+/* Stylesheet for user and group profiles */
+
+#user-info {
+    background-color: #4b6984;
+    margin-top: 45px;
+    min-height: 150px;
+    
+}
+
+#user-image {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 2% 12%;
+}
+
+#user-detail {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 2% 2%;
+}
+
+
+#user-misc {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 12% 2%;
+}
