@@ -13,4 +13,8 @@ Gemfile.lock
 bin/*
 .bundle/*
 
+# Python compiled files
+*.pyc
+
+# You really should be writing your own config
 app.config
