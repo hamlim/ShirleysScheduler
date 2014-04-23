@@ -25,6 +25,8 @@ layout:
 * Private key: `private.key`
 * Certificate chain: `ca.pem`
 
+Google Login Button ID: `google-login`
+
 #### `frontend`
 
 Main file tree for the static web page server
