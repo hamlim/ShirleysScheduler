@@ -43,9 +43,6 @@ Users are given an option to repeat an event. This will come up as a modal windo
 ```html
     #meeting-name
 ```
-```html
-    #meeting-name
-```
 Display the name of the meeting
 ```html
     #meeting-location
@@ -63,7 +60,7 @@ Display url for Google Hangouts, Join.me, etc. if this is an online seminar/meet
 Display meeting date 
 
 ```html
-    #meet-time
+    #meeting-time
 ```
 Display time of day for meeting
 
