@@ -40,12 +40,152 @@ Users are given an option to repeat an event. This will come up as a modal windo
 
 #### calendar.html
 
+```html
+    #meeting-name
+```
+```html
+    #meeting-name
+```
+Display the name of the meeting
+```html
+    #meeting-location
+```
+Display location of the meeting (could include Google Maps Integration)
+
+```html
+    #meeting-url
+```
+Display url for Google Hangouts, Join.me, etc. if this is an online seminar/meeting
+
+```html
+    #meeting-date
+```
+Display meeting date 
+
+```html
+    #meet-time
+```
+Display time of day for meeting
+
+
 
 #### dashboard.html
 
+-----------------------------------------------------------
+```html
+    #user-calendar
+```
+Display user calendar
+
+```html
+    #user-today
+```
+Display meetings of current day 
+
+```html
+    #user-tomorrow
+```
+Display meetings of the next day
+
+```html
+    #user-yesterday
+```
+Display meetings from yesterday 
+
+```html
+    #user-invites
+```
+Display meeting invites
+
+
+-----------------------------------------------------------
 #### group.html
 
+```html
+    #group-user
+```
+Display user's groups
+
+
+
+```html
+    #group-date-created
+```
+Display group creation date
+
+
+```html
+    #group-image
+```
+Display group image
+
+```html
+    #group-description
+```
+Display group
+
+```html
+    #group-meeting-url
+```
+Display link to online
+
+```html
+    #group-memebers
+```
+Show list of members in group
+
+-----------------------------------------------------------
+
 #### profile.html
+
+
+```html
+    #user-full-name
+```
+Display User's full name [first, last name]
+
+```html
+    #user-username
+```
+Display username
+
+
+```html
+    #user-email-address
+```
+Display email address
+
+
+```html
+    #user-date-joioned
+```
+Display date user joined
+
+
+```html
+    #user-profile-image
+```
+Display profile image
+
+```html
+    #user-profile-description
+```
+Display user's description (user would include details like thier occupation, class year, etc. )
+
+```html
+    #user-google-profile
+```
+Display link to Google+ profile
+
+```html
+    #user-group
+```
+Show list of groups user has joined
+
+```html
+    #user-calendar
+```
+Display calendar of meetins
 
 
 
