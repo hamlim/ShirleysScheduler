@@ -8,6 +8,13 @@ File structure to come soon!
 # UI Component IDs by template
 Below is a list of fields that will be populated with variables from variables.
 
+#### index.html
+```html
+    #google-login
+```
+Button to login to the service
+-----------------------------------------------------------
+
 #### add-meeting.html
 ```html
     #meeting-name
