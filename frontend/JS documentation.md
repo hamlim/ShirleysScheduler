@@ -152,12 +152,12 @@ api me = {
     Invites : {
         {
             eventid : "eventid",
-            eventname : "name",
+            meetingname : "name",
             owner : "Name of event creator"
         },
         {
             eventid : "eventid",
-            eventname : "name",
+            meetingname : "name",
             owner : "Name of event creator"
         }
     },
