@@ -90,7 +90,7 @@ Display meetings of the next day
 Display meetings from yesterday 
 
 ```html
-    #user-invites
+    #user-meeting-invite
 ```
 Display meeting invites
 
