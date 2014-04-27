@@ -42,7 +42,7 @@ $(document).ready(function(){
 	var usertoday = $("#user-today"); //Store the location of the ul in a variable
 	var libegin = "<li>";
 	var liend = "</li>";
-	var content;
+	var content = "";
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
@@ -53,12 +53,51 @@ $(document).ready(function(){
 		var times = "<p>" + apime["Today"][i].timebegin + " to " + apime["Today"][i].timeend + "</p>";
 		var groupname = "<p>" + apime["Today"][i].groupname + "</p>";
 		var div = "<div>" + meetingname + groupname + times + loc + "</div>";
-		content += div;
+		content += libegin + div + liend;
 	};
-	var today = libegin + content + liend;
+	if (content == ""){
+		content = "<li><div><h3>No events Today! Go have some fun!</h3></div><li>";
+	};
+	var today = content;
 	usertoday.append(today);
 	
 	// #user-tomorrow section of the dashboard.html file
 	// we want to do essentially the same thing as we did for today, and will do the same thing for yesterday
+	var usertomorrow = $("#user-tomorrow"); // store the location of the user-tomorrow ul in a var
+	content = ""; //clear out content's values for the new section
+	for(var i=0; i<apime["Tomorrow"].length; i++){
+		var meetingname = "<h3>" + apime["Tomorrow"][i].meetingname + "</h3>";
+		var loc = "<p>" + apime["Tomorrow"][i].location + "</p>";
+		var times = "<p>" + apime["Tomorrow"][i].timebegin + " to " + apime["Tomorrow"][i].timeend + "</p>";
+		var groupname = "<p>" + apime["Tomorrow"][i].groupname + "</p>";
+		var div = "<div>" + meetingname + groupname + times+ loc + "</div>"
+		content += libegin + div + liend;
+	};
+	if (content ==""){
+		content = "<li><div><h3>No events Tomorrow! Plan something fun!</h3></div><li>";
+	};
+	var tomorrow = content;
+	usertomorrow.append(tomorrow);
+	
+	// #user-yesterday section
+	
+	var useryesterday = $("#user-yesterday");
+	content = "";
+	for ( var i=0; i<apime["Yesterday"].length; i++){
+		var meetingname = "<h3>" + apime["Yesterday"][i].meetingname + "</h3>";
+		var loc = "<p>" + apime["Yesterday"][i].location + "</p>";
+		var times = "<p>" + apime["Yesterday"][i].timebegin + " to " + apime["Yesterday"][i].timeend + "</p>";
+		var groupname = "<p>" + apime["Yesterday"][i].groupname + "</p>";
+		var div = "<div>" + meetingname + groupname + times+ loc + "</div>"
+		content += libegin + div + liend;
+	};
+	if (content == ""){
+		content = "<li><div><h3>No events Yesterday!</h3></div><li>"
+	}
+	var yesterday = content;
+	useryesterday.append(yesterday);
+	
+	// #user-meeting-invite section of the dashboard.html file
+	// Here we represent the event invites to the user
 	
 });
