@@ -1,16 +1,19 @@
 /* Stylesheet for user and group profiles */
+.subtitle {
+	font-weight: bold;
+}
 
 #user-info {
     background-color: #4b6984;
     margin-top: 45px;
     min-height: 150px;
-    
 }
 
 #user-image {
     color: #fff;
     margin-top: 45px;
     margin: 2% 2% 2% 12%;
+	
 }
 
 #user-detail {
@@ -20,8 +23,30 @@
 }
 
 
-#user-misc {
+#user-name {
     color: #fff;
     margin-top: 45px;
-    margin: 2% 2% 12% 2%;
+    margin: 2% 2% 2% 12%;
+	
+}
+
+#user-email-address {
+	margin-left: 45px;
+    margin: 1% 2% 2% 2%;
+}
+
+#user-date-joined {
+	margin-left: 45px;
+    margin: 1% 2% 2% 2%;
+}
+
+#user-google-profile {
+	margin-left: 45px;
+    margin: 1% 2% 2% 2%;
+}
+
+#user-profile-description {
+	margin-left: 0.65%;
+	margin-bottom: 2%;
+    
 }
