@@ -27,8 +27,6 @@ ShirleysScheduler
 * The content received from the `/api/me` is then stored in LocalStorage to make the process simpler for future calls
 * Redirect to `dashboard.html` and populate with data from `/api/me`
 
-- [x] Make a list of every field that needs to be filled in the html pages (delegate to Adriana)
-
 
 
 ### Add an Event (`add-meeting.html`)
