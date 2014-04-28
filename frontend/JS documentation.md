@@ -48,7 +48,8 @@ ShirleysScheduler
 
 #### Notes: 
 * View will be weekly view, 7 days starting at current day
-* onclick to go to event page
+* onclick to go to event modal
+* Modal information is found [here](http://getbootstrap.com/javascript/#modals)
 
 #### Fields:
 * Fields we need to fill in:

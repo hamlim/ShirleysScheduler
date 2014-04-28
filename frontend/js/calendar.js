@@ -11,11 +11,11 @@ $(document).ready(function(){
 				(In future: link to google maps)
 			#meeting-url
 				This is a link to a meeting url, something like a livestream  event
-				
 			#meeting-date
 				display the date for the meeting
 			#meeting-time
 				sidplay the beginning and end time of the meeting
+		Modal Information found here: http://getbootstrap.com/javascript/#modals
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
 	// Preliminary data allocation
