@@ -30,5 +30,12 @@ $(document).ready(function(){
 	var mdateb = "<p id='meeting-date'>";
 	var mtimeb = "<p id='meeting-time'>";
 	//we need to handle the calendar that is on the page
+	//a large amount of the code from this page will happen within the  calendar initialization
+	$("#calendar").fullCalendar({
+		//here we will:
+		// set the view to a week
+		// import the events
+		// enable onclick of events
+	})
 	
 })
