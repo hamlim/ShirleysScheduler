@@ -34,6 +34,7 @@ $(document).ready(function(){
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-calendar section of the dashboard.html file
+	// Uses FullCalendar
 	
 	
 	
