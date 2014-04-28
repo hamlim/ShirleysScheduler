@@ -47,6 +47,8 @@ Users are given an option to repeat an event. This will come up as a modal windo
 
 #### calendar.html
 
+General NOTE: Modal and elements are being added in via JS.
+
 ```html
     #meeting-name
 ```

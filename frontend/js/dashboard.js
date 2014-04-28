@@ -32,9 +32,13 @@ $(document).ready(function(){
 				Displays meeting invites from other users
 				Will be link to the meeting
 	*/
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-calendar section of the dashboard.html file
 	
 	
+	
+	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-today section of the dashboard.html file
 	//we want to create a simple repeatable semantic content container for the metadata
 	//#user-today is on a Ul element
@@ -60,7 +64,7 @@ $(document).ready(function(){
 	};
 	var today = content;
 	usertoday.append(today);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-tomorrow section of the dashboard.html file
 	// we want to do essentially the same thing as we did for today, and will do the same thing for yesterday
 	var usertomorrow = $("#user-tomorrow"); // store the location of the user-tomorrow ul in a var
@@ -78,7 +82,7 @@ $(document).ready(function(){
 	};
 	var tomorrow = content;
 	usertomorrow.append(tomorrow);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-yesterday section
 	
 	var useryesterday = $("#user-yesterday");
@@ -96,7 +100,7 @@ $(document).ready(function(){
 	}
 	var yesterday = content;
 	useryesterday.append(yesterday);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-meeting-invite section of the dashboard.html file
 	// Here we represent the event invites to the user
 	var invites = $("#user-meeting-invite");
