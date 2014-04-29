@@ -42,7 +42,7 @@ $(document).ready(function(){
 	function eventarr(object){
 		//note object is really only going to be apime
 		//we need to isolate the events in the object
-		var arr = [];
+		var pubcalarr = [];
 		for (var i=0; i<object["Calendar"].length; i++){
 			//object["Calendar"][i] is an event
 			//we want to isolate those events with and w/o a url
@@ -56,22 +56,28 @@ $(document).ready(function(){
 				microarr["title"] = name;
 				microarr["start"] = start;
 				microarr["end"] = end;
-				arr.push(microarr);
+				pubcalarr.push(microarr);
 			} else {
 				//there is a url
 				var microarr = [];
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
-				
-			}
-		}
-	}
+				microarr["title"] = name;
+				microarr["start"] = start;
+				microarr["end"] = end;
+				microarr["url"] = url;
+				pubcalarr.push(microarr)
+			};
+		};
+		return pubcalarr;
+	};
+	
 	$("#calendar").fullCalendar({
 		// week view
 		defaultView: 'month',
 		editable: false,
-		events: eventarr(apime),
+		events: eventarr(apime)
 	});
 		
 	
