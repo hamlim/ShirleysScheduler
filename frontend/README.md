@@ -43,7 +43,7 @@ Display invitees in a list
 ```html
     #meeting-repeat
 ```
-Users are given an option to repeat an event. This will come up as a modal window or tooltip. [Reference iCalendar] (https://drupal.org/files/issues/iCal-Third-Wednesday.jpg)
+Users are given an option to repeat an event. This will come up as a modal window or tooltip. [Reference iCalendar](https://drupal.org/files/issues/iCal-Third-Wednesday.jpg)
 
 #### calendar.html
 
@@ -81,7 +81,7 @@ Display time of day for meeting
 ```html
     #user-calendar
 ```
-Display user calendar
+Display user calendar for the month
 
 ```html
     #user-today
@@ -133,7 +133,7 @@ Display group
 ```html
     #group-meeting-url
 ```
-Display link to online
+Display link to Google Hangouts, Join.me, etc. if this is an online seminar/meeting
 
 ```html
     #group-memebers
@@ -191,7 +191,7 @@ Show list of groups user has joined
 ```html
     #user-calendar
 ```
-Display calendar of meetins
+Display calendar of meetings
 
 
 
