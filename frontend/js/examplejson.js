@@ -1,6 +1,6 @@
 //This file will have an example API/me return JS Object "JSON"
 var apime = {
-    Today : {
+    Today: {
         {
             meetingname : "Meeting with Adrian",
             groupname : "Friends",
@@ -10,7 +10,7 @@ var apime = {
 						url : ""
         }
     },
-    Tomorrow : {
+    Tomorrow: {
         {
             meetingname : "Team Meeting",
             groupname : "Schedulr Team",
@@ -28,29 +28,21 @@ var apime = {
 						url : ""
         }
     },
-    Yesterday : {
+    Yesterday: {
         {
             meetingname : "Team Meeting",
-            groupname : "SS",
+            groupname : "SS inc",
             location : "3rd floor, Union",
             timebegin : 1398870000,
             timeend : 1398877200,
 						url = ""
-        },
-        {    
-            meetingname : "blahblah",
-            groupname : "blahblah inc",
-            location : "here",
-            timebegin : int,
-            timeend : int,
-						url : ""
         }
     },
-    Invites : {
+    Invites: {
         {
-            eventid : "eventid",
-            meetingname : "name",
-            owner : "Name of event creator"
+            eventid : 1234,
+            meetingname : "Team Meeting",
+            owner : "Matt Hamlin"
         },
         {
             eventid : "eventid",
@@ -58,21 +50,21 @@ var apime = {
             owner : "Name of event creator"
         }
     },
-    Groups : {
+    Groups: {
         { 
             groupname : "blah",
             groupid : "blah",
             [MORE LATER]
         },
     },
-    Calendar : { // Notes: calendar includes all events for the user
+    Calendar: { 
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url"
+            meetingname : "Team Meeting",
+            groupname : "SS inc",
+            location : "3rd floor, Union",
+            timebegin : 1398870000,
+            timeend : 1398877200,
+            url : ""
         },
         {
             meetingname : "blah",
