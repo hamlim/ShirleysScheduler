@@ -2,60 +2,63 @@
 var apime = {
     Today: {
         {
-            meetingname : "Meeting with Adrian",
-            groupname : "Friends",
-            location : "Times Square",
-            timebegin : 1398967200,
-            timeend : 1398970800,
-						url : ""
+            "meetingname" : "Meeting with Adrian",
+            "groupname" : "Friends",
+            "location" : "Times Square",
+            "timebegin" : 1398967200,
+            "timeend" : 1398970800,
+			"url" : ""
         }
     },
     Tomorrow: {
         {
-            meetingname : "Team Meeting",
-            groupname : "Schedulr Team",
-            location : "McNeil Room, Union",
-            timebegin : 1399042800,
-            timeend : 1399050000,
-						url : ""
+            "meetingname": "Team Meeting",
+            "groupname": "Schedulr Team",
+            "location": "McNeil Room, Union",
+            "timebegin": 1399042800,
+            "timeend": 1399050000,
+			"url" : ""
         },
         {    
-            meetingname : "Chat with V. Kudinov",
-            groupname : "ACME inc",
-            location : "Skype conference",
-            timebegin : 1398934800,
-            timeend : 1398938400,
+            "meetingname" : "Chat with V. Kudinov",
+            "groupname" : "ACME inc",
+            "location" : "Skype conference",
+            "timebegin" : 1398934800,
+            "timeend" : 1398938400,
 						url : ""
         }
     },
     Yesterday: {
         {
-            meetingname : "Team Meeting",
-            groupname : "SS inc",
-            location : "3rd floor, Union",
-            timebegin : 1398870000,
-            timeend : 1398877200,
-						url = ""
+            "meetingname": "Team Meeting",
+            "groupname": "SS inc",
+            "location": "3rd floor, Union",
+            "timebegin": 1398870000,
+            "timeend": 1398877200,
+			"url" = ""
         }
     },
     Invites: {
         {
-            eventid : 1234,
-            meetingname : "Team Meeting",
-            owner : "Matt Hamlin"
+            "eventid": 1234,
+            "meetingname": "Team Meeting",
+            "owner": "Matt Hamlin"
         },
         {
-            eventid : "eventid",
-            meetingname : "name",
-            owner : "Name of event creator"
+            "eventid": "eventid",
+            "meetingname": "name",
+            "owner": "Name of event creator"
         }
     },
     Groups: {
         { 
-            groupname : "blah",
-            groupid : "blah",
-            [MORE LATER]
+            "groupname": "blah",
+            "groupid": 12345
         },
+		{
+		  	"groupname": "Friends",
+			"groupid": 12346
+		}
     },
     Calendar: { 
         {
@@ -67,21 +70,24 @@ var apime = {
             url : ""
         },
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url here"
+            meetingname : "Meeting with Adrian",
+            groupname : "Friends",
+            location : "Times Square",
+            timebegin : 1398967200,
+            timeend : 1398970800,
+            url : ""
         },
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url here"
+            meetingname : "Team Meeting",
+            groupname : "Schedulr Team",
+            location: "McNeil Room, Union",
+            timebegin: 1399042800,
+            timeend: 1399050000,
+            url : ""
         },
+		{
+			meetingname			
+		}
     }
     Person : {
         name : "Joe smith",
