@@ -37,9 +37,9 @@
     <script src="js/jquery.placeholder.js"></script>
 		<script src="js/settings.js"></script>
 		<script>
-			var aliasem = document.getElementById("alias-email");
+			var aliasem = $("#test");
 			function alias(){
-				var email = aliasem.value;
+				var email = aliasem.val();
 				//email is the input email
 				//we need to ajax it to the server
 				alert(email);
@@ -51,7 +51,7 @@
 					<h3 id="form-header">Settings:</h3>
 					<!-- alias email. -->
 					<div>
-						<input type="text" placeholder="Alternative Email" class="form-control" id="alias-email" value=""/>
+						<input type="text" placeholder="Alternative Email" class="form-control" id="test" value=""/>
 						<input type="button" class="btn btn-primary btn-wide" value="Update email" name="email" onclick="alias()"/>
 					</div>
 					<!-- nickname section. -->
