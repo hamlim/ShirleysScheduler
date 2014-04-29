@@ -22,16 +22,65 @@ $(document).ready(function(){
 	//---------------------------------------------------------------------------
   // ajax request for #alias-email
 	//the first step is to handle click events on the buttons
-	
+	aliasbtn.on("click", function(){
+		//need to check if there is input
+		var val = aliasem.val();
+		if (val != null || val != ""){
+			console.log(val);
+			//now we need to push this data to the server and update the local storage
+			//first the local storage
+			var obj = localStorage.getItem("apime");
+			var me = JSON.parse(obj);
+			me["Person"]["aliasemail"] = val;
+			localStorage.setItem("apime", JSON.stringify(me));
+			//now we need to push the new value to the server
+			
+		} else {
+			// TODO: handle no input in form field
+			
+		};
+	});
 	//---------------------------------------------------------------------------
 	//---------------------------------------------------------------------------
 	//ajax request for #nickname
 	//the first step is to handle click events on the buttons
-	
+	nickbtn.on("click", function(){
+		//need to check for input
+		var val = nick.val();
+		if (val != null || val != ""){
+			console.log(val);
+			//now we need to push this data to the server and update the local storage
+			//first the local storage
+			var obj = localStorage.getItem("apime");
+			var me = JSON.parse(obj);
+			me["Person"]["username"] = val;
+			localStorage.setItem("apime", JSON.stringify(me));
+			//now we need to push the new value to the server
+		} else {
+			// TODO: handle no input in form field
+			
+		};
+	});
 	//---------------------------------------------------------------------------
 	//---------------------------------------------------------------------------
 	//ajax request for #phone-number
 	//the first step is to handle click events on the buttons
-	
+	phonebtn.on("click", function(){
+		//need to check for true input:
+		var val  = phonenum.val();
+		if (val != null || val != ""){
+			console.log(val);
+			//now we need to push this data to the server and update the local storage
+			//first the local storage
+			var obj = localStorage.getItem("apime");
+			var me = JSON.parse(obj);
+			me["Person"]["phonenumber"] = val;
+			localStorage.setItem("apime", JSON.stringify(me));
+			//now we need to push the new value to the server
+		} else {
+			// TODO: handle no input in form field
+			
+		};
+	});
 	//---------------------------------------------------------------------------
 });
