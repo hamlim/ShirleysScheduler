@@ -32,12 +32,46 @@ $(document).ready(function(){
 				Displays meeting invites from other users
 				Will be link to the meeting
 	*/
+	var obj = localStorage.getItem('apime');
+	var apime = JSON.parse(obj);
+	console.log(apime); //apime stores all the data from the database
 	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-calendar section of the dashboard.html file
 	// Uses FullCalendar
-	// week view
+	//generate the array of events before the calendar section:
+	function eventarr(object){
+		//note object is really only going to be apime
+		//we need to isolate the events in the object
+		var arr = [];
+		for (var i=0; i<object["Calendar"].length; i++){
+			//object["Calendar"][i] is an event
+			//we want to isolate those events with and w/o a url
+			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
+				//no url to worry about:
+				var microarr = [];
+				console.log(microarr);
+				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var end = new Date(object["Calendar"][i]["timeend"]*1000)
+				var name = object["Calendar"][i]["meetingname"];
+				microarr["title"] = name;
+				microarr["start"] = start;
+				microarr["end"] = end;
+				arr.push(microarr);
+			} else {
+				//there is a url
+				var microarr = [];
+				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var end = new Date(object["Calendar"][i]["timeend"]*1000);
+				var url = object["Calendar"][i]["url"];
+				
+			}
+		}
+	}
 	$("#calendar").fullCalendar({
-		
+		// week view
+		defaultView: 'month',
+		editable: false,
+		events: eventarr(apime),
 	});
 		
 	
@@ -50,9 +84,6 @@ $(document).ready(function(){
 	var libegin = "<li>";
 	var liend = "</li>";
 	var content = "";
-	var obj = localStorage.getItem('apime');
-	var apime = JSON.parse(obj);
-	console.log(apime); //apime stores all the data from the database
 	//now we iterate through all the events in the today array
 	for (var i=0; i<apime["Today"].length; i++){
 		var meetingname = "<h3>" + apime["Today"][i].meetingname + "</h3>";

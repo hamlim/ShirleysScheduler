@@ -172,13 +172,14 @@ api me = {
             [MORE LATER]
         },
     },
-    Calendar : {
+    Calendar : { // Notes: calendar includes all events for the user
         {
             meetingname : "blah",
             groupname : "blah",
             location : "blah",
             timebegin : int,
             timeend : int,
+            url : "url"
         },
         {
             meetingname : "blah",
@@ -186,6 +187,7 @@ api me = {
             location : "blah",
             timebegin : int,
             timeend : int,
+            url : "url here"
         },
         {
             meetingname : "blah",
@@ -193,6 +195,7 @@ api me = {
             location : "blah",
             timebegin : int,
             timeend : int,
+            url : "url here"
         },
     }
     Person : {

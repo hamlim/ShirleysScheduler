@@ -36,6 +36,7 @@ $(document).ready(function(){
 		// set the view to a month
 		// import the events
 		// enable onclick of events
+		defaultView: 'month',
 		
 	});
 	
