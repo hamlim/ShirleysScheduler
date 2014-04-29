@@ -193,7 +193,26 @@ Show list of groups user has joined
 ```
 Display calendar of meetings
 
+-----------------------------------------------------------
 
+#### settings.html
+
+```html
+	#alias-email
+```
+Input for the alias email to be added to an account
+
+```html
+	#nickname
+```
+
+Input for the nickname/change of a username for the user
+
+```html
+	#phone-number
+```
+
+Input for the user to add a phone number to their account
 
 ------------
 

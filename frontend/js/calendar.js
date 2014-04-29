@@ -23,12 +23,6 @@ $(document).ready(function(){
 	var obj = localStorage.getItem('apime');
 	var me = JSON.parse(obj);
 	// me variable stores the JSON from the API/ME call to the server
-	var content = ""; //Simple variable to store appended content
-	var mnameb = "<h4 id='meeting-name'>";
-	var mlocb = "<p id='meeting-location'>";
-	var murlb = "<a id='meeting-url' href=";
-	var mdateb = "<p id='meeting-date'>";
-	var mtimeb = "<p id='meeting-time'>";
 	//we need to handle the calendar that is on the page
 	//a large amount of the code from this page will happen within the  calendar initialization
 	//need to handle events properly
@@ -98,6 +92,4 @@ $(document).ready(function(){
 		
 		}
 	});
-	
-	
 });
