@@ -32,6 +32,16 @@ $(document).ready(function(){
 				Displays meeting invites from other users
 				Will be link to the meeting
 	*/
+	//here we make the api call
+	$.ajax({
+		type: "GET",
+		url: "/api/me",
+		success: function(data){
+			console.log("we have api me data");
+			//store data as "apime" in localstorage
+			localStorage.setItem("apime", JSON.stringify(data));
+		}
+	});
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
