@@ -8,6 +8,13 @@ File structure to come soon!
 # UI Component IDs by template
 Below is a list of fields that will be populated with variables from variables.
 
+#### index.html
+```html
+    #google-login
+```
+Button to login to the service
+
+
 #### add-meeting.html
 ```html
     #meeting-name
@@ -36,9 +43,11 @@ Display invitees in a list
 ```html
     #meeting-repeat
 ```
-Users are given an option to repeat an event. This will come up as a modal window or tooltip. [Reference iCalendar] (https://drupal.org/files/issues/iCal-Third-Wednesday.jpg)
+Users are given an option to repeat an event. This will come up as a modal window or tooltip. [Reference iCalendar](https://drupal.org/files/issues/iCal-Third-Wednesday.jpg)
 
 #### calendar.html
+
+General NOTE: Modal and elements are being added in via JS.
 
 ```html
     #meeting-name
@@ -72,7 +81,7 @@ Display time of day for meeting
 ```html
     #user-calendar
 ```
-Display user calendar
+Display user calendar for the month
 
 ```html
     #user-today
@@ -90,7 +99,7 @@ Display meetings of the next day
 Display meetings from yesterday 
 
 ```html
-    #user-invites
+    #user-meeting-invite
 ```
 Display meeting invites
 
@@ -124,7 +133,7 @@ Display group
 ```html
     #group-meeting-url
 ```
-Display link to online
+Display link to Google Hangouts, Join.me, etc. if this is an online seminar/meeting
 
 ```html
     #group-memebers
@@ -182,12 +191,35 @@ Show list of groups user has joined
 ```html
     #user-calendar
 ```
-Display calendar of meetins
+Display calendar of meetings
 
+-----------------------------------------------------------
 
+#### settings.html
+
+```html
+	#alias-email
+```
+Input for the alias email to be added to an account
+
+```html
+	#nickname
+```
+
+Input for the nickname/change of a username for the user
+
+```html
+	#phone-number
+```
+
+Input for the user to add a phone number to their account
 
 ------------
 
 [FullCalendar Documentation](www.arshaw.com/fullcalendar/docs)
 
 [Notes and documentation](https://draftin.com/documents/307677?token=4xObTg_TTgzRgbIf7yajnOkKOepn_l-j9qgo9CRyAjTseM-UHtbfQZPzmzf03pmKQi5enl_OmnslfXYS-0iTDBE)
+
+Naming Conventions:
+
+* JS files that are central to the html page will follow the naming convention: `[htmlfilename].js`.

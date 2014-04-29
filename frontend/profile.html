@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Calendar.html</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <title>Profile.html</title>
+    <!-- <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/> -->
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
@@ -31,10 +30,12 @@
     <script src='fullcalendar/lib/jquery-ui.custom.min.js'></script>
     <script src='fullcalendar/fullcalendar.min.js'></script>
     <script src="fullcalendar/js/calender.js"></script>
-    
-    
-    <!-- include stylesheet for profile -->
+
+	
+	
+	<!-- include stylesheet for profile -->
     <link href="css/profile.css" rel="stylesheet">
+	
     
 </head>
 <body>
@@ -83,21 +84,18 @@
             <div class="col-xs-4">
                 <div id="user-image">
                     [user profile image]
-                <br><Br><Br>
+                
                </div>
             </div>
 
             <div class="col-xs-4">
-                <div id="user-detail">
-                    details about user
-                </div>
-                   <br><br><Br><br>
+                &nbsp;
             </div>
 
             <div class="col-xs-4">
-                <div id="user-misc">
-                    [other info]
-                    <Br><Br><Br><Br></div>
+                <div id="name">
+                    &nbsp;
+                </div>
             </div>
         </div>
         
@@ -110,181 +108,65 @@
      
     <!-- user profile -->
       
-      <br><Br>
      
 
-<div class="container-fliud">
+<div class="container-fluid">
     <div class="row">
+		<div class="col-xs-4">
+				<span class="subtitle">Real Name:</span>
+				<p id="user-full-name">[user-full-name]</p>
+		</div>
+		<div class="col-xs-4">
+				<span class="subtitle">Username:</span>
+				<p id="user-name">[user-name]</p>
+		</div>
+		<div class="col-xs-4">
+				<span class="subtitle">Google Email Address:</span>
+				<p id="user-email-address">[user-email-address]</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4">
+				<span class="subtitle">Alias Email Address:</span>
+				<p id="user-alias-address">[user-email-address]</p>
+		</div>
+		
+		<div class="col-xs-4">
+				<span class="subtitle">Date Joined:</span>
+				<p id="user-date-joined">[user-date-joined]</p>
+		</div>
+		<div class="col-xs-4">
+				<span class="subtitle">Google+ Profile:</span>
+				<p id="user-google-profile"><a href="#" target="_blank">[user-google-profile]</a></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+				<span class="subtitle">Description:</span> 
+				
+				<div id="user-profile-description">
+					<img id="edit-description" width="15px" src="images/icons/png/edit.png" /><p id="cmt_edit_323" class="cmtedit">[user-profile-description]</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	</div>
+	
     
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
-  <li><a href="#groups" data-toggle="tab">groups</a></li>
+  <li class="active"><a href="#groups" data-toggle="tab">Groups</a></li>
   <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane active" id="events">
-     <!-- to-do lists -->
-    <br><br>
-      
-            <!-- today's events -->
-            <div class="col-xs-4">
-                <div id="today-events">
-                    <div class="todo">
-                     <h4>Today's Events</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                </div>
-            <!-- /to-do -->
-            </div>
-            
-            
-            
-            
-            <!-- next day events -->
-            <div class="col-xs-4">
-                <div id="tomorrow-events">
-                    <div class="todo">
-                        <h4>Tomorrow's Meetings</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-            <!-- /to-do -->
-                </div>
-            </div>
-            
-                
-                <!-- outline for the week -->
-                <div class="col-xs-4">
-                    <div id="week-outline">
-                    <div class="todo">
-                      <h4>Week Outline</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-            <!-- /to-do -->
-                </div>
-            </div>
-         
     
-    </div>
-
-    
-  <div class="tab-pane" id="groups">
+  <div class="tab-pane active" id="groups">
       <br>
       <div class="container-fluid">
-          <div class="list-group">
+          <div class="list-group" id="list-groups">
               <a href="#" class="list-group-item active">Lorem ipsum dolor</a>
               <a href="#" class="list-group-item">Lorem ipsum dolor</a>
               <a href="#" class="list-group-item">Lorem ipsum dolor</a>
@@ -301,7 +183,7 @@
         <div class="fluid-container">
             <div class="row">
                 <div class="col-md-12">
-                    <div id='calendar'></div>
+                    <div id='calendar'>[calendar]</div>
                 </div>
         </div>  
         </div>
@@ -310,8 +192,6 @@
 
       
     </div>  
-</div>
-</div>
   
    <Br><Br><br>
     
@@ -417,7 +297,7 @@
         	
       });
       </script>
-
+	<script src='js/profile.js'></script>
 
   </body>
 </html>
