@@ -30,6 +30,13 @@
 	text-align:center;
 }
 
+#edit-description {
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	
+}
+
 #user-alias-address {
 
 }
