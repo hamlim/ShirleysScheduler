@@ -14,4 +14,9 @@ $(document).ready( function(){
 	var alias = $("#alias-email");
 	var nick = $("#nickname");
 	var phone = $("#phone-number");
+  // ajax request for #alias-email
+	
+	//ajax request for #nickname
+	
+	//ajax request for #phone-number
 });
