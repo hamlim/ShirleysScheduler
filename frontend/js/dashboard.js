@@ -78,7 +78,7 @@ $(document).ready(function(){
 		defaultView: 'month',
 		header: {
 			left: 'pref, next today',
-			center: '',
+			center: 'title',
 			right: ''
 		},
 		editable: false,

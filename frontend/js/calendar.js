@@ -31,6 +31,40 @@ $(document).ready(function(){
 	var mtimeb = "<p id='meeting-time'>";
 	//we need to handle the calendar that is on the page
 	//a large amount of the code from this page will happen within the  calendar initialization
+	//need to handle events properly
+	function eventarr(object){
+		//note object is really only going to be apime
+		//we need to isolate the events in the object
+		var pubcalarr = [];
+		for (var i=0; i<object["Calendar"].length; i++){
+			//object["Calendar"][i] is an event
+			//we want to isolate those events with and w/o a url
+			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
+				//no url to worry about:
+				var microarr = [];
+				console.log(microarr);
+				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var end = new Date(object["Calendar"][i]["timeend"]*1000)
+				var name = object["Calendar"][i]["meetingname"];
+				microarr["title"] = name;
+				microarr["start"] = start;
+				microarr["end"] = end;
+				pubcalarr.push(microarr);
+			} else {
+				//there is a url
+				var microarr = [];
+				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var end = new Date(object["Calendar"][i]["timeend"]*1000);
+				var url = object["Calendar"][i]["url"];
+				microarr["title"] = name;
+				microarr["start"] = start;
+				microarr["end"] = end;
+				microarr["url"] = url;
+				pubcalarr.push(microarr)
+			};
+		};
+		return pubcalarr;
+	};
 	$("#calendar").fullCalendar({
 		//here we will:
 		// set the view to a month
@@ -42,6 +76,8 @@ $(document).ready(function(){
 			center: 'title',
 			right: ''
 		},
+		editable: false,
+		events: eventarr(me),
 		
 		
 	});
