@@ -1,0 +1,111 @@
+//This file will have an example API/me return JS Object "JSON"
+var apime = {
+    Today : {
+        {
+            meetingname : "Meeting with Adrian",
+            groupname : "Friends",
+            location : "3rd floor, Union",
+            timebegin : 1398967200,
+            timeend : 1398970800,
+						url : ""
+        }
+    },
+    Tomorrow : {
+        {
+            meetingname : "blah",
+            groupname : "blah",
+            location : "McNeil Room, Union",
+            timebegin : 1399042800,
+            timeend : 1399050000
+        },
+        {    
+            meetingname : "Team Meeting",
+            groupname : "Schedulr team",
+            location : "here",
+            timebegin : int,
+            timeend : int
+        }
+    },
+    Yesterday : {
+        {
+            meetingname : "blah",
+            groupname : "blah",
+            location : "location here",
+            timebegin : int,
+            timeend : int
+        },
+        {    
+            meetingname : "blahblah",
+            groupname : "blahblah inc",
+            location : "here",
+            timebegin : int,
+            timeend : int
+        }
+    },
+    Invites : {
+        {
+            eventid : "eventid",
+            meetingname : "name",
+            owner : "Name of event creator"
+        },
+        {
+            eventid : "eventid",
+            meetingname : "name",
+            owner : "Name of event creator"
+        }
+    },
+    Groups : {
+        { 
+            groupname : "blah",
+            groupid : "blah",
+            [MORE LATER]
+        },
+    },
+    Calendar : { // Notes: calendar includes all events for the user
+        {
+            meetingname : "blah",
+            groupname : "blah",
+            location : "blah",
+            timebegin : int,
+            timeend : int,
+            url : "url"
+        },
+        {
+            meetingname : "blah",
+            groupname : "blah",
+            location : "blah",
+            timebegin : int,
+            timeend : int,
+            url : "url here"
+        },
+        {
+            meetingname : "blah",
+            groupname : "blah",
+            location : "blah",
+            timebegin : int,
+            timeend : int,
+            url : "url here"
+        },
+    }
+    Person : {
+        name : "Joe smith",
+        email : "gmail",
+        aliasemail : "outlook",
+        username : "usernamehere",
+				phonenumber : "Phone number here!",
+        groups : {
+            {
+                groupname : "name",
+                groupid : "id"
+            },
+            {
+                groupname : "name",
+                groupid : "id"
+            },
+        },
+        datejoined : int,
+        profileimg : "link to profile image",
+        description : "description text",
+        googlelink : "link to google+ profile"
+    }
+}

@@ -11,5 +11,7 @@ $(document).ready( function(){
 				
 			All of these values are additional things that can be stored in with the Person section of the api/me return values
 	*/
-	
+	var alias = $("#alias-email");
+	var nick = $("#nickname");
+	var phone = $("#phone-number");
 });
