@@ -73,7 +73,7 @@ $(document).ready(function(){
 		// enable onclick of events
 		defaultView: 'month',
 		header: {
-			left: 'prev, next today',
+			left: 'prev, next, today',
 			center: 'title',
 			right: ''
 		},

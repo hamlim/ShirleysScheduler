@@ -89,9 +89,9 @@ $(document).ready(function(){
 	
 	$("#calendar").fullCalendar({
 		// week view
-		defaultView: 'month',
+		defaultView: 'week',
 		header: {
-			left: 'pref, next today',
+			left: 'pref, next, today',
 			center: 'title',
 			right: ''
 		},
