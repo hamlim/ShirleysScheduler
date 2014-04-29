@@ -37,9 +37,15 @@
 			<div class="form-group">
 				<div class="input-group">
 					<h3 id="form-header">Settings:</h3>
-					<input type="text" placeholder="Alternative Email" class="form-control" id="alias-email"/>
-					<input type="text" placeholder="Preferred Name" class="form-control" id="nickname"/>
-					<input type="text" placeholder="Phone Number" class="form-control" id="phone-number"/>
+					<!-- alias email. -->
+					<input type="text" placeholder="Alternative Email" class="form-control" id="alias-email" value=""/>
+					<input type="button" class="btn btn-default btn-wide" value="Update email" onclick="alias();"/>
+					<!-- nickname section. -->
+					<input type="text" placeholder="Preferred Name" class="form-control" id="nickname" value=""/>
+					<input type="button" class="btn btn-default btn-wide" value="Update name" onclick="name();" />
+					<!-- phone number section. -->
+					<input type="text" placeholder="Phone Number" class="form-control" id="phone-number" value=""/>
+					<input type="button" class="btn btn-default btn-wide" value="Update Phone#" onclick="phone();" />
 				</div>	
 			</div>
 		</div>
@@ -54,6 +60,6 @@
     <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
-    <script src="js/ss.ajax-pages.js"></script>
+    <script src="js/settings.js"></script>
   </body>
 </html>
