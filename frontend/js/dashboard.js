@@ -35,9 +35,11 @@ $(document).ready(function(){
 	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-calendar section of the dashboard.html file
 	// Uses FullCalendar
-	
-	
-	
+	// week view
+	$("#calendar").fullCalendar({
+		
+	});
+		
 	
 	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-today section of the dashboard.html file

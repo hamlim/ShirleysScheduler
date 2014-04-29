@@ -33,9 +33,10 @@ $(document).ready(function(){
 	//a large amount of the code from this page will happen within the  calendar initialization
 	$("#calendar").fullCalendar({
 		//here we will:
-		// set the view to a week
+		// set the view to a month
 		// import the events
 		// enable onclick of events
-	})
+		
+	});
 	
-})
+});

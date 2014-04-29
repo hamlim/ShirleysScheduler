@@ -47,9 +47,13 @@ ShirleysScheduler
 ### Calendar (`calendar.html`)
 
 #### Notes: 
-* View will be weekly view, 7 days starting at current day
+* View will be monthly view
 * onclick to go to event modal
 * Modal information is found [here](http://getbootstrap.com/javascript/#modals)
+
+In depth Notes:
+* Docs on event clicks is [here](http://arshaw.com/fullcalendar/docs/mouse/eventClick/)
+* Docs on event feed is [here](http://arshaw.com/fullcalendar/docs/event_data/events_array/)
 
 #### Fields:
 * Fields we need to fill in:
@@ -64,6 +68,7 @@ ShirleysScheduler
 #### Notes:
 
 * Dashboard `#user-calendar` is a FullCalendar object
+    * View is a week
 
 * `#user-today/tomorrow/yesterday` is text based, simple summaries of the events including:
     * Meeting name
@@ -169,7 +174,6 @@ api me = {
     },
     Calendar : {
         {
-            day : 2,
             meetingname : "blah",
             groupname : "blah",
             location : "blah",
@@ -177,7 +181,6 @@ api me = {
             timeend : int,
         },
         {
-            day : 2,
             meetingname : "blah",
             groupname : "blah",
             location : "blah",
@@ -185,7 +188,6 @@ api me = {
             timeend : int,
         },
         {
-            day : 3,
             meetingname : "blah",
             groupname : "blah",
             location : "blah",
