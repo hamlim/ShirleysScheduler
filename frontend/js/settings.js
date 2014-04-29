@@ -34,7 +34,21 @@ $(document).ready(function(){
 			me["Person"]["aliasemail"] = val;
 			localStorage.setItem("apime", JSON.stringify(me));
 			//now we need to push the new value to the server
-			
+			//for the api call we need the userid first:
+			var uid = me["Person"]["userid"];
+			//now we can make the post request
+			$.ajax({
+				url: "/api/"+uid+"/settings",
+				type: "POST",
+				data: JSON.parse(val),
+				success: function(e){
+					console.log("Success!");
+				},
+				error: function(xhr, e){
+					console.log("Error!");
+					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+				}
+			});
 		} else {
 			// TODO: handle no input in form field
 			
@@ -56,6 +70,21 @@ $(document).ready(function(){
 			me["Person"]["username"] = val;
 			localStorage.setItem("apime", JSON.stringify(me));
 			//now we need to push the new value to the server
+			//for the api call we need the userid first:
+			var uid = me["Person"]["userid"];
+			//now we can make the post request
+			$.ajax({
+				url: "/api/"+uid+"/settings",
+				type: "POST",
+				data: JSON.parse(val),
+				success: function(e){
+					console.log("Success!");
+				},
+				error: function(xhr, e){
+					console.log("Error!");
+					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+				}
+			});
 		} else {
 			// TODO: handle no input in form field
 			
@@ -77,6 +106,21 @@ $(document).ready(function(){
 			me["Person"]["phonenumber"] = val;
 			localStorage.setItem("apime", JSON.stringify(me));
 			//now we need to push the new value to the server
+			//for the api call we need the userid first:
+			var uid = me["Person"]["userid"];
+			//now we can make the post request
+			$.ajax({
+				url: "/api/"+uid+"/settings",
+				type: "POST",
+				data: JSON.parse(val),
+				success: function(e){
+					console.log("Success!");
+				},
+				error: function(xhr, e){
+					console.log("Error!");
+					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+				}
+			});
 		} else {
 			// TODO: handle no input in form field
 			
