@@ -30,11 +30,12 @@
     <script src='fullcalendar/lib/jquery-ui.custom.min.js'></script>
     <script src='fullcalendar/fullcalendar.min.js'></script>
     <script src="fullcalendar/js/calender.js"></script>
+
 	
 	
 	<!-- include stylesheet for profile -->
     <link href="css/profile.css" rel="stylesheet">
-	<script src='js/profile.js'></script>
+	
     
 </head>
 <body>
@@ -141,8 +142,11 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-				<span class="subtitle">Description:</span> <a id="edit-description" href="#" title="Edit Description"><img width="15px" src="images/icons/png/edit.png" /></a>
-				<p id="user-profile-description">[user-profile-description]</p>
+				<span class="subtitle">Description:</span> 
+				
+				<div id="user-profile-description">
+					<img id="edit-description" width="15px" src="images/icons/png/edit.png" /><p id="cmt_edit_323" class="cmtedit">[user-profile-description]</p>
+				</div>
 		</div>
 	</div>
 	
@@ -293,7 +297,7 @@
         	
       });
       </script>
-
+	<script src='js/profile.js'></script>
 
   </body>
 </html>
