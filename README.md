@@ -25,6 +25,7 @@ layout:
 * Private key: `private.key`
 * Certificate chain: `ca.pem`
 
+
 #### `frontend`
 
 Main file tree for the static web page server

@@ -4871,13 +4871,10 @@ body.nav-expanded {
   opacity: 1;
 }
 
-
-
-
-
-
-
-
+#google-login {
+	text-align:center;
+	margin-bottom:10px;
+}
 
 
 
