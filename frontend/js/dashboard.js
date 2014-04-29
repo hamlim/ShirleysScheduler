@@ -76,6 +76,11 @@ $(document).ready(function(){
 	$("#calendar").fullCalendar({
 		// week view
 		defaultView: 'month',
+		header: {
+			left: 'pref, next today',
+			center: '',
+			right: ''
+		},
 		editable: false,
 		events: eventarr(apime)
 	});

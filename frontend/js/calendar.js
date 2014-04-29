@@ -37,6 +37,12 @@ $(document).ready(function(){
 		// import the events
 		// enable onclick of events
 		defaultView: 'month',
+		header: {
+			left: 'prev, next today',
+			center: 'title',
+			right: ''
+		},
+		
 		
 	});
 	
