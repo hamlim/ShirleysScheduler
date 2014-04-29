@@ -52,6 +52,7 @@ $(document).ready(function(){
 				microarr["start"] = start;
 				microarr["end"] = end;
 				microarr["location"] = loc;
+				microarr["gname"] = object["Calendar"][i]["groupname"];
 				pubcalarr.push(microarr);
 			} else {
 				//there is a url
@@ -64,7 +65,8 @@ $(document).ready(function(){
 				microarr["start"] = start;
 				microarr["end"] = end;
 				microarr["url"] = url;
-				microarr["location"] = loc
+				microarr["location"] = loc;
+				microarr["gname"] = object["Calendar"][i]["groupname"];
 				pubcalarr.push(microarr)
 			};
 		};
@@ -83,8 +85,19 @@ $(document).ready(function(){
 		},
 		editable: false,
 		events: eventarr(me),
+		eventClick: function(calEvent, jsEvent, view){
+			//calEvent.datum = datum value
+			//we make a modal first
+			var body = document.getElementsByTagName("body");
+			if(calEvent.url != "" || calEvent.url != null){
+				var modal = "<div id='popout-modal' class='modal fade'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button><h4 class='modal-title'>" + calEvent.title + "</h4></div><div class='modal-body'><h4 id='group-name'>" + calEvent.gname + "</h4><p id='location'>" + calEvent.loc + "</p><p id='url'><a href=" + calEvent.url + ">Link</a></p><p id='meeting-date'>" + calEvent.start.getUTCDay() + "</p><p id='meeting-time'>" + calEvent.start.getUTCHours() + "</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>";
+			} else {
+				var modal = "<div id='popout-modal' class='modal fade'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button><h4 class='modal-title'>" + calEvent.title + "</h4></div><div class='modal-body'><h4 id='group-name'>" + calEvent.gname + "</h4><p id='location'>" + calEvent.loc + "</p><p id='url'>None</p><p id='meeting-date'>" + calEvent.start.getUTCDay() + "</p><p id='meeting-time'>" + calEvent.start.getUTCHours() + "</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>";
+			};
+			body.append(modal);
 		
-		
+		}
 	});
+	
 	
 });
