@@ -14,11 +14,19 @@ $(document).ready(function(){
 	$("#user-full-name").text(apime["Person"].name);
 	$("#user-email-address").text(apime["Person"].email);
 	$("#user-alias-address").text(apime["Person"].aliasemail);
-	$("#user-date-joined").text(apime["Person"].datejoined * 1000);
+	$("#user-date-joined").text(new Date(apime["Person"].datejoined * 1000));
 	$("#user-image").text(apime["Person"].profileimg);
 	$("#user-google-profile").text(apime["Person"].googlelink);
 	$("#user-profile-description").text(apime["Person"].description);
 	
 	// need to do groups
+	for (int i = 0; i < apime["Person"]["groups"].length; i++) {
+		$("#list-groups").append('<a href="#" class="list-group-item active">apime["Person"]["groups"][i].groupname</a>');
+	}
+	
+	
+	// need to add function to add/remove groups
+	
+	// need to add function to update description
 	
 });
