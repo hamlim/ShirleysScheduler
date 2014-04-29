@@ -4,7 +4,7 @@ var apime = {
         {
             meetingname : "Meeting with Adrian",
             groupname : "Friends",
-            location : "3rd floor, Union",
+            location : "Times Square",
             timebegin : 1398967200,
             timeend : 1398970800,
 						url : ""
@@ -12,34 +12,38 @@ var apime = {
     },
     Tomorrow : {
         {
-            meetingname : "blah",
-            groupname : "blah",
+            meetingname : "Team Meeting",
+            groupname : "Schedulr Team",
             location : "McNeil Room, Union",
             timebegin : 1399042800,
-            timeend : 1399050000
+            timeend : 1399050000,
+						url : ""
         },
         {    
-            meetingname : "Team Meeting",
-            groupname : "Schedulr team",
-            location : "here",
-            timebegin : int,
-            timeend : int
+            meetingname : "Chat with V. Kudinov",
+            groupname : "ACME inc",
+            location : "Skype conference",
+            timebegin : 1398934800,
+            timeend : 1398938400,
+						url : ""
         }
     },
     Yesterday : {
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "location here",
-            timebegin : int,
-            timeend : int
+            meetingname : "Team Meeting",
+            groupname : "SS",
+            location : "3rd floor, Union",
+            timebegin : 1398870000,
+            timeend : 1398877200,
+						url = ""
         },
         {    
             meetingname : "blahblah",
             groupname : "blahblah inc",
             location : "here",
             timebegin : int,
-            timeend : int
+            timeend : int,
+						url : ""
         }
     },
     Invites : {
