@@ -35,6 +35,7 @@ $(document).ready(function(){
 	function eventarr(object){
 		//note object is really only going to be apime
 		//we need to isolate the events in the object
+		// Note meeting location is a custom additional value
 		var pubcalarr = [];
 		for (var i=0; i<object["Calendar"].length; i++){
 			//object["Calendar"][i] is an event
@@ -46,9 +47,11 @@ $(document).ready(function(){
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
+				var loc = object["Calendar"][i]["location"];
 				microarr["title"] = name;
 				microarr["start"] = start;
 				microarr["end"] = end;
+				microarr["location"] = loc;
 				pubcalarr.push(microarr);
 			} else {
 				//there is a url
@@ -56,10 +59,12 @@ $(document).ready(function(){
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
+				var loc = object["Calendar"][i]["location"];
 				microarr["title"] = name;
 				microarr["start"] = start;
 				microarr["end"] = end;
 				microarr["url"] = url;
+				microarr["location"] = loc
 				pubcalarr.push(microarr)
 			};
 		};
