@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Settings</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <meta name="description" content="Settings for Shirleys Scheduler application"/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
@@ -23,6 +23,30 @@
     <![endif]-->
   </head>
   <body>
+		<div id="settings-form">
+			<form>
+				<div class="form-group">
+					<div class="input-group">
+						<h3 id="form-header">Settings:</h3>
+						<!-- alias email. -->
+						<div>
+							<input type="email" placeholder="Alternative Email" class="form-control" id="alias-email" value=""/>
+							<button class="btn btn-primary btn-wide" id="email-btn">Update Email</button>
+						</div>
+						<!-- nickname section. -->
+						<div>
+							<input type="text" placeholder="Preferred Name" class="form-control" id="nickname" value=""/>
+							<button class="btn btn-primary btn-wide" id="name-btn">Update Name</button>
+						</div>
+						<!-- phone number section. -->
+						<div>
+							<input type="text" placeholder="Phone Number" class="form-control" id="phone-number" value=""/>
+							<button id="phone-btn" class="btn btn-primary btn-wide">Update Phone Number</button>
+						</div>
+					</div>	
+				</div>
+			</form>
+		</div>
   	
 		<!-- Load JS here for greater good =============================-->
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -36,36 +60,6 @@
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
 		<script src="js/settings.js"></script>
-		<script>
-			var aliasem = $("#test");
-			function alias(){
-				var email = aliasem.val();
-				//email is the input email
-				//we need to ajax it to the server
-				alert(email);
-			};
-		</script>
-		<div id="settings-form">
-			<div class="form-group">
-				<div class="input-group">
-					<h3 id="form-header">Settings:</h3>
-					<!-- alias email. -->
-					<div>
-						<input type="text" placeholder="Alternative Email" class="form-control" id="test" value=""/>
-						<input type="button" class="btn btn-primary btn-wide" value="Update email" name="email" onclick="alias()"/>
-					</div>
-					<!-- nickname section. -->
-					<div>
-						<input type="text" placeholder="Preferred Name" class="form-control" id="nickname" value=""/>
-						<input type="button" class="btn btn-primary btn-wide" value="Update name" onclick="name()" />
-					</div>
-					<!-- phone number section. -->
-					<div>
-						<input type="text" placeholder="Phone Number" class="form-control" id="phone-number" value=""/>
-						<input type="button" class="btn btn-primary btn-wide" value="Update Phone#" onclick="phone()" />
-					</div>
-				</div>	
-			</div>
-		</div>
+	
   </body>
 </html>

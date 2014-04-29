@@ -11,26 +11,27 @@ $(document).ready(function(){
 				
 			All of these values are additional things that can be stored in with the Person section of the api/me return values
 	*/
+	//create pointers to each element we want to track
+	
 	var aliasem = $("#alias-email");
+	var aliasbtn = $("#email-btn");
 	var nick = $("#nickname");
+	var nickbtn = $("#name-btn");
 	var phonenum = $("#phone-number");
+	var phonebtn = $("#phone-btn");
+	//---------------------------------------------------------------------------
   // ajax request for #alias-email
-	function alias(){
-		var email = aliasem.val();
-		//email is the input email
-		//we need to ajax it to the server
-		alert(email);
-	};
+	//the first step is to handle click events on the buttons
+	
+	//---------------------------------------------------------------------------
+	//---------------------------------------------------------------------------
 	//ajax request for #nickname
-	function name(){
-		var name = nick.value;
-		//we need to ajax this data to the server
-		
-	};
+	//the first step is to handle click events on the buttons
+	
+	//---------------------------------------------------------------------------
+	//---------------------------------------------------------------------------
 	//ajax request for #phone-number
-	function phone(){
-		var num = phonenum.value;
-		//ajax this to the server
-		
-	};
+	//the first step is to handle click events on the buttons
+	
+	//---------------------------------------------------------------------------
 });
