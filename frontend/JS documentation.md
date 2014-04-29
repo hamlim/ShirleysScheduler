@@ -96,12 +96,21 @@ In depth Notes:
 
 ### Settings Page (`settings.html`)
 
+#### Notes:
+* add extra emails
+* change display name (nickname)
+* add a phone #
 
+#### Fields:
+* Fields we need to collect input from:
+    * Alias email: `#alias-email`
+    * Change name: `#nickname`
+    * Add Phone #: `#phone-number`
 
 ## API return results ideally:
 
 #### Notes:
-* Need to parse the date format from unix timestamps
+* Need to parse the date format from unix timestamps [simply multiply by 1000]
 
 ```
 api me = {
@@ -203,6 +212,7 @@ api me = {
         email : "gmail",
         aliasemail : "outlook",
         username : "usernamehere",
+				phonenumber : "Phone number here!",
         groups : {
             {
                 groupname : "name",
