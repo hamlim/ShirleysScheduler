@@ -1,7 +1,7 @@
 //This file will have an example API/me return JS Object "JSON"
 var apime = {
     "Today": {
-        {
+        "event1": {
             "meetingname" : "Meeting with Adrian",
             "groupname" : "Friends",
             "location" : "Times Square",
@@ -11,7 +11,7 @@ var apime = {
         }
     },
     "Tomorrow": {
-        {
+        "event1": {
             "meetingname": "Team Meeting",
             "groupname": "Schedulr Team",
             "location": "McNeil Room, Union",
@@ -19,7 +19,7 @@ var apime = {
             "timeend": 1399050000,
 			"url": ""
         },
-        {    
+        "event2": {    
             "meetingname": "Chat with V. Kudinov",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -29,7 +29,7 @@ var apime = {
         }
     },
     "Yesterday": {
-        {
+        "event1": {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
             "location": "3rd floor, Union",
@@ -39,33 +39,33 @@ var apime = {
         }
     },
     "Invites": {
-        {
+        "invite1": {
             "eventid": 12345678,
             "meetingname": "Team Meeting",
             "owner": "Matt Hamlin"
         },
-        {
+        "invite2": {
             "eventid": 12345679,
             "meetingname": "Meet and Greet",
             "owner": "Steve"
         }
     },
     "Groups": {
-        { 
+        "group1": { 
             "groupname": "SS inc",
             "groupid": 12345
         },
-		{
-		  	"groupname": "Friends",
-			"groupid": 12346
-		},
-		{
-		  	"groupname": "ACME inc",
-			"groupid": 12347
-		}
+				"group2": {
+						"groupname": "Friends",
+					"groupid": 12346
+				},
+				"group3": {
+						"groupname": "ACME inc",
+					"groupid": 12347
+				}
     },
     "Calendar": { 
-        {
+        "event1": {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
             "location": "3rd floor, Union",
@@ -73,7 +73,7 @@ var apime = {
             "timeend": 1398877200,
             "url": ""
         },
-        {
+        "event2": {
             "meetingname": "Meeting with Adrian",
             "groupname": "Friends",
             "location": "Times Square",
@@ -81,7 +81,7 @@ var apime = {
             "timeend": 1398970800,
             "url": ""
         },
-        {
+        "event3": {
             "meetingname": "Team Meeting",
             "groupname": "Schedulr Team",
             "location": "McNeil Room, Union",
@@ -89,14 +89,14 @@ var apime = {
             "timeend": 1399050000,
             "url": ""
         },
-		{
-			"meetingname": "Chat with V. Kudinov",
-			"groupname": "ACME inc",
-			"location": "Skype conference",
-			"timebegin": 1398934800,
-			"timeend": 1398938400,
-			"url": ""
-		}
+				"event4": {
+					"meetingname": "Chat with V. Kudinov",
+					"groupname": "ACME inc",
+					"location": "Skype conference",
+					"timebegin": 1398934800,
+					"timeend": 1398938400,
+					"url": ""
+				}
     },
     "Person": {
         "name": "Jaime Lannister",

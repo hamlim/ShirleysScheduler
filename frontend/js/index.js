@@ -3,7 +3,15 @@ $(document).ready(function(){
 	//	change window location to dashboard.html
 	//  make a call to the api and retrieve the data from /api/me
 	//  store the data in local storage
-	
+	//-------------------------------------
+	//for TESTING only:
+	var data = apime;
+	localStorage.setItem("apime", JSON.stringify(data));
+	// Now all pages should get the data added to local storage
+	//test local storage
+	var obj = localStorage.getItem("apime");
+	var dat = JSON.parse(obj);
+	console.log(dat["Person"]["name"]);
 	//-------------------------------------
 	var login = $("#google-login");
 	login.on("click", function(){
