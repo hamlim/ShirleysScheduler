@@ -40,6 +40,10 @@ $(document).ready(function(){
 			console.log("we have api me data");
 			//store data as "apime" in localstorage
 			localStorage.setItem("apime", JSON.stringify(data));
+		},
+		error: function(xhr, text, e){
+			console.log("Error: " + e);
+			alert("Unable to access data from server!");
 		}
 	});
 	var obj = localStorage.getItem('apime');
