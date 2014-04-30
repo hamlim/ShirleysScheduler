@@ -22,6 +22,7 @@ $(document).ready(function(){
 	//first read in from local storage
 	var obj = localStorage.getItem('apime');
 	var me = JSON.parse(obj);
+	console.log(me["Groups"].length);
 	// me variable stores the JSON from the API/ME call to the server
 	//we need to handle the calendar that is on the page
 	//a large amount of the code from this page will happen within the  calendar initialization

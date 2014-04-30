@@ -43,13 +43,16 @@ $(document).ready(function(){
 		},
 		error: function(xhr, text, e){
 			console.log("Error: " + e);
-			alert("Unable to access data from server!");
+			//alert("Unable to access data from server!");
 		}
 	});
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
 	//---------------------------------------------------------------------------------------------------------------------------
+	var s = new Date();
+	s.setDate(s.getDate() - 2);
+	//s is the start date for the event generating function
 	// #user-calendar section of the dashboard.html file
 	// Uses FullCalendar
 	//generate the array of events before the calendar section:
