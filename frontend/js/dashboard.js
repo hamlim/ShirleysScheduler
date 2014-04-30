@@ -42,7 +42,7 @@ $(document).ready(function(){
 			localStorage.setItem("apime", JSON.stringify(data));
 		},
 		error: function(xhr, text, e){
-			console.log("Error: " + e);
+			console.log("AJAX Error: " + e);
 			//alert("Unable to access data from server!");
 		}
 	});
