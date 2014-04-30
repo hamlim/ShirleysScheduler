@@ -69,23 +69,41 @@ $(document).ready(function(){
 		});
 	}
 		
-	var dimg = '<img class="deletegroup" src="images/icons/png/delete.png" width="15px" />';
 	for (var i = 0; i < apime["Groups"].length; i++) {
-		$("#list-groups").append('<p class="list-group-item"><a href="#" id="'+apime["Groups"][i].groupname+'">'+dimg +'</a>' + apime["Groups"][i].groupname+ '</p>');
+		var img = '<img class="deletegroup" src="images/icons/png/delete.png" width="15" id="'+i+'" />';
+		$("#list-groups").append('<p class="list-group-item"><a href="#">'+img+'</a>'+ apime["Groups"][i].groupname+ '</p>');
 	} 
 	
 	
-	$(".deletegroup").click (function(e) {
-		e.preventDefault();
+	$(".deletegroup").click (function(name, e) {
+		
 		var x;
 		var r=confirm("Do you really want to delete the group though?!");
-		if (r==true)
-		{
-		x="OK group has been deleted!";
-		}
-		else
-		{
-		x="You pressed Cancel!";
+		if (r==true) {
+			x="OK group has been deleted!";
+			var index = parseInt($(this).attr('id'));
+			apime["Groups"].splice(index, 1);
+			localStorage.setItem("apime", JSON.stringify(apime));
+			
+			console.log(JSON.stringify(apime));
+			//now we need to push the new value to the server
+			//for the api call we need the userid first:
+			
+			var uid = apime["Person"]["userid"];
+			//now we can make the post request
+			
+			$.ajax({
+				url: "/api/"+uid+"/settings",
+				type: "POST",
+				data: apime["Groups"],
+				success: function(e){
+					console.log("Success!");
+				},
+				error: function(xhr, e){
+					console.log("Error!");
+					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+				}
+		});
 		}
 		$("#notification").text(x);
 	});
