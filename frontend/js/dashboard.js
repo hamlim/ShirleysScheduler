@@ -50,13 +50,10 @@ $(document).ready(function(){
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
 	//---------------------------------------------------------------------------------------------------------------------------
-	var s = new Date();
-	s.setDate(s.getDate() - 2);
-	//s is the start date for the event generating function
 	// #user-calendar section of the dashboard.html file
 	// Uses FullCalendar
 	//generate the array of events before the calendar section:
-	function eventarr(start, end, callback){
+	function eventarr(object){
 		//note object is really only going to be apime
 		//we need to isolate the events in the object
 		var pubcalarr = [];
@@ -65,8 +62,6 @@ $(document).ready(function(){
 			//we want to isolate those events with and w/o a url
 			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
 				//no url to worry about:
-				var microarr = [];
-				console.log(microarr);
 				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var endt = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
@@ -89,6 +84,7 @@ $(document).ready(function(){
 				});
 			};
 		};
+		callback(pubcalarr);
 		return pubcalarr;
 	};
 	var events = eventarr(apime);
