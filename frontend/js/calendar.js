@@ -18,6 +18,7 @@ $(document).ready(function(){
 		Modal Information found here: http://getbootstrap.com/javascript/#modals
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
+	$('#pcalendar').fullCalendar('render');
 	// Preliminary data allocation
 	//first read in from local storage
 	var obj = localStorage.getItem('apime');
