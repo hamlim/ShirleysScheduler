@@ -89,7 +89,7 @@ $(document).ready(function(){
 	
 	$("#pcalendar").fullCalendar({
 		// week view
-		defaultView: 'basicWeek',
+		defaultView: 'agendaWeek',
 		header: {
 			left: 'prev, next today',
 			center: 'title',
