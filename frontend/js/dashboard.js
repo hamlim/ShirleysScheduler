@@ -72,7 +72,6 @@ $(document).ready(function(){
 				});
 			} else {
 				//there is a url
-				var microarr = [];
 				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var endt = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
@@ -84,7 +83,6 @@ $(document).ready(function(){
 				});
 			};
 		};
-		callback(pubcalarr);
 		return pubcalarr;
 	};
 	var events = eventarr(apime);
