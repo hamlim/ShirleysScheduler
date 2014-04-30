@@ -42,12 +42,13 @@ $(document).ready(function(){
 				var end = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
 				var loc = object["Calendar"][i]["location"];
-				microarr["title"] = name;
-				microarr["start"] = start;
-				microarr["end"] = end;
-				microarr["location"] = loc;
-				microarr["gname"] = object["Calendar"][i]["groupname"];
-				pubcalarr.push(microarr);
+				pubcalarr.push({
+					title: name,
+					start: start,
+					end: end,
+					location: loc,
+					gname: object["Calendar"][i]["groupname"]
+				});
 			} else {
 				//there is a url
 				var microarr = [];
@@ -55,13 +56,14 @@ $(document).ready(function(){
 				var end = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
 				var loc = object["Calendar"][i]["location"];
-				microarr["title"] = name;
-				microarr["start"] = start;
-				microarr["end"] = end;
-				microarr["url"] = url;
-				microarr["location"] = loc;
-				microarr["gname"] = object["Calendar"][i]["groupname"];
-				pubcalarr.push(microarr)
+				pubcalarr.push({
+					title: name,
+					start: start,
+					end: end,
+					location: loc,
+					gname: object["Calendar"][i]["groupname"],
+					url: url
+				});
 			};
 		};
 		return pubcalarr;

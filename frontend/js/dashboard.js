@@ -53,7 +53,7 @@ $(document).ready(function(){
 	// #user-calendar section of the dashboard.html file
 	// Uses FullCalendar
 	//generate the array of events before the calendar section:
-	function eventarr(object){
+	function eventarr(start, end, callback){
 		//note object is really only going to be apime
 		//we need to isolate the events in the object
 		var pubcalarr = [];
@@ -64,16 +64,13 @@ $(document).ready(function(){
 				//no url to worry about:
 				var microarr = [];
 				console.log(microarr);
-				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
-				var end = new Date(object["Calendar"][i]["timeend"]*1000)
+				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var endt = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
-				microarr["title"] = name;
-				microarr["start"] = start;
-				microarr["end"] = end;
 				pubcalarr.push({
 					title: name,
-					start: start,
-					end: end
+					start: startt,
+					end: endt
 				});
 			} else {
 				//there is a url
