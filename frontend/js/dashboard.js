@@ -50,7 +50,6 @@ $(document).ready(function(){
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
 	//---------------------------------------------------------------------------------------------------------------------------
-	$('#pcalendar').fullCalendar('render');
 	var s = new Date();
 	s.setDate(s.getDate() - 2);
 	//s is the start date for the event generating function
