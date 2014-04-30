@@ -11,7 +11,7 @@ $(document).ready(function(){
 	//test local storage
 	var obj = localStorage.getItem("apime");
 	var dat = JSON.parse(obj);
-	console.log(dat["Person"]["name"]);
+//	console.log(dat["Person"]["name"]);
 	//-------------------------------------
 	var login = $("#google-login");
 	login.on("click", function(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
 				});
 			},
 			error: function(xhr, status, error){
-				console.log("error: " + error);
+				console.log("AJAX error: " + error);
 			}
 		})
 	});
