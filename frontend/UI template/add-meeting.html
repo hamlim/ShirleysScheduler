@@ -3,26 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>add-meeting.html</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Loading Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/customize.css" rel="stylesheet">
+    <link href="css/off-canvas-style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+      
+      
+    <!-- Flat UI won't work with three different timepickers!! -->
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+ 
 
-
-    <!-- Loading Flat UI -->
-    <!--<link href="css/flat-ui.css" rel="stylesheet">-->
-    <link href="css/demo.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- include parallax -->
+    <script src="js/init.js"></script>
 
     <!-- Time Picker -->
 
 
     <style type="text/css">
-      h1 {
+      /*h1 {
         margin-left: 5%;
-      }
+      }*/
       /* Under page title */
       #instructions {
         margin-left: 6%;
@@ -151,11 +163,22 @@
   <body>
 
       
-      <header>
-       <!--Include your brand here-->
-        <h1>Add a meeting</h1>
-        <h4 id="instructions"><em>Fill out the information below to create a meeting</em></h4>
 
+    
+      
+      <header>
+    
+    <section id="welcome-banner" data-speed="3" data-type="background">
+        <div class="fluid-container">
+            <div class="container">
+                <h1>Add a meeting</h1>
+                 <p class="lead"><em>Fill out the information below to create a meeting</em></p>
+            </div>
+
+        </div>
+    </section>
+       <!--Include your brand here-->
+   
         <a class="navbar-brand" href="#"></a>
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
@@ -188,9 +211,9 @@
       
       </header>
       
-      <div class="container-fluid">
+      <div class="container">
           <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-12">
                     <div class="form-group">
                       <h4 class="sectionLabel"><strong>Meeting Details</strong></h4>
                         <label><strong><em>*Title</em></strong></label>
@@ -212,7 +235,7 @@
 
                     <!-- Date & time input -->
                     <div class="form-group">
-                        <h4 class="sectionLabel"><strong>Date & Time</strong></h4>
+                        <h4 class="sectionLabel"><strong>Date &amp Time</strong></h4>
 
                         <div id="container">
                           <label><strong><em>*Start date</em></strong></label>
@@ -282,10 +305,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
     
 
-    <!-- Flat UI won't work with three different timepickers!! -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
-
      
     <!-- Javascript for off-canvas menu
     ================================================== -->
@@ -295,13 +314,11 @@
     <script src="https://datejs.googlecode.com/files/date.js"></script>
 
     <!-- Flat UI won't work with three different timepickers!! -->
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="js/moment.js"></script>
-  <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
     
     <!-- Tag Input (Invite Users) -->
-
+        
 
 
     
@@ -421,6 +438,5 @@
 
     </script>
       
-
-  </body>
+</body>
 </html>
