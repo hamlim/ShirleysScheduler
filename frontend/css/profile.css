@@ -1,4 +1,7 @@
 /* Stylesheet for user and group profiles */
+body {
+	margin-left: 50px;
+}
 .subtitle {
 	font-weight: bold;
 }
@@ -33,24 +36,7 @@
 #edit-description {
 	width: 15px;
 	height: 15px;
-	margin-left: 5px;
-	
-}
-
-#user-alias-address {
-
-}
-
-#user-email-address {
-
-}
-
-#user-date-joined {
-	
-}
-
-#user-google-profile {
-	
+	margin-left: 5px;	
 }
 
 #cmt_edit_323 {
@@ -59,5 +45,4 @@
 
 #user-profile-description {
 	margin-bottom: 2%;
-    
 }

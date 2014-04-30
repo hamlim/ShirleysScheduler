@@ -16,6 +16,7 @@ $(document).ready(function(){
 	// need to do groups
 
 	$(".cmtedit").on('click', function (e) {
+		e.preventDefault();
 		TBox(this);
 	});
 	
@@ -35,7 +36,7 @@ $(document).ready(function(){
 		var id = $(obj).attr("id");
 		var tid = id.replace("cmt_tedit_", "cmt_edit_");
 		var input = $('<p />', { 'id': tid, 'class': 'cmtedit', 'html': value });
-		// uncomment when the time comes
+		
 		apime["Person"]["description"] = value;
 		localStorage.setItem("apime", JSON.stringify(apime));
 		//now we need to push the new value to the server
@@ -61,16 +62,33 @@ $(document).ready(function(){
 		$(obj).remove();
 		
 		$(".cmtedit").on('click', function (e) {
+			e.preventDefault();
 			TBox(this);
 		});
 	}
-	
-	
-	//var dimg = '<img src="images/icons/png/delete.png" width="15px" />';
-	//<a id="'+apime["Groups"][i].groupname+'"</a><img src="'dimg +'" 
+		
+	var dimg = '<img class="deletegroup" src="images/icons/png/delete.png" width="15px" />';
 	for (var i = 0; i < apime["Groups"].length; i++) {
-		$("#list-groups").append('<a href="#" class="list-group-item">' + apime["Groups"][i].groupname+ '</a>');
+		$("#list-groups").append('<p class="list-group-item"><a href="#" id="'+apime["Groups"][i].groupname+'">'+dimg +'</a>' + apime["Groups"][i].groupname+ '</p>');
 	} 
+	
+	
+	$(".deletegroup").click (function(e) {
+		e.preventDefault();
+		var x;
+		var r=confirm("Do you really want to delete the group though?!");
+		if (r==true)
+		{
+		x="OK group has been deleted!";
+		}
+		else
+		{
+		x="You pressed Cancel!";
+		}
+		$("#notification").text(x);
+	});
+	
+	
 	
 			
 	// need to add function to add/remove groups

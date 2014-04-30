@@ -13,7 +13,9 @@
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
-
+	
+	<!-- need for confirmation dialog -->
+	<link href="http://jquery-ui.googlecode.com/svn/tags/1.8rc3/themes/base/jquery-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -163,11 +165,10 @@
   <div class="tab-pane active" id="groups">
       <br>
       <div class="container-fluid">
-          <div class="list-group" id="list-groups">
-		  <a href="#" class="list-group-item active">Add Group</a></div>
-      
+          <div class="list-group" id="list-groups"></div>
       </div>
-      
+	  <a href="#" class="btn btn-info">Add Group</a>
+      <p id="notification"></p>
     
     </div>
     
