@@ -69,7 +69,7 @@ $(document).ready(function(){
 		};
 		return pubcalarr;
 	};
-	$("#calendar").fullCalendar({
+	$("#pcalendar").fullCalendar({
 		//here we will:
 		// set the view to a month
 		// import the events
