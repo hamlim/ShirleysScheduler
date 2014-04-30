@@ -111,7 +111,7 @@ $(document).ready(function(){
 	var content = "";
 	//now we iterate through all the events in the today array
 	for (var i=0; i<apime["Today"].length; i++){
-		var meetingname = "<h3>" + apime["Today"][i].meetingname + "</h3>";
+		var meetingname = "<h4>" + apime["Today"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Today"][i].location + "</p>";
 		var times = "<p>" + apime["Today"][i].timebegin + " to " + apime["Today"][i].timeend + "</p>";
 		var groupname = "<p>" + apime["Today"][i].groupname + "</p>";
@@ -129,7 +129,7 @@ $(document).ready(function(){
 	var usertomorrow = $("#user-tomorrow"); // store the location of the user-tomorrow ul in a var
 	content = ""; //clear out content's values for the new section
 	for(var i=0; i<apime["Tomorrow"].length; i++){
-		var meetingname = "<h3>" + apime["Tomorrow"][i].meetingname + "</h3>";
+		var meetingname = "<h4>" + apime["Tomorrow"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Tomorrow"][i].location + "</p>";
 		var times = "<p>" + apime["Tomorrow"][i].timebegin + " to " + apime["Tomorrow"][i].timeend + "</p>";
 		var groupname = "<p>" + apime["Tomorrow"][i].groupname + "</p>";
@@ -147,7 +147,7 @@ $(document).ready(function(){
 	var useryesterday = $("#user-yesterday");
 	content = "";
 	for ( var i=0; i<apime["Yesterday"].length; i++){
-		var meetingname = "<h3>" + apime["Yesterday"][i].meetingname + "</h3>";
+		var meetingname = "<h4>" + apime["Yesterday"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Yesterday"][i].location + "</p>";
 		var times = "<p>" + apime["Yesterday"][i].timebegin + " to " + apime["Yesterday"][i].timeend + "</p>";
 		var groupname = "<p>" + apime["Yesterday"][i].groupname + "</p>";
