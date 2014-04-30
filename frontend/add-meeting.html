@@ -26,7 +26,6 @@
       h4 {
         margin-left: 6%;
       }
-
       #tags {
         float:left;
         border:1px solid #ccc;
@@ -77,6 +76,43 @@
         clear: both;
       }
 
+      @media only screen and (max-width: 425px) {
+        .row {
+          padding: 0 10px 0 10px;
+        }
+      }
+
+      @media only screen and (min-width:425px) and (max-width: 490px) {
+        #tags input[type=text] {
+          font-size: 12px;
+        }
+      }
+
+      @media only screen and (min-width:425px) and (max-width: 800px) {
+        .col-lg-4 {
+          width: 55%;
+          margin: 0 auto;
+        }
+      }
+
+      @media only screen and (min-width: 801px) and (max-width:1200px) {
+        .col-lg-4 {
+          width: 55%;
+          margin: 0 auto;
+        }
+      }
+
+      @media only screen and (min-width: 1201px) and (max-width:1600px) {
+        .col-lg-4 {
+          width: 85%;
+          margin: 0 auto;
+        }
+        .row {
+          width: 60%;
+          margin: 0 auto;
+        }
+      }
+
     </style>
 
 
@@ -105,7 +141,7 @@
         </div>
 
       
-          <nav>
+      <nav>
         <ul class="list-unstyled main-menu">
           
           <!--Include your navigation here-->
@@ -131,10 +167,6 @@
       
       <div class="container-fluid">
           <div class="row">
-            <!--
-              <div class="col-lg-8">
-              </div>-->
-          
               <div class="col-lg-4">
                     <div class="form-group">
                       <h6 id="label1">Meeting Details</h6>
@@ -158,18 +190,24 @@
                         <h6>Date & Time [*mm-dd-yyyy]</h6>
                         <div id="container">
                         <div class="input-group date" id="start">
-                          <input type="text" class="form-control start" placeholder="Start Date & Time"/>
+
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
+
+                          <input type="text" class="form-control start" placeholder="Start Date & Time"/>
+                          
                         </div>
 
                         <!--<span>End date & time:</span>-->
                         <div class="input-group date" id="stop">
-                          <input type="text" class="form-control end" placeholder="End Date & Time" />
+
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
+
+                          <input type="text" class="form-control end" placeholder="End Date & Time" />
+                          
                         </div>
                         </div>
                     </div>
@@ -192,14 +230,9 @@
                         <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">Repeat?
                       </label>
 
-                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">Repeat?</label>
-
                     </div>
                   
-
                     <div class="form-group">
-
-                      
 
                     </div>
                   
@@ -311,7 +344,7 @@
         // Submit meeting form
         $("#meetingButton").click(function() {
           
-          var isChecked = $("#checkbox1").is(":checked")?true:false;
+          var isChecked = $("#meeting-repeat").is(":checked")?true:false;
    
           $.ajax({
 
