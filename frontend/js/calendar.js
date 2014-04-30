@@ -18,7 +18,7 @@ $(document).ready(function(){
 		Modal Information found here: http://getbootstrap.com/javascript/#modals
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
-	$('#pcalendar').fullCalendar('render');
+	var body = document.getElementsByTagName("body");
 	// Preliminary data allocation
 	//first read in from local storage
 	var obj = localStorage.getItem('apime');
@@ -86,15 +86,14 @@ $(document).ready(function(){
 		eventClick: function(calEvent, jsEvent, view){
 			//calEvent.datum = datum value
 			//we make a modal first
-			var body = document.getElementsByTagName("body");
 			if(calEvent.url != "" || calEvent.url != null){
 				var modal = "<div id='popout-modal' class='modal hide' tabindex='-1'' role='dialog'' aria-labelledby='myModalLabel1' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button><h4 class='modal-title'>" + calEvent.title + "</h4></div><div class='modal-body'><h4 id='group-name'>" + calEvent.gname + "</h4><p id='location'>" + calEvent.loc + "</p><p id='url'><a href=" + calEvent.url + ">Link</a></p><p id='meeting-date'>" + calEvent.start.getUTCDay() + "</p><p id='meeting-time'>" + calEvent.start.getUTCHours() + "</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>";
 			} else {
 				var modal = "<div id='popout-modal' class='modal hide' tabindex='-1'' role='dialog'' aria-labelledby='myModalLabel1' aria-hidden='true'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button><h4 class='modal-title'>" + calEvent.title + "</h4></div><div class='modal-body'><h4 id='group-name'>" + calEvent.gname + "</h4><p id='location'>" + calEvent.loc + "</p><p id='url'>None</p><p id='meeting-date'>" + calEvent.start.getUTCDay() + "</p><p id='meeting-time'>" + calEvent.start.getUTCHours() + "</p></div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div></div>";
-			};
-			body.append(modal);
-			$("#popout-modal").modal('show');
-		
+//			};
+//			body.append(modal);
+//			$("#popout-modal").modal('show');
+		console.log("Event title: " + calEvent.title);
 		}
 	});
 });
