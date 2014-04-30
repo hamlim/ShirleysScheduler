@@ -158,14 +158,22 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-    
+  
   <div class="tab-pane active" id="groups">
       <br>
+	  <p id="notification"></p>
       <div class="container-fluid">
           <div class="list-group" id="list-groups"></div>
       </div>
-	  <a href="#" class="btn btn-info">Add Group</a>
-      <p id="notification"></p>
+	  <a href="#" class="btn btn-info" id = "addgroupbtn" >Add Group</a>
+	  <div id="addgroup" class="form-group" style="display:none;">
+		<strong>Invite Users</strong>
+		Enter users who you want to invite to the group.<br/>
+		They must have an @gmail.com email address.
+		<div id="tags">
+			<input type="text" value="" placeholder="Add email address" />
+		</div>
+		</div>
     
     </div>
     

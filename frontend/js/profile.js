@@ -77,7 +77,7 @@ $(document).ready(function(){
 	
 	$(".deletegroup").click (function(name, e) {
 		
-		var x;
+		var x = "";
 		var r=confirm("Do you really want to delete the group though?!");
 		if (r==true) {
 			x="OK group has been deleted!";
@@ -108,7 +108,35 @@ $(document).ready(function(){
 		$("#notification").text(x);
 	});
 	
+	$("#addgroupbtn").click (function(e) {
+		e.preventDefault();
+		$('#addgroup').show();
+	});
 	
+	function checkEmail(test) {
+		var testthis = test.slice(-10);
+		if (testthis == "@gmail.com") return true;
+		else return false;
+	}
+	
+  		// Adding invitees to meeting
+  	$("#tags input").on("focusout", function() {    
+		var txt= this.value.replace(/[^a-zA-Z0-9\.\@]/g,""); // Allowed characters list
+		
+		if(txt && checkEmail(txt)) {
+				$(this).before("<span class='tag'>"+ txt +"</span>");
+		}
+  	    this.value="";
+  	}).on('keyup',function( e ) {
+		if(/(188|13)/.test(e.which)) { 
+			$(this).focusout(); 
+		} // On comma or enter
+  	});
+
+  	// Deleting invitees that were added
+  	$("#tags").on("click",".tag",function(){
+  	  if( confirm("Delete tag?") ) $(this).remove(); 
+  	});
 	
 			
 	// need to add function to add/remove groups
