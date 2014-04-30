@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 		
@@ -63,23 +64,20 @@ $(document).ready(function(){
 			TBox(this);
 		});
 	}
-	console.log (apime["Groups"].length);
-	/*
-
+	
+	
+	//var dimg = '<img src="images/icons/png/delete.png" width="15px" />';
+	//<a id="'+apime["Groups"][i].groupname+'"</a><img src="'dimg +'" 
 	for (var i = 0; i < apime["Groups"].length; i++) {
-		$("#list-groups").append('<a href="#" class="list-group-item">AAA</a>');
-		$("#list-groups").append('<a href="#" class="list-group-item">' + i + '</a>');
-	} */
-		
+		$("#list-groups").append('<a href="#" class="list-group-item">' + apime["Groups"][i].groupname+ '</a>');
+	} 
+	
+			
 	// need to add function to add/remove groups
 	
 	//The file has just loaded in/is loading in 
 	//we need to call in the JS from the local storage DB
-	
-	
-	
 		
-	
 	// need to add function to update description
 	
 });
