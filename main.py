@@ -23,4 +23,7 @@ class Root(object):
 if __name__ == '__main__':
   configParser = ConfigParser.ConfigParser()
   configParser.read("api.config")
-  cherrypy.quickstart(Root(configParser), config="app.config")
+  root = Root(configParser)
+  cherrypy.tree.mount(root.api, '/api', config={'/': {
+    'request.dispatch': cherrypy.dispatch.MethodDispatcher()}})
+  cherrypy.quickstart(root, config="app.config")

@@ -54,6 +54,13 @@ If no user associated with the Google account exists, a new one is created with 
 
 Deactivates the provided internal access token.
 
+## Authenticating all other API calls
+
+All other API calls expect a token created and validated using the above process using the `Authorization` header in the HTTPS request:
+
+    GET /api/SOME_ENDPOINT
+    Authorization: VALIDATED_TOKEN
+
 # Profiles
 
 ## Fields
