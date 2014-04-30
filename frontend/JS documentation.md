@@ -8,6 +8,8 @@ ShirleysScheduler
 1. Use of LocalStorage to maintain persistent variables among several different html pages
 2. Use of jQuery's AJAX calls to send and receive data to and from the backend server.
 3. Use of FullCalendar developed by Adam Shaw. More info located [here](http://arshaw.com/fullcalendar/)
+4. `dashboard.html`, `profile.html`, and `calendar.html` all have FullCalendar objects (with tabs)
+5. Note if you change the value of something in the apime return JSON, like update the user email address, make the change to both the localStorage object and also a call to the server, this will allow us to keep up to date information on the user's computer (see `settings.js` for an example.)
 
 ## Documentation
 #### Written by Matt Hamlin
@@ -47,11 +49,13 @@ ShirleysScheduler
 ### Calendar (`calendar.html`)
 
 #### Notes: 
+
 * View will be monthly view
 * onclick to go to event modal
 * Modal information is found [here](http://getbootstrap.com/javascript/#modals)
+* Information on formatting **EVENTS** [info here](http://arshaw.com/fullcalendar/docs/event_data/events_function/)
 
-In depth Notes:
+#### In depth Notes:
 * Docs on event clicks is [here](http://arshaw.com/fullcalendar/docs/mouse/eventClick/)
 * Docs on event feed is [here](http://arshaw.com/fullcalendar/docs/event_data/events_array/)
 
@@ -104,17 +108,20 @@ In depth Notes:
 #### Fields:
 * Fields we need to collect input from:
     * Alias email: `#alias-email`
+        * Button: `#email-btn`
     * Change name: `#nickname`
+        * Button: `#name-btn`
     * Add Phone #: `#phone-number`
+        * Button: `#phone-btn`
 
 ## API return results ideally:
 
 #### Notes:
 * Need to parse the date format from unix timestamps [simply multiply by 1000]
 
-```
-api me = {
-    "Today": {
+```Javascript
+var apime = {
+    "Today": [
         {
             "meetingname" : "Meeting with Adrian",
             "groupname" : "Friends",
@@ -123,8 +130,8 @@ api me = {
             "timeend" : 1398970800,
 			"url" : ""
         }
-    },
-    "Tomorrow": {
+    ],
+    "Tomorrow": [
         {
             "meetingname": "Team Meeting",
             "groupname": "Schedulr Team",
@@ -141,8 +148,8 @@ api me = {
             "timeend": 1398938400,
 			"url": ""
         }
-    },
-    "Yesterday": {
+    ],
+    "Yesterday": [
         {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
@@ -151,8 +158,8 @@ api me = {
             "timeend": 1398877200,
 			"url": ""
         }
-    },
-    "Invites": {
+    ],
+    "Invites": [
         {
             "eventid": 12345678,
             "meetingname": "Team Meeting",
@@ -163,22 +170,22 @@ api me = {
             "meetingname": "Meet and Greet",
             "owner": "Steve"
         }
-    },
-    "Groups": {
+    ],
+    "Groups": [
         { 
             "groupname": "SS inc",
             "groupid": 12345
         },
 		{
-		  	"groupname": "Friends",
+			"groupname": "Friends",
 			"groupid": 12346
 		},
 		{
-		  	"groupname": "ACME inc",
+			"groupname": "ACME inc",
 			"groupid": 12347
 		}
-    },
-    "Calendar": { 
+    ],
+    "Calendar": [ 
         {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
@@ -211,14 +218,14 @@ api me = {
 			"timeend": 1398938400,
 			"url": ""
 		}
-    },
+    ],
     "Person": {
+				"userid": 1,
         "name": "Jaime Lannister",
-				"userid": 1234567890,
-        "email": "jlannister@aol.com",
+        "email": "jlannister@gmail.com",
         "aliasemail": "kingslayer434@outlook.com",
         "username": "k1ng5layr",
-		"phonenumber": "518-555-0160",
+				"phonenumber": "518-555-0160",
         "datejoined": 1398517200,
         "profileimg": "http://i.imgur.com/sx67gNb.jpg",
         "description": "Knight from the house of Lannister, moved to Albany for an amazing job.",
