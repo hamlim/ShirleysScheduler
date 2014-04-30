@@ -4,6 +4,8 @@ import base64
 import json
 import os
 
+from apiclient.discovery import build
+import httplib2
 from oauth2client.client import OAuth2WebServerFlow
 
 import schemas
@@ -11,15 +13,13 @@ import errors
 
 class AuthRoot(object):
   def __init__(self, settings, sessionFactory):
+    self.settings = settings
     self.sessionFactory = sessionFactory
-    # TODO: We can't load this from app.config because CherryPy doesn't load it
-    # until *after* this class is initialized. Perhaps use a different config
-    # file for this stuff.
     self.googleFlow = OAuth2WebServerFlow(
-        client_id=settings.get('google', 'client_id'),
-        client_secret=settings.get('google', 'client_secret'),
-        scope=settings.get('google', 'scopes'),
-        redirect_uri=settings.get('google', 'redirect_uri')
+        client_id=self.settings.get('google', 'client_id'),
+        client_secret=self.settings.get('google', 'client_secret'),
+        scope=self.settings.get('google', 'scopes'),
+        redirect_uri=self.settings.get('google', 'redirect_uri')
     )
 
   @cherrypy.expose
@@ -41,14 +41,51 @@ class AuthRoot(object):
 
     # We received a valid token originally from /auth/login. Continue with the
     # Google authentication process.
-    raise cherrypy.HTTPRedirect(self.googleFlow.step1_get_authorize_url())
+    validateFlow = OAuth2WebServerFlow(
+        client_id=self.settings.get('google', 'client_id'),
+        client_secret=self.settings.get('google', 'client_secret'),
+        scope=self.settings.get('google', 'scopes'),
+        redirect_uri=self.settings.get('google', 'redirect_uri'),
+        state=tokenPair.validator
+    )
+    raise cherrypy.HTTPRedirect(validateFlow.step1_get_authorize_url())
 
   @cherrypy.expose
-  def login_callback(state, code, scope):
+  def login_callback(self, state, code):
     # state is the validation code generated from /auth/login
     # code is the Google authorization code
     # scope contains the permissions associated with this code
-    # TODO: Request the Google access and refresh tokens
-    # TODO: Create user if necessary
-    # TODO: Add Gmail adddress to stored token
-    pass
+    session = self.sessionFactory()
+
+    # Check if the validation key exists
+    tokenPair = session.query(schemas.AuthToken).filter(
+        schemas.AuthToken.validator == state).first()
+    if tokenPair is None:
+      errors.throwError(error.InvalidToken)
+
+    # Request the Google access and refresh tokens
+    credentials = self.googleFlow.step2_exchange(code)
+
+    # Get some information about the authenticated user
+    authHttp = credentials.authorize(httplib2.Http())
+    googlePlus = build('plus', 'v1', http=authHttp)
+    googleUser = googlePlus.people().get(userId='me',
+        fields='displayName,name,emails,image').execute()
+    # A Google account *must* have a unique account email associated with it.
+    gmail = filter(
+        lambda x: x['type'] == 'account', googleUser['emails'])[0]['value']
+
+    user = session.query(schemas.User).get(gmail)
+    if user is None:
+      newUser = schemas.User(
+          gmail=gmail, displayName=googleUser['displayName'],
+          credentials=credentials.to_json())
+      session.add(newUser)
+
+    # Add Gmail adddress to stored token
+    tokenPair.gmail = gmail
+
+    session.commit()
+
+    # Success. Redirect the user to the dashboard.
+    raise cherrypy.HTTPRedirect("/dashboard.html")
