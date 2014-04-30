@@ -165,8 +165,8 @@ $(document).ready(function(){
 	var invites = $("#user-meeting-invite");
 	content = "";
 	for (var k = 0; k< apime["Invites"].length; k++){
-		var eventlink = "<a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][i].meetingname + "</a>";
-		var invite = "<h4>" + apime["Invites"][i].owner + " invited you! </h4>";
+		var eventlink = "<a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a>";
+		var invite = "<h4>" + apime["Invites"][k].owner + " invited you! </h4>";
 		content += libegin + invite + eventlink + liend;
 	};
 	if (content == ""){
