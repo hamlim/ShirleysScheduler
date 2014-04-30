@@ -19,13 +19,31 @@
 
 
     <style type="text/css">
-
       h1 {
         margin-left: 5%;
       }
-      h4 {
+      /* Under page title */
+      #instructions {
         margin-left: 6%;
       }
+      /* Each input box accompanying label */
+      div #placeholder {
+        text-align: center;
+      }
+      /* Checkbox */
+      .check {
+        clear:both;
+      }
+      /* Header label of each section */
+      .sectionLabel {
+        clear: both;
+        text-align: center;
+      }
+      /* Each input box accompanying label */
+      label {
+        font-size: 16px;
+      }
+      /* Invitees */
       #tags {
         float:left;
         border:1px solid #ccc;
@@ -63,45 +81,47 @@
         padding:7px;
         width:98%;
       }
-      #labelText {
-        float: left;
-      }
-      .check {
-        clear:both;
-      }
-      .date {
-        margin-top: 10px;
-      }
-      #label1 {
-        clear: both;
+      #tags input[type=text], .input-group input[type=text] {
+          text-align: center;
       }
 
+      /* A little added responsive design */
       @media only screen and (max-width: 425px) {
         .row {
           padding: 0 10px 0 10px;
         }
       }
-
       @media only screen and (min-width:425px) and (max-width: 490px) {
         #tags input[type=text] {
           font-size: 12px;
         }
-      }
-
-      @media only screen and (min-width:425px) and (max-width: 800px) {
-        .col-lg-4 {
-          width: 55%;
-          margin: 0 auto;
+        .sectionLabel {
+          font-size: 20px;
         }
       }
-
+      @media only screen and (min-width:425px) and (max-width: 800px) {
+        .col-lg-4 {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 22px;
+        }
+      }
       @media only screen and (min-width: 801px) and (max-width:1200px) {
         .col-lg-4 {
           width: 55%;
           margin: 0 auto;
         }
+        .sectionLabel {
+          font-size: 23px;
+        }
       }
-
+      @media only screen and (min-width: 1000px) and (max-width:1600px) {
+        .sectionLabel {
+          font-size: 24px;
+        }
+      }
       @media only screen and (min-width: 1201px) and (max-width:1600px) {
         .col-lg-4 {
           width: 85%;
@@ -111,8 +131,10 @@
           width: 60%;
           margin: 0 auto;
         }
+        .sectionLabel {
+          font-size: 25px;
+        }
       }
-
     </style>
 
 
@@ -131,7 +153,7 @@
       <header>
        <!--Include your brand here-->
         <h1>Add a meeting</h1>
-        <h4><em>Fill out the information below to create a meeting</em></h4>
+        <h4 id="instructions"><em>Fill out the information below to create a meeting</em></h4>
 
         <a class="navbar-brand" href="#"></a>
         <div class="navbar-header pull-right">
@@ -169,65 +191,64 @@
           <div class="row">
               <div class="col-lg-4">
                     <div class="form-group">
-                      <h6 id="label1">Meeting Details</h6>
+                      <h4 class="sectionLabel"><strong>Meeting Details</strong></h4>
+                        <label><strong><em>*Title</em></strong></label>
                         <input type="text" class="form-control" value="" placeholder="Name of Meeting" id="meeting-name"/>
                     </div>
 
+                    <!-- Meeting location -->
                     <div class="form-group">
+                        <label><strong><em>*Meeting location</em></strong></label>
                         <input type="text" class="form-control" value="" placeholder="Location" id="meeting-location"/>
                     </div>
                   
+                    <!-- Location URL is for groups who want to host a GoogleHangouts/skype meeting" -->
                     <div class="form-group">
-                        <!-- location url is for groups who want to host a GoogleHangouts/skype meeting" -->
+                        <label><strong><em>Online meeting? <em>(optional)</em></em></strong></label>
                         <input type="text" class="form-control" value="" placeholder="URL" id="location-url" /> 
                     </div>
 
-                    
+
+                    <!-- Date & time input -->
                     <div class="form-group">
-                      <!-- include a date picker -->
-                        <!--<span>Start date & time:</span>-->
-                        <!-- Flat UI blocks Timepicker page load -->
-                        <h6>Date & Time [*mm-dd-yyyy]</h6>
+                        <h4 class="sectionLabel"><strong>Date & Time</strong></h4>
+
                         <div id="container">
-                        <div class="input-group date" id="start">
+                          <label><strong><em>*Start date</em></strong></label>
+                          <div class="input-group date" id="start">
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
 
-                          <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
+                            <input type="text" class="form-control start" placeholder="[mm-dd-yyyy] [hh:mm]"/>
+                          </div>
+                          <br>
+                          <label><strong><em>*End date</em></strong></label>
+                          <div class="input-group date" id="end">
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
 
-                          <input type="text" class="form-control start" placeholder="Start Date & Time"/>
-                          
-                        </div>
-
-                        <!--<span>End date & time:</span>-->
-                        <div class="input-group date" id="stop">
-
-                          <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
-
-                          <input type="text" class="form-control end" placeholder="End Date & Time" />
-                          
-                        </div>
+                            <input type="text" class="form-control end" placeholder="[mm-dd-yyyy] [hh:mm]" />
+                          </div>
                         </div>
                     </div>
     
-                  
+                    <!-- Invitees -->
                     <div class="form-group">
-                      <!-- include people to invite -->
-                      <h6>Invite Others</h6>
+                      <h4 class="sectionLabel"><strong>Invite Others</strong></h4>
                       <div id="tags">
                         <input type="text" value="" placeholder="Add email address or username" />
                       </div>
                     </div>
                   
                     <br><br>
-                    <!-- include repeat meeting option -->
-                  
+                    
+                    <!-- Include repeat meeting option -->
                     <div class="form-group check">
                       <label class="checkbox" for="meeting-repeat">
 
-                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">Repeat?
+                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox"><strong><em>Repeat?</em></strong>
                       </label>
 
                     </div>
@@ -240,9 +261,6 @@
                       <a id="meetingButton" class="btn btn-primary btn-lg btn-block" href="#">Submit Meeting</a>
                       <!--<a class="login-link" href="#">Lost your password?</a>-->
                   </div>
-
-
-                  <div id="example">August 21st, 2003</div>
               
       </div>
     </div>
@@ -250,11 +268,6 @@
     <div class="container">
         Start doing your next awesomeness here.
     </div>
-
-    <span>
-      <tt id="results"></tt>
-    </span>
-    <!-- /.container -->
 
 
     <!-- Load JS here for greater good =============================-->
@@ -322,57 +335,88 @@
             }
         });
 
-        // Picker objects
+        // Date/time picker objects
         $("#start").datetimepicker();
-        $("#stop").datetimepicker();
+        $("#end").datetimepicker();
 
-        // Invitees
-        $('#tags input').on('focusout', function() {    
-          var txt= this.value.replace(/[^a-zA-Z0-9\+\-\.\#]/g,''); // allowed characters list
-          if(txt) $(this).before('<span class="tag">'+ txt +'</span>');
+
+        // Adding invitees to meeting
+        $("#tags input").on("focusout", function() {    
+          var txt= this.value.replace(/[^a-zA-Z0-9\+\-\.\#]/g,""); // Allowed characters list
+          if(txt) $(this).before('<span class="tag">'+ txt +"</span>");
           this.value="";
-          this.focus();
         }).on('keyup',function( e ){
-          // comma|enter (add more keyCodes delimited with | pipe)
-          if(/(188|13)/.test(e.which)) $(this).focusout();
+          if(/(188|13)/.test(e.which)) { $(this).focusout(); } // On comma or enter
+
         });
 
-        $('#tags').on('click','.tag',function(){
+        // Deleting invitees that were added
+        $("#tags").on("click",".tag",function(){
           if( confirm("Delete tag?") ) $(this).remove(); 
         });
 
-        // Submit meeting form
+        // When meeting form submitted..
         $("#meetingButton").click(function() {
           
-          var isChecked = $("#meeting-repeat").is(":checked")?true:false;
-   
-          $.ajax({
+          // Verify dates filled out
+          var start = Date.parse($("#start.input-group.date input[type=text]").val())/1000;
+          var end = Date.parse($("#end.input-group.date input[type=text]").val())/1000;
 
-            type: 'POST',
-            url: 'add-meeting.html',
-            data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-URL").val(), startTime:$("#start").val(),endTime:$("#stop").val(),checkbox:isChecked, invitees:$("#tags").val()},
-            dataType: 'script',
-            async: false,
-            success: function(response) {
-              // Is response string valid JSON object?
-              if (response.type == 'Error') {
-                alert("Invalid submission! Try again!");
-              }
-            },
-            error: function(xhr, err) {
-              alert("Error connecting to the server! Please try again!");
-            }
-
+          // Get invitees into an object
+          var invitees = new Array();
+          $("span.tag").each(function() {
+            invitees.push($(this).text());
           });
+
+          // Verify if checkbox checked?
+          var isChecked = $("#meeting-repeat").is(":checked")?true:false;        
+          // Validate form input
+          try {
+          
+            /*// No null fields (except optionally URL)
+            if ($("#meeting-name").val().length === 0 || $("#meeting-name").val().length === undefined)
+              throw "Meeting title incomplete";
+            if ($("#meeting-location").val().length === 0 || $("#meeting-name").val().length === undefined) 
+                throw "Meeting online URL incomplete";
+            */
+
+            // Any UNIX timestamp greater than 0 is a valid date
+            if (start === 0 || end === 0) 
+              throw "Date field incomplete";
+
+            // End date must come after start date
+            if (end < start)
+              throw "End date must be after start date";
+
+            /*// Need at least one invitee
+            if (invitees.length === 0)
+              throw "You can't have a meeting by yourself #ForeverAlone";
+            */
+
+            // Submitting form
+            $.ajax({
+                type: 'POST',
+                url: 'add-meeting.html',
+                data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
+                dataType: 'script',
+                async: false,
+                success: function(response) {  // Is response string valid JSON object?
+                  if (response.type == 'Error') {
+                    alert("Invalid submission! Try again!");
+                  }
+                },
+                error: function(xhr, err) {
+                  alert("Error connecting to the server! Please try again!");
+                }
+            });
+          }
+          catch(err) {
+            alert(err);
+          }
 
         });
 
     });
-
-
-
-    // Unix Timestamp Converter. Don't forget to add in clock.
-    console.log(Date.parse(document.getElementById("example").innerHTML)/1000);
 
     </script>
       
