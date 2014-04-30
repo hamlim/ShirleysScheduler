@@ -63,22 +63,26 @@ $(document).ready(function(){
 			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
 				//no url to worry about:
 				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var stime = $.fullCalendar.formatDate(startt, "u");
 				var endt = new Date(object["Calendar"][i]["timeend"]*1000)
+				var etime = $.fullCalendar.formatDate(endt, "u");
 				var name = object["Calendar"][i]["meetingname"];
 				pubcalarr.push({
 					title: name,
-					start: startt,
-					end: endt
+					start: stime, 
+					end: etime
 				});
 			} else {
 				//there is a url
 				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var stime = $.fullCalendar.formatDate(startt, "u");
 				var endt = new Date(object["Calendar"][i]["timeend"]*1000);
+				var etime = $.fullCalendar.formatDate(endt, "u");
 				var url = object["Calendar"][i]["url"];
 				pubcalarr.push({
 					title: name,
-					start: startt,
-					end: endt,
+					start: stime, 
+					end: etime, 
 					url: url					
 				});
 			};
@@ -90,6 +94,7 @@ $(document).ready(function(){
 	$("#pcalendar").fullCalendar({
 		// week view
 		defaultView: 'agendaWeek',
+		allDayDefault: false,
 		header: {
 			left: 'prev, next today',
 			center: 'title',
