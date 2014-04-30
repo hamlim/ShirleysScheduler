@@ -63,17 +63,15 @@ $(document).ready(function(){
 			TBox(this);
 		});
 	}
-	
-	console.log(apime.length);
-	//for (var i = 0; i < apime["Groups"].length; i++) {
-//		$("#list-groups").append('<a href="#" class="list-group-item">AAA</a>');
-		//$("#list-groups").append('<a href="#" class="list-group-item">' + i + '</a>');
-	//}
+	console.log (apime["Groups"].length);
+	/*
+
+	for (var i = 0; i < apime["Groups"].length; i++) {
+		$("#list-groups").append('<a href="#" class="list-group-item">AAA</a>');
+		$("#list-groups").append('<a href="#" class="list-group-item">' + i + '</a>');
+	} */
 		
 	// need to add function to add/remove groups
-
-	// should be able to change description
-	// and add / remove groups
 	
 	//The file has just loaded in/is loading in 
 	//we need to call in the JS from the local storage DB
