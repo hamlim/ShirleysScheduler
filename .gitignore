@@ -17,4 +17,5 @@ bin/*
 *.pyc
 
 # You really should be writing your own config
+api.config
 app.config

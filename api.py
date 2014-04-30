@@ -1,7 +1,7 @@
 import cherrypy
 
 class ApiRoot(object):
-  def __init__(self, sessionFactory):
+  def __init__(self, settings, sessionFactory):
     self.sessionFactory = sessionFactory
 
   @cherrypy.expose

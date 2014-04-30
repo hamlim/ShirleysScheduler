@@ -3,14 +3,24 @@ import cherrypy
 import base64
 import json
 import os
-import urllib
+
+from oauth2client.client import OAuth2WebServerFlow
 
 import schemas
 import errors
 
 class AuthRoot(object):
-  def __init__(self, sessionFactory):
+  def __init__(self, settings, sessionFactory):
     self.sessionFactory = sessionFactory
+    # TODO: We can't load this from app.config because CherryPy doesn't load it
+    # until *after* this class is initialized. Perhaps use a different config
+    # file for this stuff.
+    self.googleFlow = OAuth2WebServerFlow(
+        client_id=settings.get('google', 'client_id'),
+        client_secret=settings.get('google', 'client_secret'),
+        scope=settings.get('google', 'scopes'),
+        redirect_uri=settings.get('google', 'redirect_uri')
+    )
 
   @cherrypy.expose
   def login(self):
@@ -31,23 +41,14 @@ class AuthRoot(object):
 
     # We received a valid token originally from /auth/login. Continue with the
     # Google authentication process.
-    googleURL = "https://accounts.google.com/o/oauth2/auth?" + urllib.urlencode({
-      "response_type": "code",
-      "client_id": cherrypy.request.app.config['google']['client_id'],
-      "redirect_uri": "https://shirleys-scheduler.com/auth/login_callback",
-      "scope": "profile email",
-      "state": tokenPair.validator,
-      "access_type": "offline",
-      "include_granted_scopes": "true"
-    })
-    # Redirect the client to Google for authentication
-    raise cherrypy.HTTPRedirect(googleURL)
+    raise cherrypy.HTTPRedirect(self.googleFlow.step1_get_authorize_url())
 
   @cherrypy.expose
-  def login_callback(state, code):
+  def login_callback(state, code, scope):
     # state is the validation code generated from /auth/login
     # code is the Google authorization code
-    # TODO: Request a Google refresh token
+    # scope contains the permissions associated with this code
+    # TODO: Request the Google access and refresh tokens
     # TODO: Create user if necessary
     # TODO: Add Gmail adddress to stored token
     pass
