@@ -32,11 +32,21 @@ The second step to log in or create new users. Expects the access token (which m
 
 Intended for use directly from the client browser (not AJAX) - this will redirect the client to Google for authentication (see [Google’s documentation](https://developers.google.com/accounts/docs/OAuth2WebServer)). A separate activation token is also sent to Google as part of the callback URL.
 
+#### Basic example
+
+###### Request
+
+    GET /auth/login_validate?token=INVALID_TOKEN_FROM_AUTH_LOGIN
+
+##### Response
+
+The client is redirected to Google for authentication.
+
 ### GET /auth/login_callback [private]
 
-The third step to log in or create new users. Intended to be called only from Google servers.
+The third step to log in or create new users. Called automatically on `/auth/login_validate` success.
 
-After Google authenticates a user (from /auth/login), Google sends a response to this callback with a Google authorization token and our activation token. This validates our access token from /auth/login and associates it with that user’s Google account. See [Google’s documentation](https://developers.google.com/accounts/docs/OAuth2WebServer#handlingtheresponse) for other details.
+After Google authenticates a user, Google redirects the client to this callback with a Google authorization token and our activation token. This validates our access token from `/auth/login` and associates it with that user’s Google account. See [Google’s documentation](https://developers.google.com/accounts/docs/OAuth2WebServer#handlingtheresponse) for other details.
 
 If no user associated with the Google account exists, a new one is created with default settings populated from the user’s Google+ profile.
 
