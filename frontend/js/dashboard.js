@@ -70,24 +70,30 @@ $(document).ready(function(){
 				microarr["title"] = name;
 				microarr["start"] = start;
 				microarr["end"] = end;
-				pubcalarr.push(microarr);
+				pubcalarr.push({
+					title: name,
+					start: start,
+					end: end
+				});
 			} else {
 				//there is a url
 				var microarr = [];
-				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
-				var end = new Date(object["Calendar"][i]["timeend"]*1000);
+				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var endt = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
-				microarr["title"] = name;
-				microarr["start"] = start;
-				microarr["end"] = end;
-				microarr["url"] = url;
-				pubcalarr.push(microarr)
+				pubcalarr.push({
+					title: name,
+					start: startt,
+					end: endt,
+					url: url					
+				});
 			};
 		};
 		return pubcalarr;
 	};
+	var events = eventarr(apime);
 	
-	$("#calendar").fullCalendar({
+	$("#pcalendar").fullCalendar({
 		// week view
 		defaultView: 'basicWeek',
 		header: {
