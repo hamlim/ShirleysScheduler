@@ -39,6 +39,8 @@ $(document).ready(function(){
 		
 		apime["Person"]["description"] = value;
 		localStorage.setItem("apime", JSON.stringify(apime));
+		
+		console.log(JSON.stringify(apime));
 		//now we need to push the new value to the server
 		//for the api call we need the userid first:
 		
