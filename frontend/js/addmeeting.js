@@ -203,7 +203,6 @@
 						$("#usergroups").append('<option>'+ apime["Groups"][i].groupname+ '</option>');
 					}
 
-
 					// Show meeting day options
 					$("#meeting-repeat").change(function() {
 						$("#expand").slideToggle("fast");
@@ -220,7 +219,13 @@
 						// Verify if checkbox checked?
 						var isChecked = $("#meeting-repeat").is(":checked")?true:false;
 
+            // Which group?
+            var invitees = $("#usergroups option:selected").val();
 
+            for (var i = 0; i < apime["Groups"].length; ++i) {
+              if(apime["Groups"][i].groupname === invitees)
+                var group_id = apime["Groups"][i].groupid;
+            }
 
 						// Validate form input
 						try {
@@ -245,10 +250,11 @@
 								throw "You can't have a meeting by yourself #ForeverAlone";
 							*/
 
+              
 							// Submitting form
 							$.ajax({
 									type: 'POST',
-									url: "https://shirleys-scheduler.com/api/"+ {[GroupID]} +"/event",
+									url: "https://shirleys-scheduler.com/api/"+ group_id +"/event",
 									data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
 									dataType: 'JSON',
 									async: false,
