@@ -87,21 +87,60 @@ $(document).ready(function(){
 		eventClick: function(calEvent, jsEvent, view){
 			//calEvent.datum = datum value
 			//we make a modal first
+			var day = "";
+			function(){
+				//generate a day name based on getUTCdate
+				var val = calEvent.start.getUTCDay();
+				if(val == 1){
+					day = "Monday";
+				} else if (val == 2){
+					day = "Tuesday";
+				} else if( val == 3){
+					day = "Wednesday";
+				} else if (val == 4){
+					day = "Thursday";
+				} else if (val == 5){
+					day = "Friday";
+				} else if (val == 6){
+					day = "Saturday";
+				} else {
+					day = "Sunday";
+				}
+			};
 			if(calEvent.url != "" || calEvent.url != null){
-				$("#modal-title").text(calEvent.title);
-				$("#group-name").text(calEvent.gname);
-				$("#location").text(calEvent.loc);
-				$("#url").append("<a href=" + calEvent.url + ">Link</a>");
-				$("#meeting-date").text(calEvent.start.getUTCDay());
-				$("#meeting-time").text(calEvent.start.getUTCHours());
-				$("#popout-modal").modal('show');
+				if(calEvent.loc == null || calEvent.loc == ""){
+					$("#modal-title").text("Meeting Name: " + calEvent.title);
+					$("#group-name").text("Group Name: " + calEvent.gname);
+					$("#location").text("No location specified.");
+					$("#url").append("<a href=" + calEvent.url + ">Link</a>");
+					$("#meeting-date").text("Meeting Date: " + day);
+					$("#meeting-time").text("Meeting Time: " + calEvent.start.getUTCHours());
+					$("#popout-modal").modal('show');
+				} else {
+					$("#modal-title").text("Meeting Name: " + calEvent.title);
+					$("#group-name").text("Group Name: " + calEvent.gname);
+					$("#location").text("Location: " + calEvent.loc);
+					$("#url").append("<a href=" + calEvent.url + ">Link</a>");
+					$("#meeting-date").text("Meeting Date: " + day);
+					$("#meeting-time").text("Meeting Time: " + calEvent.start.getUTCHours());
+					$("#popout-modal").modal('show');
+				}
 			} else {
-				$("#modal-title").text(calEvent.title);
-				$("#group-name").text(calEvent.gname);
-				$("#location").text(calEvent.loc);
-				$("#meeting-date").text(calEvent.start.getUTCDay());
-				$("#meeting-time").text(calEvent.start.getUTCHours());
-				$("#popout-modal").modal('show');
+				if(calEvent.loc == null || calEvent.loc == ""){
+					$("#modal-title").text("Meeting Name: " + calEvent.title);
+					$("#group-name").text("Group Name: " + calEvent.gname);
+					$("#location").text("No location specified.");
+					$("#meeting-date").text("Meeting Date: " + day);
+					$("#meeting-time").text("Meeting Time: " + calEvent.start.getUTCHours());
+					$("#popout-modal").modal('show');
+				} else {
+					$("#modal-title").text("Meeting Name: " + calEvent.title);
+					$("#group-name").text("Group Name: " + calEvent.gname);
+					$("#location").text("Location: " + calEvent.loc);
+					$("#meeting-date").text("Meeting Date: " + day);
+					$("#meeting-time").text("Meeting Time: " + calEvent.start.getUTCHours());
+					$("#popout-modal").modal('show');
+				}
 				console.log("Event " + calEvent);
 			};
 		}
