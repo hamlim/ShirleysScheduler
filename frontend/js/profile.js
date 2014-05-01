@@ -24,7 +24,6 @@ $(document).ready(function(){
 		RBox(this);
 	});
 	function TBox(obj) {
-		
 		var id = $(obj).attr("id");
 		var tid = id.replace("cmt_edit_", "cmt_tedit_");
 		var input = $('<input />', { 'type': 'text', 'name': 'n' + tid, 'id': tid, 'class': 'text_box', 'value': $(obj).html() });
@@ -41,7 +40,6 @@ $(document).ready(function(){
 		apime["Person"]["description"] = value;
 		localStorage.setItem("apime", JSON.stringify(apime));
 		
-		console.log(JSON.stringify(apime));
 		//now we need to push the new value to the server
 		//for the api call we need the userid first:
 		
@@ -68,6 +66,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			TBox(this);
 		});
+		console.log(JSON.stringify(apime));
 	}
 		
 	for (var i = 0; i < apime["Groups"].length; i++) {
@@ -94,7 +93,7 @@ $(document).ready(function(){
 			//now we can make the post request
 			
 			$.ajax({
-				url: "/api/"+uid+"/settings",
+				url: "/api/"+uid+"/group",
 				type: "POST",
 				data: apime["Groups"],
 				success: function(e){
@@ -116,12 +115,49 @@ $(document).ready(function(){
 	
 	$("#submitgroup").click (function(e) {
 		e.preventDefault();
-		//alert("howdy");
+		
+		var groupname = $("#groupnametext").val();
+		if (!groupname || groupname == "" ) {
+			alert("Please enter a group name!");
+			return;
+		}
 		// Get invitees into an object
 		var invitees = new Array();
 		$("span.tag").each(function() {
 			invitees.push($(this).text());
 		});
+		// also include self?
+		
+		if (invitees.length == 0) {
+			alert("Please enter at least one group member to add!");
+			return;
+		}
+		
+		// invitees.push(apime["Person"]["email"]);
+		// create newgroup object to be stored
+		// attributes:
+		//		groupname - name of group
+		// 		invitees  - array of email addresses of people to be added to groups
+		var newGroup = {};
+		newGroup["groupname"] = groupname;
+		newGroup["inivitees"] = invitees;
+		
+		$.ajax({
+				url: "/api/me/group",
+				type: "POST",
+				data: newGroup,
+				success: function(e){
+					console.log("Success!");
+				},
+				error: function(xhr, e){
+					console.log("Error!");
+					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+				}
+		});
+		
+		apime["Groups"].push(newGroup);
+		console.log(JSON.stringify(apime));
+		$("#notification").text("Created new group: "+groupname);
 	});
 	
 	function checkEmail(test) {
@@ -148,13 +184,4 @@ $(document).ready(function(){
   	$("#tags").on("click",".tag",function(){
   	  if( confirm("Delete tag?") ) $(this).remove(); 
   	});
-	
-			
-	// need to add function to add/remove groups
-	
-	//The file has just loaded in/is loading in 
-	//we need to call in the JS from the local storage DB
-		
-	// need to add function to update description
-	
 });

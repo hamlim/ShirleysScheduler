@@ -160,16 +160,20 @@
 <div class="tab-content">
   
   <div class="tab-pane active" id="groups">
-      <br>
-	  <p id="notification"></p>
+	  
       <div class="container-fluid">
           <div class="list-group" id="list-groups"></div>
       </div>
+	  <p id="notification"></p>
 	  <a href="#" class="btn btn-info" id = "addgroupbtn" >Add Group</a>
 	  <div id="addgroup" class="form-group" style="display:none;">
+		<strong>Group Name</strong>
+		<p>Enter a dope name for your group.</p>
+		<div id="groupname">
+			<input id="groupnametext" type="text" value="" placeholder="Add group name" />
+		</div>
 		<strong>Invite Users</strong>
-		Enter users who you want to invite to the group.<br/>
-		They must have an @gmail.com email address.
+		<p>Enter users who you want to invite to the group. They must have an @gmail.com email address.</p>
 		<div id="tags">
 			<input type="text" value="" placeholder="Add email address" />
 		</div>
