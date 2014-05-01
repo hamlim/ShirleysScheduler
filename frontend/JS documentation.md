@@ -17,9 +17,11 @@ ShirleysScheduler
 > Documentation is laid out by the process that it is relevant to, so it will follow some example actions
 
 ### Put this on the top of JS
-```var obj = localStorage.getItem('apime');
-	if (obj == null || typeof obj == 'undefined') {window.location.replace( 'index.html' );}
-	else { // the rest of your code }
+```Javascript
+var obj = localStorage.getItem('apime');
+if (obj == null || typeof obj == 'undefined'){
+window.location.replace( 'index.html' );
+} else { // the rest of your code }
 ```
 
 ### Login Process (`Index.html` is the page)
