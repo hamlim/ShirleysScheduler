@@ -252,23 +252,23 @@
 
               
 							// Submitting form
-							$.ajax({
-									type: 'POST',
-									url: "https://shirleys-scheduler.com/api/"+ group_id +"/event",
-									data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
-									dataType: 'JSON',
-									async: false,
-									success: function(toke) {  // Is response string valid JSON object?
-										console.log("Success, now we need to update the localstorage stuff");
-										// in here push stuff to local storage, ie, add a new event to the calendar arr, then set the new JSON thingy as apime in local storage
-									},
-									error: function(xhr, err) {
-										alert("Error connecting to the server! Please try again!");
-									}
-							});
+//							$.ajax({
+//									type: 'POST',
+//									url: "https://shirleys-scheduler.com/api/"+ group_id +"/event",
+//									data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
+//									dataType: 'JSON',
+//									async: false,
+//									success: function(toke) {  // Is response string valid JSON object?
+//										console.log("Success, now we need to update the localstorage stuff");
+//										// in here push stuff to local storage, ie, add a new event to the calendar arr, then set the new JSON thingy as apime in local storage
+//									},
+//									error: function(xhr, err) {
+//										console.log("Error connecting to the server! Please try again!");
+//									}
+//							});
 						}
 						catch(err) {
-							alert(err);
+							console.log(err);
 						}
 
 					});
