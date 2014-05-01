@@ -1,5 +1,10 @@
+import json
+import re
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+
+EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
 ClassBase = declarative_base()
 
@@ -26,3 +31,9 @@ class User(ClassBase):
   credentials = Column(String(8192))
   # The user's full name.
   displayName = Column(String(256))
+
+  def toJson(self):
+    return json.dumps({
+      'gmail': self.gmail,
+      'displayName': self.displayName
+    })
