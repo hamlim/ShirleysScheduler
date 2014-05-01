@@ -23,7 +23,7 @@ var groups = {
             "location": "Union @ RPI",
             "timebegin": 1399390200,
             "timeend": 1399392000,
-            "url"": ""
+            "url": ""
         }
     ]
 };
