@@ -6,8 +6,7 @@ $(document).ready(function(){
 	//-------------------------------------
 	//for TESTING only:
 	var data = apime;
-	var group = groups;
-	localStorage.setItem("groups", JSON.stringify(group));
+	//localStorage.setItem("groups", JSON.stringify(group));
 	localStorage.setItem("apime", JSON.stringify(data));
 	// Now all pages should get the data added to local storage
 	//test local storage
@@ -23,12 +22,13 @@ $(document).ready(function(){
 		$.ajax({
 			url: "https://shirleys-scheduler.com/auth/login",
 			type: "GET",
+			dataType: "JSON",
 			success: function(toke){
-				console.log("it worked");
 				// now we have an invalid token
 				// token is stored in data
 				localStorage.setItem("token", toke["token"]);
-				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke['token']);
+				console.log(toke);
+				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]);
 			},
 			error: function(xhr, status, error){
 				console.log("AJAX error: " + error);

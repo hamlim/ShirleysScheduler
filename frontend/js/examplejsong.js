@@ -1,5 +1,6 @@
 var groups = {
     "Groupname": "Friends",
+		"Groupid": 12346,
     "Users": [
         {
             "email": "jlannister@gmail.com",

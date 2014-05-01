@@ -122,7 +122,7 @@ $(document).ready(function(){
 		//each event will be an li element
 		var usertoday = $("#user-today"); //Store the location of the ul in a variable
 		var content = "";
-		var libegin = "<li>";
+		var libegin = "<li class='list-group-item'>";
 		var liend = "</li>";
 		//now we iterate through all the events in the today array
 		for (var i=0; i<apime["Today"].length; i++){
@@ -210,9 +210,9 @@ $(document).ready(function(){
 		var invites = $("#user-meeting-invite");
 		content = "";
 		for (var k = 0; k< apime["Invites"].length; k++){
-			var eventlink = "<a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a>";
-			var invite = "<h4>" + apime["Invites"][k].owner + " invited you! </h4>";
-      var buttonView = "<button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accept" +  apime["Invites"][k].meetingname + "</button>";
+			var eventlink = "<h5><a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a></h5>";
+			var invite = "<h3>" + apime["Invites"][k].owner + " invited you! </h3>";
+      var buttonView = "<div align='right'><button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accept" +  apime["Invites"][k].meetingname + "</button></div>";
 			content += libegin + invite + eventlink + buttonView + liend;
 		};
 		if (content == ""){
