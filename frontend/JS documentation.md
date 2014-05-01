@@ -95,6 +95,7 @@ ShirleysScheduler
 
 #### Notes:
 * [Color of events](http://arshaw.com/fullcalendar/docs/event_data/Event_Source_Object/#options)
+* Multiple event sources: [eventSources](http://arshaw.com/fullcalendar/docs/event_data/events_json_feed/)
 
 #### Fields:
 
@@ -128,7 +129,7 @@ var apime = {
             "location" : "Times Square",
             "timebegin" : 1398967200,
             "timeend" : 1398970800,
-			"url" : ""
+	    "url" : ""
         }
     ],
     "Tomorrow": [
@@ -138,7 +139,7 @@ var apime = {
             "location": "McNeil Room, Union",
             "timebegin": 1399042800,
             "timeend": 1399050000,
-			"url": ""
+	    "url": ""
         },
         {    
             "meetingname": "Chat with V. Kudinov",
@@ -156,7 +157,7 @@ var apime = {
             "location": "3rd floor, Union",
             "timebegin": 1398870000,
             "timeend": 1398877200,
-			"url": ""
+	    "url": ""
         }
     ],
     "Invites": [
@@ -176,14 +177,14 @@ var apime = {
             "groupname": "SS inc",
             "groupid": 12345
         },
-		{
-			"groupname": "Friends",
-			"groupid": 12346
-		},
-		{
-			"groupname": "ACME inc",
-			"groupid": 12347
-		}
+	{
+	    "groupname": "Friends",
+	    "groupid": 12346
+	},
+	{
+	    "groupname": "ACME inc",
+	    "groupid": 12347
+	}
     ],
     "Calendar": [ 
         {
@@ -210,23 +211,18 @@ var apime = {
             "timeend": 1399050000,
             "url": ""
         },
-		{
-			"meetingname": "Chat with V. Kudinov",
-			"groupname": "ACME inc",
-			"location": "Skype conference",
-			"timebegin": 1398934800,
-			"timeend": 1398938400,
-			"url": ""
-		}
+	{
+	    "meetingname": "Chat with V. Kudinov",
+	    "groupname": "ACME inc",
+	    "location": "Skype conference",
+	    "timebegin": 1398934800,
+	    "timeend": 1398938400,
+	    "url": ""
+	}
     ],
     "Person": {
-				"userid": 1,
         "name": "Jaime Lannister",
         "email": "jlannister@gmail.com",
-        "aliasemail": "kingslayer434@outlook.com",
-        "username": "k1ng5layr",
-				"phonenumber": "518-555-0160",
-        "datejoined": 1398517200,
         "profileimg": "http://i.imgur.com/sx67gNb.jpg",
         "description": "Knight from the house of Lannister, moved to Albany for an amazing job.",
         "googlelink": ""
