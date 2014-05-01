@@ -18,22 +18,22 @@ class AuthToken(ClassBase):
   # identify a token in place of the token itself.
   validator = Column(String(256))
   # The token provides acccess to the user identified by this Gmail address.
-  gmail = Column(String(256))
+  email = Column(String(256))
 
 # A user on our service.
 class User(ClassBase):
   __tablename__ = "users"
 
   # We use Gmail address to uniquely identify users.
-  gmail = Column(String(256), primary_key=True, nullable=False)
+  email = Column(String(256), primary_key=True, nullable=False)
   # We are literally serializing the Google credentials object to JSON and
   # storing it as a string here. Sorry.
   credentials = Column(String(8192))
   # The user's full name.
-  displayName = Column(String(256))
+  name = Column(String(256))
 
   def toJson(self):
     return json.dumps({
-      'gmail': self.gmail,
-      'displayName': self.displayName
+      'email': self.email,
+      'name': self.name
     })

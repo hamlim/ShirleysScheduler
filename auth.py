@@ -72,18 +72,18 @@ class AuthRoot(object):
     googleUser = googlePlus.people().get(userId='me',
         fields='displayName,name,emails,image').execute()
     # A Google account *must* have a unique account email associated with it.
-    gmail = filter(
+    email = filter(
         lambda x: x['type'] == 'account', googleUser['emails'])[0]['value']
 
-    user = session.query(schemas.User).get(gmail)
+    user = session.query(schemas.User).get(email)
     if user is None:
       newUser = schemas.User(
-          gmail=gmail, displayName=googleUser['displayName'],
+          email=email, name=googleUser['displayName'],
           credentials=credentials.to_json())
       session.add(newUser)
 
     # Add Gmail adddress to stored token
-    tokenPair.gmail = gmail
+    tokenPair.email = email
 
     session.commit()
 

@@ -11,7 +11,7 @@ def getCurrentUser(dbSession):
   token = dbSession.query(schemas.AuthToken).get(requestToken)
   if token is None:
     return None
-  return dbSession.query(schemas.User).get(token.gmail)
+  return dbSession.query(schemas.User).get(token.email)
 
 def handleGetUser(currentUser, dbSession, userId, subObject=None):
   user = dbSession.query(schemas.User).get(userId)
@@ -32,7 +32,7 @@ class ApiRoot(object):
     if currentUser is None:
       errors.throwError(errors.InvalidToken)
     if objectId == "me":
-      objectId = currentUser.gmail
+      objectId = currentUser.email
 
     objectId = urllib.unquote(objectId).decode('utf8')
     if schemas.EMAIL_REGEX.match(objectId):
