@@ -88,7 +88,7 @@ $(document).ready(function(){
 			//calEvent.datum = datum value
 			//we make a modal first
 			var day = "";
-			function(){
+			function blah(){
 				//generate a day name based on getUTCdate
 				var val = calEvent.start.getUTCDay();
 				if(val == 1){
@@ -107,6 +107,7 @@ $(document).ready(function(){
 					day = "Sunday";
 				}
 			};
+			blah();
 			if(calEvent.url != "" || calEvent.url != null){
 				if(calEvent.loc == null || calEvent.loc == ""){
 					$("#modal-title").text("Meeting Name: " + calEvent.title);
