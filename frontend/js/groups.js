@@ -68,7 +68,7 @@ $(document).ready(function(){
 		}
 		var newUser = {};
 		newUser["email"] = users[0];
-		newUser["name"] = "Matt Hamlin";
+		newUser["name"] = "Dan Gilligan";
 		groups["Users"].push(newUser);
 		
 		// invitees.push(apime["Person"]["email"]);
