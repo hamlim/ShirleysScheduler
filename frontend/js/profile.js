@@ -12,7 +12,8 @@ $(document).ready(function(){
 	$("#user-alias-address").text(apime["Person"].aliasemail);
 	$("#user-date-joined").text(new Date(apime["Person"].datejoined * 1000));
 	$("#user-image").html('<img src="'+apime["Person"].profileimg+'" width="125px" />');
-	$("#user-google-profile").text(apime["Person"].googlelink);
+	$("#user-google-profile").href = apime["Person"].googlelink;
+	$("#user-google-profile").text(apime["Person"].name);
 	$("#cmt_edit_323").text(apime["Person"].description);
 	
 	// need to do groups
@@ -92,23 +93,23 @@ $(document).ready(function(){
 			//now we need to push the new value to the server
 			//for the api call we need the userid first:
 			
-			var uid = apime["Person"]["userid"];
+//			var uid = apime["Person"]["userid"];
 			//now we can make the post request
 			
-			// call to remove the member from a group?!?
-			$.ajax({
-				url: "https://shirleys-scheduler.com/api/"+uid+"/group",
-				dataType: "json",
-				type: "POST",
-				data: apime["Groups"],
-				success: function(e){
-					console.log("Success!");
-				},
-				error: function(xhr, e){
-					console.log("Error!");
-					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
-				}
-		});
+//			// call to remove the member from a group?!?
+//			$.ajax({
+//				url: "https://shirleys-scheduler.com/api/"+uid+"/group",
+//				dataType: "json",
+//				type: "POST",
+//				data: apime["Groups"],
+//				success: function(e){
+//					console.log("Success!");
+//				},
+//				error: function(xhr, e){
+//					console.log("Error!");
+//					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+//				}
+//		});
 		}
 		$("#notification").text(x);
 	});
