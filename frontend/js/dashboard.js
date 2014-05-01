@@ -32,9 +32,81 @@ $(document).ready(function(){
 				Displays meeting invites from other users
 				Will be link to the meeting
 	*/
+	//here we make the api call
+	$.ajax({
+		type: "GET",
+		url: "/api/me",
+		success: function(data){
+			console.log("we have api me data");
+			//store data as "apime" in localstorage
+			localStorage.setItem("apime", JSON.stringify(data));
+		},
+		error: function(xhr, text, e){
+			console.log("Error: " + e);
+			//alert("Unable to access data from server!");
+		}
+	});
+	var obj = localStorage.getItem('apime');
+	var apime = JSON.parse(obj);
+	console.log(apime); //apime stores all the data from the database
+	//---------------------------------------------------------------------------------------------------------------------------
+	var s = new Date();
+	s.setDate(s.getDate() - 2);
+	//s is the start date for the event generating function
 	// #user-calendar section of the dashboard.html file
+	// Uses FullCalendar
+	//generate the array of events before the calendar section:
+	function eventarr(start, end, callback){
+		//note object is really only going to be apime
+		//we need to isolate the events in the object
+		var pubcalarr = [];
+		for (var i=0; i<object["Calendar"].length; i++){
+			//object["Calendar"][i] is an event
+			//we want to isolate those events with and w/o a url
+			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
+				//no url to worry about:
+				var microarr = [];
+				console.log(microarr);
+				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var endt = new Date(object["Calendar"][i]["timeend"]*1000)
+				var name = object["Calendar"][i]["meetingname"];
+				pubcalarr.push({
+					title: name,
+					start: startt,
+					end: endt
+				});
+			} else {
+				//there is a url
+				var microarr = [];
+				var startt = new Date(object["Calendar"][i]["timebegin"]*1000);
+				var endt = new Date(object["Calendar"][i]["timeend"]*1000);
+				var url = object["Calendar"][i]["url"];
+				pubcalarr.push({
+					title: name,
+					start: startt,
+					end: endt,
+					url: url					
+				});
+			};
+		};
+		return pubcalarr;
+	};
+	var events = eventarr(apime);
 	
+	$("#pcalendar").fullCalendar({
+		// week view
+		defaultView: 'basicWeek',
+		header: {
+			left: 'prev, next today',
+			center: 'title',
+			right: ''
+		},
+		editable: false,
+		events: eventarr(apime)
+	});
+		
 	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-today section of the dashboard.html file
 	//we want to create a simple repeatable semantic content container for the metadata
 	//#user-today is on a Ul element
@@ -43,9 +115,6 @@ $(document).ready(function(){
 	var libegin = "<li>";
 	var liend = "</li>";
 	var content = "";
-	var obj = localStorage.getItem('apime');
-	var apime = JSON.parse(obj);
-	console.log(apime); //apime stores all the data from the database
 	//now we iterate through all the events in the today array
 	for (var i=0; i<apime["Today"].length; i++){
 		var meetingname = "<h3>" + apime["Today"][i].meetingname + "</h3>";
@@ -60,7 +129,7 @@ $(document).ready(function(){
 	};
 	var today = content;
 	usertoday.append(today);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-tomorrow section of the dashboard.html file
 	// we want to do essentially the same thing as we did for today, and will do the same thing for yesterday
 	var usertomorrow = $("#user-tomorrow"); // store the location of the user-tomorrow ul in a var
@@ -78,7 +147,7 @@ $(document).ready(function(){
 	};
 	var tomorrow = content;
 	usertomorrow.append(tomorrow);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-yesterday section
 	
 	var useryesterday = $("#user-yesterday");
@@ -96,7 +165,7 @@ $(document).ready(function(){
 	}
 	var yesterday = content;
 	useryesterday.append(yesterday);
-	
+	//---------------------------------------------------------------------------------------------------------------------------
 	// #user-meeting-invite section of the dashboard.html file
 	// Here we represent the event invites to the user
 	var invites = $("#user-meeting-invite");
