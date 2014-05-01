@@ -159,5 +159,5 @@ $(document).ready(function(){
 
 			}
 		});
-	};
+	}
 });
