@@ -213,7 +213,7 @@ $(document).ready(function(){
 		for (var k = 0; k< apime["Invites"].length; k++){
 			var eventlink = "<h5><a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a></h5>";
 			var invite = "<h3>" + apime["Invites"][k].owner + " invited you! </h3>";
-      var buttonView = "<div align='right'><button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accept" +  apime["Invites"][k].meetingname + "</button></div>";
+      var buttonView = "<div align='right'><button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accept " +  apime["Invites"][k].meetingname + "</button></div>";
 			content += libegin + invite + eventlink + buttonView + liend;
 		};
 		if (content == ""){
