@@ -1,0 +1,11 @@
+/* Stylesheet for Calendar UI */
+ 
+#calendar {
+    min-width: auto;
+    margin: 0 auto;
+    padding: 5% 5% 5% 5%;
+}
+
+#scheduled-events {
+    padding: 5% 5% 5% 5%;
+}

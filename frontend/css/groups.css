@@ -1,0 +1,108 @@
+/* Stylesheet for user and group profiles */
+
+/* just cuz of the calendar issue */
+
+.subtitle {
+	font-weight: bold;
+}
+
+#user-info {
+    /*background-color: #4b6984;*/
+    margin-top: 45px;
+    min-height: 150px;
+}
+
+#user-image {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 2% 12%;
+	
+}
+
+#user-detail {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 2% 2%;
+}
+
+
+#user-name {
+    color: #fff;
+    margin-top: 45px;
+    margin: 2% 2% 2% 12%;
+	text-align:center;
+}
+
+#edit-description {
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;	
+	cursor: pointer;
+	cursor: hand; 
+}
+
+#cmt_edit_323 {
+	display:inline;
+}
+
+#user-profile-description {
+	margin-bottom: 2%;
+}
+
+#tags , #groupname{
+  float:left;
+  border:1px solid #ccc;
+  padding:4px;
+  font-family:Arial;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#tags span.tag {
+  cursor:pointer;
+  display:block;
+  float:left;
+  color:#555;
+  background:#add;
+  padding:5px 10px;
+  padding-right:30px;
+  margin:4px;
+}
+
+#tags span.tag:hover {
+  opacity:0.7;
+}
+
+#tags span.tag:after {
+  position:absolute;
+  content:'×';
+  border:1px solid;
+  border-radius:10px;
+  padding:0 4px;
+  margin:3px 0 10px 7px;
+  font-size:10px;
+}
+
+#tags input {
+  background:#eee;
+  border:0;
+  margin:4px;
+  padding:7px;
+  width:98%;
+}
+
+#tags input[type=text] {
+  text-align: center;
+}
+
+.user-event {
+	
+}
+
+.clear-distance {
+    margin: 10px 5px 10px 0px;
+}
+
+#adduser {
+    margin: 20px 10px 10px 0px;
+}

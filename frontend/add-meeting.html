@@ -3,171 +3,384 @@
   <head>
     <meta charset="utf-8">
     <title>add-meeting.html</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/customize.css" rel="stylesheet">
+    <!--<link href="css/off-canvas-style.css" rel="stylesheet">-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--<link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />-->
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>-->
+    <!-- Calendar View -->
+    <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href="css/calendar.css" rel="stylesheet" > <!-- custom styling for calendar -->
+    <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 
-    <!-- Loading Flat UI -->
-    <link href="css/flat-ui.css" rel="stylesheet">
-    <link href="css/demo.css" rel="stylesheet">
+    <!-- Time Picker -->
+
+    <style type="text/css">
+      /* Under page title */
+      #instructions {
+        margin-left: 6%;
+      }
+      /* Each input box accompanying label */
+      div #placeholder {
+        text-align: center;
+      }
+      /* Checkbox */
+      .check {
+        clear:both;
+      }
+      /* Header label of each section */
+      .sectionLabel {
+        clear: both;
+        text-align: center;
+      }
+      /* Each input box accompanying label */
+      label {
+        font-size: 16px;
+      }
+      .day:hover, .next:hover, .prev:hover, .minute:hover {
+        background-color: #3BBDFA;
+      }
+      td, th {
+        text-align: center;
+      }
+      th.switch {
+        pointer-events: none;
+      }
+      .table-condensed {
+        margin: 0 auto;
+      }
+      /* A little added responsive design */
+      @media only screen and (max-width: 425px) {
+        .row {
+          padding: 0 10px 0 10px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 490px) {
+        #tags input[type=text] {
+          font-size: 12px;
+        }
+        .sectionLabel {
+          font-size: 20px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 800px) {
+        .col-lg-4 {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 22px;
+        }
+      }
+      @media only screen and (min-width: 801px) and (max-width:1200px) {
+        .col-lg-4 {
+          width: 55%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 23px;
+        }
+      }
+      @media only screen and (min-width: 1000px) and (max-width:1600px) {
+        .sectionLabel {
+          font-size: 24px;
+        }
+      }
+      @media only screen and (min-width: 1201px) and (max-width:1600px) {
+        .col-lg-4 {
+          width: 85%;
+          margin: 0 auto;
+        }
+        .row {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 25px;
+        }
+      }
+    </style>
+
+    <!-- Time Picker -->
+
+    <style type="text/css">
+      h1 {
+        margin-left: 5%;
+      }
+      /* Under page title */
+      #instructions {
+        margin-left: 6%;
+      }
+      /* Each input box accompanying label */
+      div #placeholder {
+        text-align: center;
+      }
+      /* Checkbox */
+      .check {
+        clear:both;
+      }
+      /* Header label of each section */
+      .sectionLabel {
+        clear: both;
+        text-align: center;
+      }
+      /* Each input box accompanying label */
+      label {
+        font-size: 16px;
+      }
+      /* A little added responsive design */
+      @media only screen and (max-width: 425px) {
+        .row {
+          padding: 0 10px 0 10px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 490px) {
+        #tags input[type=text] {
+          font-size: 12px;
+        }
+        .sectionLabel {
+          font-size: 20px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 800px) {
+        .col-lg-4 {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 22px;
+        }
+      }
+      @media only screen and (min-width: 801px) and (max-width:1200px) {
+        .col-lg-4 {
+          width: 55%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 23px;
+        }
+      }
+      @media only screen and (min-width: 1000px) and (max-width:1600px) {
+        .sectionLabel {
+          font-size: 24px;
+        }
+      }
+      @media only screen and (min-width: 1201px) and (max-width:1600px) {
+        .col-lg-4 {
+          width: 85%;
+          margin: 0 auto;
+        }
+        .row {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 25px;
+        }
+      }
+    </style>
 
     <link rel="shortcut icon" href="images/favicon.ico">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
-  <body>
 
-      
-      <header>
+  <body>    
+    <header>
+    <section id="welcome-banner" data-speed="3" data-type="background">
+        <div class="fluid-container">
+            <div class="container">
+                <h1>Add a meeting</h1>
+                 <p class="lead"><em>Fill out the information below to create a meeting</em></p>
+            </div>
+
+        </div>
+    </section>
        <!--Include your brand here-->
-        <a class="navbar-brand" href="#">Off Canvas Menu</a>
+
+        <a class="navbar-brand" href="#"></a>
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
             MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
           </a>
         </div>
-    </div>
-      
-          <nav>
-        <ul class="list-unstyled main-menu">
-          
-          <!--Include your navigation here-->
-          <li class="text-right"><a href="#" id="nav-close">X</a></li>
-          <li><a href="#">Menu One <span class="icon"></span></a></li>
-          <li><a href="#">Menu Two <span class="icon"></span></a></li>
-          <li><a href="#">Menu Three <span class="icon"></span></a></li>
-          <li><a href="#">Dropdown</a>
-            <ul class="list-unstyled">
-                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
-            </ul>
-          </li>
-          <li><a href="#">Menu Four <span class="icon"></span></a></li>
-          <li><a href="#">Menu Five <span class="icon"></span></a></li>
-        </ul>
-      </nav>
+
+    <nav>
+    <ul class="list-unstyled main-menu">
+
+      <!--Include your navigation here-->
+      <li class="text-right"><a href="#" id="nav-close">X</a></li>
+      <li><a href="dashboard.html">Dashboard<span class="icon"></span></a></li>
+      <li><a href="profile.html">Profiles<span class="icon"></span></a></li>
+      <li><a href="calendar.html">Calendar <span class="icon"></span></a></li>
+      <li><a href="add-meeting.html">Add Meeting +<span class="icon"></span></a></li>
+      <li><a href="groups.html">Groups</a></li>
+
+    </ul>
+  </nav>
       
       </header>
       
-      
-      <div class="container-fluid">
+
+      <div class="container">
           <div class="row">
-              <div class="col-lg-8">
-              </div>
-          
-              <div class="col-lg-4">
-                 
+              <div class="col-lg-12">
                     <div class="form-group">
+                      <h4 class="sectionLabel"><strong>Meeting Details</strong></h4>
+                        <label><strong><em>*Title</em></strong></label>
                         <input type="text" class="form-control" value="" placeholder="Name of Meeting" id="meeting-name"/>
                     </div>
 
+                    <!-- Meeting location -->
                     <div class="form-group">
+                        <label><strong><em>*Meeting location</em></strong></label>
                         <input type="text" class="form-control" value="" placeholder="Location" id="meeting-location"/>
                     </div>
                   
+                    <!-- Location URL is for groups who want to host a GoogleHangouts/skype meeting" -->
                     <div class="form-group">
-                        <!-- location url is for groups who want to host a GoogleHangouts/skype meeting" -->
-                        <input type="text" class="form-control" value="" placeholder="url" id="location-url" /> 
+                        <label><strong><em>Online meeting? <em>(optional)</em></em></strong></label>
+                        <input type="text" class="form-control" value="" placeholder="URL" id="location-url" /> 
                     </div>
 
-                    <div class="form-group">
-                      <!-- include a date picker -->
-                    </div>
-                  
-                    <div class="form-group">
-                      <!-- include people to invite -->
-                    </div>
-                  
-                  
-                    <!-- include repeat meeting option -->
-                  
-                    <div class="form-group">
-                      <label class="checkbox" for="checkbox1">
-                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">Repeat?</label>
-                    </div>
-                  
-                                      <div class="form-group">
-                      <!-- include a date picker -->
-                    </div>
-                  
 
-                    <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>
-                    <a class="login-link" href="#">Lost your password?</a>
+                    <!-- Date & time input -->
+                    <div class="form-group">
+           <h4 class="sectionLabel"><strong>Date &amp Time</strong></h4>
+
+
+                        <div id="container">
+                          <label><strong><em>*Start date</em></strong></label>
+                          <div class="input-group date" id="start">
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+
+                            <input type="text" class="form-control start" placeholder="[mm-dd-yyyy] [hh:mm]"/>
+                          </div>
+                          <br>
+                          <label><strong><em>*End date</em></strong></label>
+                          <div class="input-group date" id="end">
+                            <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+
+                            <input type="text" class="form-control end" placeholder="[mm-dd-yyyy] [hh:mm]" />
+                          </div>
+                        </div>
+
+                    </div>
+    
+                    <!-- Groups -->
+                    <div class="form-group">
+                      <h4 class="sectionLabel"><strong>Select Group</strong></h4>
+                      <label>
+                        <strong><em>*Which group? I wanna know</em></strong>
+                        <select id="usergroups" class="form-control select-group">
+                        </select>
+                      </label>
+
+                    </div>
+
+                    <div id='pcalendar'></div>
+                    
+                    <!-- Include repeat meeting option -->
+                    <div class="form-group check">
+                      <label class="checkbox" for="meeting-repeat">
+                        <input type="checkbox" value="" id="meeting-repeat"  data-toggle="checkbox">
+                        <strong><em>Repeat?</em></strong>
+                      </label>
+
+                      <div id="expand" style="display:none">
+                        <select class="form-control">
+                          <option value="daily">Daily</option>
+                          <option value="weekly">Weekly (once)</option>
+                          <option value="weekly2">Weekly (more than once)</option>
+                        </select>
+                      </div>
+
+                  </div>
+                  
+                  <div class="form-group">
+                      <a id="meetingButton" class="btn btn-primary btn-lg btn-block" href="#">Submit Meeting</a>
                   </div>
               
       </div>
     </div>
+
+          </div>
+      
+      <div class="clear"><br><br></div>
   
-    <div class="container">
-        Start doing your next awesomeness here.
-    </div>
-    <!-- /.container -->
+          <div class="fluid-container">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7">
+            <h3 class="footer-title">Break away from whenisgood</h3>
+            <p>This project kicks ass. We should probably include something better in the footer. It's too late in the night to think. 
+            </p>
 
 
+
+            <a class="footer-brand" href="http://designmodo.com" target="_blank">
+              
+            </a>
+          </div> <!-- /col-xs-7 -->
+
+          <div class="col-xs-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">Shirley's Scheduler</h3>
+              <ul>
+                <li>About</li>
+                <li>Features</li>
+                <li>Login</li>
+                <li>Github</li>
+              </ul>
+              Go to: <a href="http:/breakthrough-designs.com" target="_blank">Breakthrough Designs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+              </div>
     <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
-    <script src="js/bootstrap-switch.js"></script>
-    <script src="js/flatui-checkbox.js"></script>
-    <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
-      
-     
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+    <script src="js/init.js"></script>
+    
+
+
+
     <!-- Javascript for off-canvas menu
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/jquery.navgoco.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://datejs.googlecode.com/files/date.js"></script>
+
+
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src='fullcalendar/fullcalendar.min.js'></script>
+    <script src="fullcalendar/js/calender.js"></script>
+    <script src="js/addmeeting.js"></script>
     
-    <script>
-    $(document).ready(function(){												
-       
-       //Navigation Menu Slider
-        $('#nav-expander').on('click',function(e){
-      		e.preventDefault();
-      		$('body').toggleClass('nav-expanded');
-      	});
-      	$('#nav-close').on('click',function(e){
-      		e.preventDefault();
-      		$('body').removeClass('nav-expanded');
-      	});
-      	
-      	
-      	// Initialize navgoco with default options
-        $(".main-menu").navgoco({
-            caret: '<span class="caret"></span>',
-            accordion: false,
-            openClass: 'open',
-            save: true,
-            cookie: {
-                name: 'navgoco',
-                expires: false,
-                path: '/'
-            },
-            slide: {
-                duration: 300,
-                easing: 'swing'
-            }
-        });
-  
-        	
-      });
-      </script>
-  
+    <script src="js/examplejson.js"></script>
+
   </body>
+
 </html>

@@ -8,11 +8,21 @@ ShirleysScheduler
 1. Use of LocalStorage to maintain persistent variables among several different html pages
 2. Use of jQuery's AJAX calls to send and receive data to and from the backend server.
 3. Use of FullCalendar developed by Adam Shaw. More info located [here](http://arshaw.com/fullcalendar/)
+4. `dashboard.html`, `profile.html`, and `calendar.html` all have FullCalendar objects (with tabs)
+5. Note if you change the value of something in the apime return JSON, like update the user email address, make the change to both the localStorage object and also a call to the server, this will allow us to keep up to date information on the user's computer (see `settings.js` for an example.)
 
 ## Documentation
 #### Written by Matt Hamlin
 
 > Documentation is laid out by the process that it is relevant to, so it will follow some example actions
+
+### Put this on the top of JS
+```Javascript
+var obj = localStorage.getItem('apime');
+if (obj == null || typeof obj == 'undefined'){
+window.location.replace( 'index.html' );
+} else { // the rest of your code }
+```
 
 ### Login Process (`Index.html` is the page)
 
@@ -47,11 +57,13 @@ ShirleysScheduler
 ### Calendar (`calendar.html`)
 
 #### Notes: 
+
 * View will be monthly view
 * onclick to go to event modal
 * Modal information is found [here](http://getbootstrap.com/javascript/#modals)
+* Information on formatting **EVENTS** [info here](http://arshaw.com/fullcalendar/docs/event_data/events_function/)
 
-In depth Notes:
+#### In depth Notes:
 * Docs on event clicks is [here](http://arshaw.com/fullcalendar/docs/mouse/eventClick/)
 * Docs on event feed is [here](http://arshaw.com/fullcalendar/docs/event_data/events_array/)
 
@@ -66,6 +78,7 @@ In depth Notes:
 ### Dashboard (`dashboard.html`) {brief for user}
 
 #### Notes:
+* `#accept-btn` button is when a user accepts an invite, remove the invite and add to events in calendar, AJAX stuff?
 
 * Dashboard `#user-calendar` is a FullCalendar object
     * View is a week
@@ -91,6 +104,7 @@ In depth Notes:
 
 #### Notes:
 * [Color of events](http://arshaw.com/fullcalendar/docs/event_data/Event_Source_Object/#options)
+* Multiple event sources: [eventSources](http://arshaw.com/fullcalendar/docs/event_data/events_json_feed/)
 
 #### Fields:
 
@@ -104,129 +118,155 @@ In depth Notes:
 #### Fields:
 * Fields we need to collect input from:
     * Alias email: `#alias-email`
+        * Button: `#email-btn`
     * Change name: `#nickname`
+        * Button: `#name-btn`
     * Add Phone #: `#phone-number`
+        * Button: `#phone-btn`
 
 ## API return results ideally:
 
 #### Notes:
 * Need to parse the date format from unix timestamps [simply multiply by 1000]
 
-```
-api me = {
-    Today : {
+```Javascript
+var apime = {
+    "Today": [
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "location here",
-            timebegin : int,
-            timeend : int
+            "meetingname" : "Meeting with Adrian",
+            "groupname" : "Friends",
+            "location" : "Times Square",
+            "timebegin" : 1398967200,
+            "timeend" : 1398970800,
+	    "url" : ""
+        }
+    ],
+    "Tomorrow": [
+        {
+            "meetingname": "Team Meeting",
+            "groupname": "Schedulr Team",
+            "location": "McNeil Room, Union",
+            "timebegin": 1399042800,
+            "timeend": 1399050000,
+	    "url": ""
         },
         {    
-            meetingname : "blahblah",
-            groupname : "blahblah inc",
-            location : "here",
-            timebegin : int,
-            timeend : int
+            "meetingname": "Chat with V. Kudinov",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1398934800,
+            "timeend": 1398938400,
+			"url": ""
         }
-    },
-    Tomorrow : {
+    ],
+    "Yesterday": [
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "location here",
-            timebegin : int,
-            timeend : int
-        },
-        {    
-            meetingname : "blahblah",
-            groupname : "blahblah inc",
-            location : "here",
-            timebegin : int,
-            timeend : int
+            "meetingname": "Team Meeting",
+            "groupname": "SS inc",
+            "location": "3rd floor, Union",
+            "timebegin": 1398870000,
+            "timeend": 1398877200,
+	    "url": ""
         }
-    },
-    Yesterday : {
+    ],
+    "Invites": [
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "location here",
-            timebegin : int,
-            timeend : int
-        },
-        {    
-            meetingname : "blahblah",
-            groupname : "blahblah inc",
-            location : "here",
-            timebegin : int,
-            timeend : int
-        }
-    },
-    Invites : {
-        {
-            eventid : "eventid",
-            meetingname : "name",
-            owner : "Name of event creator"
+            "eventid": 12345678,
+            "meetingname": "Team Meeting",
+            "owner": "Matt Hamlin"
         },
         {
-            eventid : "eventid",
-            meetingname : "name",
-            owner : "Name of event creator"
+            "eventid": 12345679,
+            "meetingname": "Meet and Greet",
+            "owner": "Steve"
         }
-    },
-    Groups : {
+    ],
+    "Groups": [
         { 
-            groupname : "blah",
-            groupid : "blah",
-            [MORE LATER]
+            "groupname": "SS inc",
+            "groupid": 12345
         },
-    },
-    Calendar : { // Notes: calendar includes all events for the user
+	{
+	    "groupname": "Friends",
+	    "groupid": 12346
+	},
+	{
+	    "groupname": "ACME inc",
+	    "groupid": 12347
+	}
+    ],
+    "Calendar": [ 
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url"
+            "meetingname": "Team Meeting",
+            "groupname": "SS inc",
+            "location": "3rd floor, Union",
+            "timebegin": 1398870000,
+            "timeend": 1398877200,
+            "url": ""
         },
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url here"
+            "meetingname": "Meeting with Adrian",
+            "groupname": "Friends",
+            "location": "Times Square",
+            "timebegin": 1398967200,
+            "timeend": 1398970800,
+            "url": ""
         },
         {
-            meetingname : "blah",
-            groupname : "blah",
-            location : "blah",
-            timebegin : int,
-            timeend : int,
-            url : "url here"
+            "meetingname": "Team Meeting",
+            "groupname": "Schedulr Team",
+            "location": "McNeil Room, Union",
+            "timebegin": 1399042800,
+            "timeend": 1399050000,
+            "url": ""
         },
-    }
-    Person : {
-        name : "Joe smith",
-        email : "gmail",
-        aliasemail : "outlook",
-        username : "usernamehere",
-				phonenumber : "Phone number here!",
-        groups : {
-            {
-                groupname : "name",
-                groupid : "id"
-            },
-            {
-                groupname : "name",
-                groupid : "id"
-            },
-        },
-        datejoined : int,
-        profileimg : "link to profile image",
-        description : "description text",
-        googlelink : "link to google+ profile"
+	{
+	    "meetingname": "Chat with V. Kudinov",
+	    "groupname": "ACME inc",
+	    "location": "Skype conference",
+	    "timebegin": 1398934800,
+	    "timeend": 1398938400,
+	    "url": ""
+	}
+    ],
+    "Person": {
+        "name": "Jaime Lannister",
+        "email": "jlannister@gmail.com",
+        "profileimg": "http://i.imgur.com/sx67gNb.jpg",
+        "description": "Knight from the house of Lannister, moved to Albany for an amazing job.",
+        "googlelink": ""
     }
 }
+```
+
+```Javascript
+var groups = {
+    "Groupname": "Friends",
+    "Users": [
+        {
+            "email": "jlannister@gmail.com",
+            "name": "Jaime Lannister"
+        },
+        {
+            "email": "hamlinmatt212@gmail.com",
+            "name": "Matt Hamlin"
+        }
+    ],
+    "Events": [
+        {
+            "meetingname": "Meeting with Adrian",
+            "location": "Times Square",
+            "timebegin": 1398967200,
+            "timeend": 1398970800,
+            "url": ""
+        },
+        {
+            "meetingname": "Meeting with John",
+            "location": "Union @ RPI",
+            "timebegin": 1399390200,
+            "timeend": 1399392000,
+            "url"": ""
+        }
+    ]
+};
 ```
