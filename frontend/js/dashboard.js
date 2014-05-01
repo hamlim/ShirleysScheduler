@@ -211,7 +211,7 @@ $(document).ready(function(){
 		for (var k = 0; k< apime["Invites"].length; k++){
 			var eventlink = "<a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a>";
 			var invite = "<h4>" + apime["Invites"][k].owner + " invited you! </h4>";
-            var buttonView = "<button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accep" +  apime["Invites"][k].meetingname + "</button>";
+      var buttonView = "<button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accept" +  apime["Invites"][k].meetingname + "</button>";
 			content += libegin + invite + eventlink + buttonView + liend;
 		};
 		if (content == ""){
@@ -219,6 +219,9 @@ $(document).ready(function(){
 		};
 		var invitecontent = content;
 		invites.append(invitecontent);
+		
+		
+
 
 
 
