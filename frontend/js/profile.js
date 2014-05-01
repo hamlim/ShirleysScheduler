@@ -15,15 +15,16 @@ $(document).ready(function(){
 	
 	// need to do groups
 
-	$(".cmtedit").on('click', function (e) {
+	$("#edit-description").on('click', function (e) {
 		e.preventDefault();
-		TBox(this);
+		TBox(".cmtedit");
 	});
 	
 	$("#user-profile-description").on('blur', 'input', function(e) {
 		RBox(this);
 	});
 	function TBox(obj) {
+		
 		var id = $(obj).attr("id");
 		var tid = id.replace("cmt_edit_", "cmt_tedit_");
 		var input = $('<input />', { 'type': 'text', 'name': 'n' + tid, 'id': tid, 'class': 'text_box', 'value': $(obj).html() });
