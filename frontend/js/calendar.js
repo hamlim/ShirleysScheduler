@@ -18,6 +18,9 @@ $(document).ready(function(){
 		Modal Information found here: http://getbootstrap.com/javascript/#modals
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
+	//we want to generate an array filled with colors for different events
+		
+	//---------------------------------------------------------------------------------------------------------------------------
 	$('#pcalendar').fullCalendar('render');
 	// Preliminary data allocation
 	//first read in from local storage
