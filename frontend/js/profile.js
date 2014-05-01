@@ -103,7 +103,6 @@ $(document).ready(function(){
 					console.log("Error!");
 					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
 				}
-			x="OK group has been deleted!";
 		});
 		}
 		$("#notification").text(x);
