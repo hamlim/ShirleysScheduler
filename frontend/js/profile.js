@@ -113,6 +113,16 @@ $(document).ready(function(){
 		$('#addgroup').show();
 	});
 	
+	$("#submitgroup").click (function(e) {
+		e.preventDefault();
+		//alert("howdy");
+		// Get invitees into an object
+		var invitees = new Array();
+		$("span.tag").each(function() {
+			invitees.push($(this).text());
+		});
+	});
+	
 	function checkEmail(test) {
 		var testthis = test.slice(-10);
 		if (testthis == "@gmail.com") return true;
