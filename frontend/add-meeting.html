@@ -10,30 +10,18 @@
     <!-- Loading Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/customize.css" rel="stylesheet">
-    <link href="css/off-canvas-style.css" rel="stylesheet">
+    <!--<link href="css/off-canvas-style.css" rel="stylesheet">-->
     <link rel="shortcut icon" href="images/favicon.ico">
-      
-      
-    <!-- Flat UI won't work with three different timepickers!! -->
-    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
- 
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    
-    
+    <!--<link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />-->
+    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>-->
+    <!-- Calendar View -->
+    <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href="css/calendar.css" rel="stylesheet" > <!-- custom styling for calendar -->
+    <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 
     <!-- Time Picker -->
 
-
     <style type="text/css">
-      /*h1 {
-        margin-left: 5%;
-      }*/
       /* Under page title */
       #instructions {
         margin-left: 6%;
@@ -55,48 +43,15 @@
       label {
         font-size: 16px;
       }
-      /* Invitees */
-      #tags {
-        float:left;
-        border:1px solid #ccc;
-        padding:4px;
-        font-family:Arial;
-        margin-bottom: 20px;
-        width: 100%;
+      .day:hover, .day:active, .next:hover, .prev:hover, .minute:hover, .minute {
+        background-color: #3BBDFA;
       }
-      #tags span.tag {
-        cursor:pointer;
-        display:block;
-        float:left;
-        color:#555;
-        background:#add;
-        padding:5px 10px;
-        padding-right:30px;
-        margin:4px;
+      td, th {
+        text-align: center;
       }
-      #tags span.tag:hover {
-        opacity:0.7;
+      .table-condensed {
+        margin: 0 auto;
       }
-      #tags span.tag:after {
-       position:absolute;
-       content:"×";
-       border:1px solid;
-       border-radius:10px;
-       padding:0 4px;
-       margin:3px 0 10px 7px;
-       font-size:10px;
-      }
-      #tags input {
-        background:#eee;
-        border:0;
-        margin:4px;
-        padding:7px;
-        width:98%;
-      }
-      #tags input[type=text], .input-group input[type=text] {
-          text-align: center;
-      }
-
       /* A little added responsive design */
       @media only screen and (max-width: 425px) {
         .row {
@@ -149,15 +104,7 @@
       }
     </style>
 
-
-    <!-- Calendar View -->
-    <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
-    <link href="css/calendar.css" rel="stylesheet" > <!-- custom styling for calendar -->
-    <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-
-
     <!-- Time Picker -->
-
 
     <style type="text/css">
       h1 {
@@ -236,24 +183,11 @@
       }
     </style>
 
-
-
     <link rel="shortcut icon" href="images/favicon.ico">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
-  <body>
 
-      
-
-    
-      
-      <header>
-    
+  <body>    
+    <header>
     <section id="welcome-banner" data-speed="3" data-type="background">
         <div class="fluid-container">
             <div class="container">
@@ -352,8 +286,7 @@
                       <h4 class="sectionLabel"><strong>Select Group</strong></h4>
                       <label>
                         <strong><em>*Which group? I wanna know</em></strong>
-                        <select class="form-control select-group">
-                          <option value="one"></option>
+                        <select id="usergroups" class="form-control select-group">
                         </select>
                       </label>
 
@@ -364,7 +297,7 @@
                     <!-- Include repeat meeting option -->
                     <div class="form-group check">
                       <label class="checkbox" for="meeting-repeat">
-                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">
+                        <input type="checkbox" value="" id="meeting-repeat"  data-toggle="checkbox">
                         <strong><em>Repeat?</em></strong>
                       </label>
 
@@ -376,15 +309,10 @@
                         </select>
                       </div>
 
-                     <!-- </label>-->
-                      
-
                   </div>
                   
                   <div class="form-group">
-
                       <a id="meetingButton" class="btn btn-primary btn-lg btn-block" href="#">Submit Meeting</a>
-                      <!--<a class="login-link" href="#">Lost your password?</a>-->
                   </div>
               
       </div>
@@ -435,7 +363,6 @@
     <script src="js/jquery.tagsinput.js"></script>
     <script src="js/jquery.placeholder.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
-		<!-- include parallax -->
     <script src="js/init.js"></script>
     
 

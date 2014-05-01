@@ -1,5 +1,6 @@
 
-    $(document).ready(function(){												
+    $(document).ready(function() {	
+
        var data = localStorage.getItem("apime");
 			 var me = JSON.parse(data);
 			 if (me == null || me == 'undefined'){
@@ -70,8 +71,8 @@
 					*/
 
 					// Pick group for meeting
-					for (var i = 0; i < apime["Groups"].length; i++) {
-						$(".form-control .select-group").append('<option value="one">'+ apime["Groups"][i].groupname+ '</option>');
+					for (var i = 0; i < apime["Groups"].length; ++i) {
+						$("#usergroups").append('<option>'+ apime["Groups"][i].groupname+ '</option>');
 					}
 
 
