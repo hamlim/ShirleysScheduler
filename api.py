@@ -2,6 +2,7 @@ import cherrypy
 
 import json
 
+import errors
 import schemas
 
 class ApiRoot(object):
