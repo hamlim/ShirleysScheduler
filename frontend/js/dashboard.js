@@ -42,7 +42,9 @@ $(document).ready(function(){
 			localStorage.setItem("apime", JSON.stringify(data));
 		},
 		error: function(xhr, text, e){
+
 			console.log("AJAX Error: " + e);
+
 			//alert("Unable to access data from server!");
 		}
 	});
@@ -54,6 +56,7 @@ $(document).ready(function(){
 	// Uses FullCalendar
 	//generate the array of events before the calendar section:
 	function eventarr(object){
+
 		//note object is really only going to be apime
 		//we need to isolate the events in the object
 		var pubcalarr = [];
@@ -83,6 +86,7 @@ $(document).ready(function(){
 					title: name,
 					start: stime, 
 					end: etime, 
+
 					url: url					
 				});
 			};
@@ -93,8 +97,10 @@ $(document).ready(function(){
 	
 	$("#pcalendar").fullCalendar({
 		// week view
+
 		defaultView: 'agendaWeek',
 		allDayDefault: false,
+
 		header: {
 			left: 'prev, next today',
 			center: 'title',

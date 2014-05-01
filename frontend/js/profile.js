@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 		
@@ -185,3 +185,4 @@ $(document).ready(function(){
   	  if( confirm("Delete tag?") ) $(this).remove(); 
   	});
 });
+

@@ -3,17 +3,154 @@
   <head>
     <meta charset="utf-8">
     <title>add-meeting.html</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/customize.css" rel="stylesheet">
+    <link href="css/off-canvas-style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+      
+      
+    <!-- Flat UI won't work with three different timepickers!! -->
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+ 
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- include parallax -->
+    <script src="js/init.js"></script>
+
+    <!-- Time Picker -->
 
 
-    <!-- Loading Flat UI -->
-    <!--<link href="css/flat-ui.css" rel="stylesheet">-->
-    <link href="css/demo.css" rel="stylesheet">
+    <style type="text/css">
+      /*h1 {
+        margin-left: 5%;
+      }*/
+      /* Under page title */
+      #instructions {
+        margin-left: 6%;
+      }
+      /* Each input box accompanying label */
+      div #placeholder {
+        text-align: center;
+      }
+      /* Checkbox */
+      .check {
+        clear:both;
+      }
+      /* Header label of each section */
+      .sectionLabel {
+        clear: both;
+        text-align: center;
+      }
+      /* Each input box accompanying label */
+      label {
+        font-size: 16px;
+      }
+      /* Invitees */
+      #tags {
+        float:left;
+        border:1px solid #ccc;
+        padding:4px;
+        font-family:Arial;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      #tags span.tag {
+        cursor:pointer;
+        display:block;
+        float:left;
+        color:#555;
+        background:#add;
+        padding:5px 10px;
+        padding-right:30px;
+        margin:4px;
+      }
+      #tags span.tag:hover {
+        opacity:0.7;
+      }
+      #tags span.tag:after {
+       position:absolute;
+       content:"×";
+       border:1px solid;
+       border-radius:10px;
+       padding:0 4px;
+       margin:3px 0 10px 7px;
+       font-size:10px;
+      }
+      #tags input {
+        background:#eee;
+        border:0;
+        margin:4px;
+        padding:7px;
+        width:98%;
+      }
+      #tags input[type=text], .input-group input[type=text] {
+          text-align: center;
+      }
+
+      /* A little added responsive design */
+      @media only screen and (max-width: 425px) {
+        .row {
+          padding: 0 10px 0 10px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 490px) {
+        #tags input[type=text] {
+          font-size: 12px;
+        }
+        .sectionLabel {
+          font-size: 20px;
+        }
+      }
+      @media only screen and (min-width:425px) and (max-width: 800px) {
+        .col-lg-4 {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 22px;
+        }
+      }
+      @media only screen and (min-width: 801px) and (max-width:1200px) {
+        .col-lg-4 {
+          width: 55%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 23px;
+        }
+      }
+      @media only screen and (min-width: 1000px) and (max-width:1600px) {
+        .sectionLabel {
+          font-size: 24px;
+        }
+      }
+      @media only screen and (min-width: 1201px) and (max-width:1600px) {
+        .col-lg-4 {
+          width: 85%;
+          margin: 0 auto;
+        }
+        .row {
+          width: 60%;
+          margin: 0 auto;
+        }
+        .sectionLabel {
+          font-size: 25px;
+        }
+      }
+    </style>
+
+
 
     <!-- Time Picker -->
 
@@ -108,10 +245,21 @@
   <body>
 
       
+
+    
+      
       <header>
+    
+    <section id="welcome-banner" data-speed="3" data-type="background">
+        <div class="fluid-container">
+            <div class="container">
+                <h1>Add a meeting</h1>
+                 <p class="lead"><em>Fill out the information below to create a meeting</em></p>
+            </div>
+
+        </div>
+    </section>
        <!--Include your brand here-->
-        <h1>Add a meeting</h1>
-        <h4 id="instructions"><em>Fill out the information below to create a meeting</em></h4>
 
         <a class="navbar-brand" href="#"></a>
         <div class="navbar-header pull-right">
@@ -145,9 +293,10 @@
       
       </header>
       
-      <div class="container-fluid">
+
+      <div class="container">
           <div class="row">
-              <div class="col-lg-4">
+              <div class="col-lg-12">
                     <div class="form-group">
                       <h4 class="sectionLabel"><strong>Meeting Details</strong></h4>
                         <label><strong><em>*Title</em></strong></label>
@@ -169,7 +318,8 @@
 
                     <!-- Date & time input -->
                     <div class="form-group">
-                        <h4 class="sectionLabel"><strong>Date & Time</strong></h4>
+           <h4 class="sectionLabel"><strong>Date &amp Time</strong></h4>
+
 
                         <div id="container">
                           <label><strong><em>*Start date</em></strong></label>
@@ -190,6 +340,7 @@
                             <input type="text" class="form-control end" placeholder="[mm-dd-yyyy] [hh:mm]" />
                           </div>
                         </div>
+
                     </div>
     
                     <!-- Invitees -->
@@ -205,6 +356,7 @@
                           <option value="five">Five</option>
                         </select>
                       </label>
+
                     </div>
 
                     <div id='pcalendar'></div>
@@ -231,9 +383,6 @@
                   
                   <div class="form-group">
 
-                  </div>
-                  
-                  <div class="form-group">
                       <a id="meetingButton" class="btn btn-primary btn-lg btn-block" href="#">Submit Meeting</a>
                       <!--<a class="login-link" href="#">Lost your password?</a>-->
                   </div>
@@ -241,6 +390,42 @@
       </div>
     </div>
 
+          </div>
+      
+      <div class="clear"><br><br></div>
+  
+          <div class="fluid-container">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7">
+            <h3 class="footer-title">Break away from whenisgood</h3>
+            <p>This project kicks ass. We should probably include something better in the footer. It's too late in the night to think. 
+            </p>
+
+
+
+            <a class="footer-brand" href="http://designmodo.com" target="_blank">
+              
+            </a>
+          </div> <!-- /col-xs-7 -->
+
+          <div class="col-xs-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">Shirley's Scheduler</h3>
+              <ul>
+                <li>About</li>
+                <li>Features</li>
+                <li>Login</li>
+                <li>Github</li>
+              </ul>
+              Go to: <a href="http:/breakthrough-designs.com" target="_blank">Breakthrough Designs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+              </div>
     <!-- Load JS here for greater good =============================-->
     <!--<script src="js/jquery-1.8.3.min.js"></script>-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -252,11 +437,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
     
 
-    <!-- Flat UI won't work with three different timepickers!! -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
 
-     
+
     <!-- Javascript for off-canvas menu
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -265,150 +447,17 @@
     <script src="https://datejs.googlecode.com/files/date.js"></script>
 
     <!-- Flat UI won't work with three different timepickers!! -->
+
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
     
-
-    <script>
-    $(document).ready(function(){												
-       
-       //Navigation Menu Slider
-        $('#nav-expander').on('click',function(e){
-      		e.preventDefault();
-      		$('body').toggleClass('nav-expanded');
-      	});
-      	$('#nav-close').on('click',function(e){
-      		e.preventDefault();
-      		$('body').removeClass('nav-expanded');
-      	});
-      	
-      	
-      	// Initialize navgoco with default options
-        $(".main-menu").navgoco({
-            caret: '<span class="caret"></span>',
-            accordion: false,
-            openClass: 'open',
-            save: true,
-            cookie: {
-                name: 'navgoco',
-                expires: false,
-                path: '/'
-            },
-            slide: {
-                duration: 300,
-                easing: 'swing'
-            }
-        });
-
-        // Date/time picker objects
-        $("#start").datetimepicker();
-        $("#end").datetimepicker();
-
-        // Can't repeat until date & time selected first
-        if (Date.parse($("#start.input-group.date input[type=text]").val()) <= 0 || Date.parse($("#end.input-group.date input[type=text]").val()) <= 0) {
-          document.getElementById("meeting-repeat").disabled=true;
-        }
+    <!-- Tag Input (Invite Users) -->
         
-        // Undisable checkbox if both date boxes are filled
-        // Need to fix bug - only one date filled and checkbox active again
-        $("#start.input-group.date input[type=text], #end.input-group.date input[type=text]").change(function() {
-          document.getElementById("meeting-repeat").disabled=false;
-        });
+</body>
 
-        /*
-        var startFilled = $("#start .input-group.date input[type=text]").change(function() {
-
-        });
-
-        var endFilled = $("#end .input-group.date input[type=text]").change(function() {
-          
-        });
-
-        //Example followed deferring event trigger
-        var load = $.Deferred(function (dfd) {
-          $('#div1').load(…, dfd.resolve);
-        }).promise();
-
-        var animate = $('html,body').animate(…);
-
-        $.when(load, animate).then(function () {
-          // Do your thing here!
-        });
-        */
-
-        // Pick group for meeting
-
-
-        // Show meeting day options
-        $("#meeting-repeat").change(function() {
-          $("#expand").slideToggle("fast");
-        });
-        
-
-        // When meeting form submitted..
-        $("#meetingButton").click(function() {
-          
-          // Verify dates filled out
-          var start = Date.parse($("#start.input-group.date input[type=text]").val())/1000;
-          var end = Date.parse($("#end.input-group.date input[type=text]").val())/1000;
-
-          // Verify if checkbox checked?
-          var isChecked = $("#meeting-repeat").is(":checked")?true:false;
-
-
-
-          // Validate form input
-          try {
-          
-            /*// No null fields (except optionally URL)
-            if ($("#meeting-name").val().length === 0 || $("#meeting-name").val().length === undefined)
-              throw "Meeting title incomplete";
-            if ($("#meeting-location").val().length === 0 || $("#meeting-name").val().length === undefined) 
-                throw "Meeting online URL incomplete";
-            */
-
-            // Any UNIX timestamp greater than 0 is a valid date
-            if (start === 0 || end === 0) 
-              throw "Date field incomplete";
-
-            // End date must come after start date
-            if (end < start)
-              throw "End date must be after start date";
-
-            /*// Need at least one invitee
-            if (invitees.length === 0)
-              throw "You can't have a meeting by yourself #ForeverAlone";
-            */
-
-            // Submitting form
-            $.ajax({
-                type: 'POST',
-                url: 'add-meeting.html',
-                data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
-                dataType: 'script',
-                async: false,
-                success: function(response) {  // Is response string valid JSON object?
-                  if (response.type == 'Error') {
-                    alert("Invalid submission! Try again!");
-                  }
-                },
-                error: function(xhr, err) {
-                  alert("Error connecting to the server! Please try again!");
-                }
-            });
-          }
-          catch(err) {
-            alert(err);
-          }
-
-        });
-
-    });
-
-    </script>
-      
-
-  </body>
 </html>

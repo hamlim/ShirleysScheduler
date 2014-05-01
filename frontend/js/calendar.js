@@ -18,9 +18,11 @@ $(document).ready(function(){
 		Modal Information found here: http://getbootstrap.com/javascript/#modals
 	*/
 	//---------------------------------------------------------------------------------------------------------------------------
+
 	//we want to generate an array filled with colors for different events
 		
 	//---------------------------------------------------------------------------------------------------------------------------
+
 	$('#pcalendar').fullCalendar('render');
 	// Preliminary data allocation
 	//first read in from local storage
@@ -39,8 +41,10 @@ $(document).ready(function(){
 		for (var i=0; i<object["Calendar"].length; i++){
 			//object["Calendar"][i] is an event
 			//we want to isolate those events with and w/o a url
+
 			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
 				//no url to worry about:
+
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
@@ -70,7 +74,7 @@ $(document).ready(function(){
 		};
 		return pubcalarr;
 	};
-	
+
 	$("#pcalendar").fullCalendar({
 		//here we will:
 		// set the view to a month
@@ -87,6 +91,7 @@ $(document).ready(function(){
 		eventClick: function(calEvent, jsEvent, view){
 			//calEvent.datum = datum value
 			//we make a modal first
+
 			var day = "";
 			function blah(){
 				//generate a day name based on getUTCdate
@@ -144,6 +149,7 @@ $(document).ready(function(){
 				}
 				console.log("Event " + calEvent);
 			};
+
 		}
 	});
 });

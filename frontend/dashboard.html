@@ -3,17 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Dashboard.html</title>
-    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+    <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Loading Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Loading Flat UI -->
-    <link href="css/flat-ui.css" rel="stylesheet">
-    <link href="css/demo.css" rel="stylesheet">
-
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/customize.css" rel="stylesheet">
+    <link href="css/off-canvas-style.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -21,6 +18,9 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- include parallax -->
+    <script src="js/init.js"></script>
      
     <!-- include fullCalendar -->
     <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
@@ -32,19 +32,21 @@
     <script src="fullcalendar/js/calender.js"></script>
     
 
+
 </head>
 <body>
     
-<header>
+          
+  <header>
     <nav>
     <ul class="list-unstyled main-menu">
 
       <!--Include your navigation here-->
       <li class="text-right"><a href="#" id="nav-close">X</a></li>
-      <li><a href="#">Menu One <span class="icon"></span></a></li>
-      <li><a href="#">Menu Two <span class="icon"></span></a></li>
-      <li><a href="#">Menu Three <span class="icon"></span></a></li>
-      <li><a href="#">Dropdown</a>
+      <li><a href="#">Dashboard<span class="icon"></span></a></li>
+      <li><a href="#">Calendar <span class="icon"></span></a></li>
+      <li><a href="#">Add Meeting +<span class="icon"></span></a></li>
+      <li><a href="#">Groups</a>
         <ul class="list-unstyled">
             <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
             <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
@@ -53,113 +55,156 @@
             <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
         </ul>
       </li>
-      <li><a href="#">Menu Four <span class="icon"></span></a></li>
-      <li><a href="#">Menu Five <span class="icon"></span></a></li>
+      <li><a href="#">Settings <span class="icon"></span></a></li>
     </ul>
   </nav>
-    <div class="row">
-    <div class="navbar navbar-inverse navbar-fixed-top">      
+      
+          <div class="row">
+       
         <!--Include your brand here-->
-        <a class="navbar-brand" href="#">Off Canvas Menu</a>
+        
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
             MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
           </a>
         </div>
-    </div>
-        </div>
-</header>
-      
-      
-    <!-- user profile -->
-      
-      <br><Br>
-      
-    <div class="clear"></div>
-    <div class="container-fliud">
-    
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
-  <li><a href="#messages" data-toggle="tab">Message Invites</a></li>
-  <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="events">
-     <!-- to-do lists -->
-    <br><br>
-      
-            <!-- today's events -->
-            <div class="col-xs-4">
-                <div id="today-events">
-                    <div class="todo">
-                     <h4>Today's Events</h4>
-                      <ul id="user-today">
-                      </ul>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-            
-            <!-- next day events -->
-            <div class="col-xs-4">
-                <div id="tomorrow-events">
-                    <div class="todo">
-                        <h4>Tomorrow's Meetings</h4>
-                      <ul id="user-tomorrow">
-                      </ul>
-                    </div>
-                </div>
-            </div>
-            
-                
-                <!-- outline for the yesterday -->
-                <div class="col-xs-4">
-                    <div id="yesterday-outline">
-                    <div class="todo">
-                      <h4>Yesterday's Meetings</h4>
-                      <ul id="user-yesterday">
-                      </ul>
-                    </div>
-                </div>
-            </div>
-         
-    
-    </div>
-
-    
-  	<div class="tab-pane active" id="messages">
-      <br>
-      <div class="col-xs-4">
-          <div class="todo" id="user-meeting-invite">
-          </div>
-      </div>
-   	</div>
-    
-    <div class="tab-pane" id="user-calendar">
-        <div class="fluid-container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id='pcalendar'></div>
-                </div>
-        </div>  
-        </div>
-    </div>
-        
-
-      
-    </div>  
-  
-  
-   <Br><Br><br>
-    
-   <div class="clear"></div>
    
+        </div>
+    </header>
+
     
+    <section id="welcome-banner" data-speed="3" data-type="background">
+        <div class="fluid-container">
+            <div class="container">
+                <h1>Howdy, sunshine!</h1>
+                <p class="lead">Here's what you have going on this week (brace yourself!):</p>
+            </div>
+
+        </div>
+    </section>
+    
+
+
+      <section id="dashboard" data-speed="3" data-type="background">
+            <!-- user profile -->
+          <div class="clear"></div>
+
+        <!-- Nav tabs -->
+           <div class="clear"></div>
+            <div class="fluid-container">
+                <div class="container">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+                      <li><a href="#messages" data-toggle="tab">Message Invites</a></li>
+                      <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
+                    </ul>
+                </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="events">
+             <!-- to-do lists -->
+            <br><br>
+              <div class="container">
+                    <!-- today's events -->
+                    <div class="col-xs-4">
+                        <div id="today-events">
+                            <div class="todo">
+                             <h4>Today's Events</h4>
+                              <ul id="user-today">
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- next day events -->
+                    <div class="col-xs-4">
+                        <div id="tomorrow-events">
+                            <div class="todo">
+                                <h4>Tomorrow's Meetings</h4>
+                              <ul id="user-tomorrow">
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <!-- outline for the yesterday -->
+                        <div class="col-xs-4">
+                            <div id="yesterday-outline">
+                            <div class="todo">
+                              <h4>Yesterday's Meetings</h4>
+                              <ul id="user-yesterday">
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+
+            </div>
+
+
+            <div class="tab-pane" id="messages">
+              <br>
+              <div class="container">
+                  <div class="list-group" id="user-meeting-invite">
+                  </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="user-calendar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id='pcalendar'></div>
+                        </div>
+                </div>  
+
+                </div>
+            </div>
+
+
+      
+    </div>
+  </div>
+</section>
+    
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7">
+            <h3 class="footer-title">Break away from whenisgood</h3>
+            <p>This project kicks ass. We should probably include something better in the footer. It's too late in the night to think. 
+            </p>
+
+
+
+            <a class="footer-brand" href="http://designmodo.com" target="_blank">
+              
+            </a>
+          </div> <!-- /col-xs-7 -->
+
+          <div class="col-xs-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">Shirley's Scheduler</h3>
+              <ul>
+                <li>About</li>
+                <li>Features</li>
+                <li>Login</li>
+                <li>Github</li>
+              </ul>
+              Go to: <a href="http:/breakthrough-designs.com" target="_blank">Breakthrough Designs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     
     
     <!-- Load JS here for greater good =============================-->
@@ -181,7 +226,10 @@
     <!--<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>-->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="js/jquery.navgoco.js"></script>
-		<script src="js/dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
+
+    <script src="js/classie.js"></script>
+
     
     <script>
     $(document).ready(function(){												
