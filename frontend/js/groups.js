@@ -8,8 +8,8 @@ $(document).ready(function(){
             "name": "Jaime Lannister"
         },
         {
-            "email": "hamlinmatt212@gmail.com",
-            "name": "Matt Hamlin"
+            "email": "gamingmaster42@gmail.com",
+            "name": "Taha Mehdi"
         }
     ],
     "Events": [
@@ -66,6 +66,10 @@ $(document).ready(function(){
 			alert("Please enter at least one member to add!");
 			return;
 		}
+		var newUser = {};
+		newUser["email"] = users[0];
+		newUser["name"] = "Matt Hamlin";
+		groups["Users"].push(newUser);
 		
 		// invitees.push(apime["Person"]["email"]);
 		// create newgroup object to be stored
@@ -86,8 +90,8 @@ $(document).ready(function(){
 //				}
 //		});
 //		
-		apime["Groups"].push(users);
-		console.log(apime);
+		
+		console.log(groups);
 		$("#notification").text("Added "+users.length+" new users to : "+groups["Groupname"]);
 	});
 	function checkEmail(test) {
