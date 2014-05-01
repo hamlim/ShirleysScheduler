@@ -248,12 +248,13 @@
 							// Submitting form
 							$.ajax({
 									type: 'POST',
-									url: "https://shirleys-scheduler.com/auth/login",
+									url: "https://shirleys-scheduler.com/api/"+ {[GroupID]} +"/event",
 									data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
 									dataType: 'JSON',
 									async: false,
 									success: function(toke) {  // Is response string valid JSON object?
-										window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]);
+										console.log("Success, now we need to update the localstorage stuff");
+										// in here push stuff to local storage, ie, add a new event to the calendar arr, then set the new JSON thingy as apime in local storage
 									},
 									error: function(xhr, err) {
 										alert("Error connecting to the server! Please try again!");
