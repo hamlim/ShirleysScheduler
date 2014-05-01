@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Profile.html</title>
+    <title>Groups.html</title>
     <meta name="description" content="Shirley's Scheduler: schedule meetings quickly. Synchronize. Connect. Meet. "/>
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
@@ -68,18 +68,6 @@
     </div>
 </header>
       
-
-    <!--<section id="welcome-banner" data-speed="3" data-type="background">
-        <div class="fluid-container">
-            <div class="container">
-                <h1>Howdy, sunshine!</h1>
-                <p class="lead">Here's what you have going on this week (brace yourself!):</p>
-            </div>
-
-        </div>
-    </section>-->
-      
-
 <!-- Default look -->
 <section id="welcome-banner" data-speed="3" data-type="background">
     
@@ -103,8 +91,8 @@
 
     <div class="container">
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#groups" data-toggle="tab">Users</a></li>
-  <li><a href="#user-calendar" data-toggle="tab">Events</a></li>
+  <li class="active"><a href="#users" data-toggle="tab">Users</a></li>
+  <li><a href="#group-event" data-toggle="tab">Events</a></li>
 </ul>
     </div>
 
@@ -114,11 +102,11 @@
 <!-- Tab panes -->
 <div class="tab-content">
   
-  <div class="tab-pane active" id="groups">
+  <div class="tab-pane active" id="users">
 	  
       <div class="container">
 
-          <div class="list-users" id="list-users"></div>
+          <div class="list-user" id="list-users"></div>
 
       
 	  <p id="notification"></p>
@@ -136,11 +124,11 @@
     </div>
     
 
-	<div class="tab-pane" id="user-calendar">
+	<div class="tab-pane" id="group-event">
      
 	 <div class="container">
 			<div class="row">
-				<div class="col-md-12" id ="user-events">
+				<div class="col-md-12" id ="group-events">
 				</div>
 			</div>  
 		</div>

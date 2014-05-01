@@ -36,8 +36,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "GET",
 		url: "https://shirleys-scheduler.com/api/me",
-		var token = localStorage.getItem('token');
-		headers : { 'Authorization' : token },
+		headers : { 'Authorization' : "zHjn1r0znDzB_mhEw1CtZLuV9QTVuyAKtnIqYV_q" },
 		success: function(data){
 			console.log("we have api me data");
 			//store data as "apime" in localstorage
