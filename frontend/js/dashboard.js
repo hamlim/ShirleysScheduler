@@ -122,7 +122,7 @@ $(document).ready(function(){
 		//each event will be an li element
 		var usertoday = $("#user-today"); //Store the location of the ul in a variable
 		var content = "";
-		var libegin = "<li>";
+		var libegin = "<li class='list-group-item'>";
 		var liend = "</li>";
 		//now we iterate through all the events in the today array
 		for (var i=0; i<apime["Today"].length; i++){
