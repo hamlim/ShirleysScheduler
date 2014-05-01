@@ -86,70 +86,25 @@
 <div class="fluid-container">
     <div class="container">
     <div class="row">
-        <div id="user-info">
-            <div class="col-xs-2">
-                <div id="user-image">
-                    [user profile image]
-                
-               </div>
-            </div>
-              
+            
 
             <div class="col-xs-10">
-                <h1 id="user-full-name">[user-full-name]</h1>
-               
-                    <div id="user-profile-description">
-                        <img id="edit-description" width="15px" src="images/icons/png/edit.png">
-                            <p id="cmt_edit_323" class="cmtedit lead">
-                               [user-profile-description]
-                            </p>
-                    </div>
-               
+                <h1 id="group-name">[group-name]</h1>
             </div>
-
     </div>
 </div>
-    </div>
     </div>
     </section>
     
     <hr>
     
-     
-    <!-- user profile -->
-      
-     
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6">
-                        <span class="subtitle">Google Email Address:</span>
-                        <p id="user-email-address">[user-email-address]</p>
-                </div>
-                <div class="col-xs-6">
-                        <span class="subtitle">Google+ Profile:</span>
-                        <p id="user-google-profile"><a href="#" target="_blank">[user-google-profile]</a></p>
-                </div>
-            </div>
-            <div class="row">
-                <!--<div class="col-xs-12">
-                        <span class="subtitle">Description:</span> 
-
-                        <div id="user-profile-description">
-                            <img id="edit-description" width="15px" src="images/icons/png/edit.png" /><p id="cmt_edit_323" class="cmtedit">[user-profile-description]</p>
-                        </div>
-                </div>-->
-            </div>
-        </div>
- 
 
 <!-- Nav tabs -->
 
     <div class="container">
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#groups" data-toggle="tab">Groups</a></li>
-  <li><a href="#user-calendar" data-toggle="tab">Event Debriefing</a></li>
+  <li class="active"><a href="#groups" data-toggle="tab">Users</a></li>
+  <li><a href="#user-calendar" data-toggle="tab">Events</a></li>
 </ul>
     </div>
 
@@ -163,17 +118,12 @@
 	  
       <div class="container">
 
-          <div class="list-group" id="list-groups"></div>
+          <div class="list-users" id="list-users"></div>
 
       
 	  <p id="notification"></p>
-	  <a href="#" class="btn btn-info" id = "addgroupbtn" >Add Group</a>
+	  <a href="#" class="btn btn-info" id = "adduserbtn" >Add User</a>
 	  <div id="addgroup" class="form-group" style="display:none;">
-		<h4>Group Name</h4>
-		<p>Enter a dope name for your group.</p>
-		<div id="groupname">
-			<input id="groupnametext" type="text" value="" placeholder="Add group name" />
-		</div>
 		<h4>Invite Users</h4>
 		<p>Enter users who you want to invite to the group. They must have an @gmail.com email address.</p>
 		<div id="tags">
@@ -297,9 +247,7 @@
       });
       </script>
 
-	<script src="js/examplejsong.js"></script>
-
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
 	<script src='js/groups.js'></script>
 
   </body>
