@@ -200,7 +200,7 @@ $(document).ready(function(){
 		
 		if (event["timebegin"] >= endtime) keepprinting = false;
 		else {
-			$("#user-events").append("<div><p class='user-event'>"+event["meetingname"]+"</p><blockquote>" +
+			$("#user-events").append("<div><h3 class='user-event'>"+event["meetingname"]+"</h3><blockquote>" +
 			"<em>Group:</em> "+event["groupname"]+"<br/><em>Location:</em> "+event["location"]+"<br/>" + 
 			"<em>Start: </em>"+new Date(event["timebegin"])+"<br/><em>End: </em>"+new Date(event["timeend"]) +"</blockquote></div>"
 			);
