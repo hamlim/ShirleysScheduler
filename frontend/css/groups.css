@@ -83,7 +83,7 @@
   font-size:10px;
 }
 
-#tags input, #groupname input {
+#tags input {
   background:#eee;
   border:0;
   margin:4px;
@@ -91,7 +91,7 @@
   width:98%;
 }
 
-#tags input[type=text], #groupname input[type=text] {
+#tags input[type=text] {
   text-align: center;
 }
 

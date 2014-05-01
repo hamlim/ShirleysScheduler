@@ -120,14 +120,12 @@
 							// Submitting form
 							$.ajax({
 									type: 'POST',
-									url: 'add-meeting.html',
+									url: "https://shirleys-scheduler.com/auth/login",
 									data: {meetingName:$("#meeting-name").val(), meetingLocation:$("#meeting-location").val(), meetingURL:$("#location-url").val(), startTime:start,endTime:end,checkbox:isChecked, group:invitees},
-									dataType: 'script',
+									dataType: 'JSON',
 									async: false,
-									success: function(response) {  // Is response string valid JSON object?
-										if (response.type == 'Error') {
-											alert("Invalid submission! Try again!");
-										}
+									success: function(toke) {  // Is response string valid JSON object?
+										window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]);
 									},
 									error: function(xhr, err) {
 										alert("Error connecting to the server! Please try again!");

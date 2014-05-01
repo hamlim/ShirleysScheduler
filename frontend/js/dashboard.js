@@ -35,7 +35,9 @@ $(document).ready(function(){
 	//here we make the api call
 	$.ajax({
 		type: "GET",
-		url: "/api/me",
+		url: "https://shirleys-scheduler.com/api/me",
+		var token = localStorage.getItem('token');
+		headers : { 'Authorization' : token },
 		success: function(data){
 			console.log("we have api me data");
 			//store data as "apime" in localstorage
