@@ -18,7 +18,7 @@ ShirleysScheduler
 
 ### Put this on the top of JS
 ```var obj = localStorage.getItem('apime');
-	if (obj == NULL || typeof obj == 'undefined') { window.location = 'index.html';}
+	if (obj == null || typeof obj == 'undefined') {window.location.replace( 'index.html' );}
 	else { // the rest of your code }
 ```
 
