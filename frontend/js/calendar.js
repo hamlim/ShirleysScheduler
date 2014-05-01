@@ -53,7 +53,6 @@ $(document).ready(function(){
 				});
 			} else {
 				//there is a url
-				var microarr = [];
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000);
 				var url = object["Calendar"][i]["url"];
