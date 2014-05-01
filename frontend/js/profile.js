@@ -194,9 +194,13 @@ $(document).ready(function(){
 	var keepprinting = true, i = 0;
 	while (keepprinting && i < apime["Calendar"].length) {
 		var event = apime["Calendar"][i];
+		alert (event["groupname"]);
 		if (event["timebegin"] >= endtime) keepprinting = false;
 		else {
-			$("#user-events").append(event["meetingname"]);
+			$("#user-events").append("<div><p class='user-event'>"+event["meetingname"]+"</p><blockquote>" +
+			"<em>Group:</em> "+event["groupname"]+"<br/><em>Location:</em> "+event["location"]+"<br/>" + 
+			"<em>Start: </em>"+new Date(event["timebegin"])+"<br/><em>End: </em>"+new Date(event["timeend"]) +"</blockquote></div>"
+			);
 		}
 		i++;
 	}
