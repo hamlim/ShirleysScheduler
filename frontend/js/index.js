@@ -6,6 +6,7 @@ $(document).ready(function(){
 	//-------------------------------------
 	//for TESTING only:
 	var data = apime;
+	localStorage.clear();
 	//localStorage.setItem("groups", JSON.stringify(group));
 	localStorage.setItem("apime", JSON.stringify(data));
 	// Now all pages should get the data added to local storage
