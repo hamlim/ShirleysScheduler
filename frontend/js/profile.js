@@ -195,7 +195,7 @@ $(document).ready(function(){
 	var keepprinting = true, i = 0;
 	while (keepprinting && i < apime["Calendar"].length) {
 		var event = apime["Calendar"][i];
-		alert (event["groupname"]);
+		
 		if (event["timebegin"] >= endtime) keepprinting = false;
 		else {
 			$("#user-events").append("<div><p class='user-event'>"+event["meetingname"]+"</p><blockquote>" +
