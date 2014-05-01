@@ -48,21 +48,28 @@
       <li><a href="#">Add Meeting +<span class="icon"></span></a></li>
       <li><a href="#">Groups</a>
         <ul class="list-unstyled">
-            <li class="sub-nav"><a href="#">View Groups<span class="icon"></span></a></li>
-            <li class="sub-nav"><a href="#">Manage Groups<span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+            <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
         </ul>
       </li>
       <li><a href="#">Settings <span class="icon"></span></a></li>
     </ul>
   </nav>
       
-    <div class="row">
+          <div class="row">
+       
+        <!--Include your brand here-->
+        
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
             MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
           </a>
         </div>
-    </div>
+   
+        </div>
     </header>
 
     
@@ -80,212 +87,89 @@
 
 
       <section id="dashboard" data-speed="3" data-type="background">
-      
-    <!-- user profile -->
+            <!-- user profile -->
+          <div class="clear"></div>
 
-      
-    <div class="clear"></div>
-    
-    
-<!-- Nav tabs -->
-          <div class="container">
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
-  <li><a href="#messages" data-toggle="tab">Message Invites</a></li>
-  <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
-</ul></div>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="events">
-     <!-- to-do lists -->
-    <br><br>
-      <div class="container">
-      <div class="row">
-            <!-- today's events -->
-            <div class="col-xs-4">
-                <div id="tomorrow-events">
-                    <div class="todo">
-                     <h4>Yesterday's Events</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
+        <!-- Nav tabs -->
+           <div class="clear"></div>
+            <div class="fluid-container">
+                <div class="container">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+                      <li><a href="#messages" data-toggle="tab">Message Invites</a></li>
+                      <li><a href="#user-calendar" data-toggle="tab">Calendar</a></li>
+                    </ul>
+                </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="events">
+             <!-- to-do lists -->
+            <br><br>
+              <div class="container">
+                    <!-- today's events -->
+                    <div class="col-xs-4">
+                        <div id="today-events">
+                            <div class="todo">
+                             <h4>Today's Events</h4>
+                              <ul id="user-today">
+                              </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            <!-- /to-do -->
-            </div>
-            
-            
-            
-            
-            <!-- next day events -->
-            <div class="col-xs-4">
-                <div id="today-events">
-                    <div id="today-events-under">
-                    <div class="todo">
-                        <h4>Today's Meetings</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-            <!-- /to-do -->
-                </div>
-                </div>
-            </div>
-            
-                
-                <!-- outline for the week -->
-                <div class="col-xs-4">
-                    <div id="week-outline">
-                    <div class="todo">
-                      <h4>Tomorrow's Outline</h4>
-                      <ul>
-                        <li class="todo-done">
-                          <div class="todo-icon fui-user"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Meet <strong>Adrian</strong> at <strong>6pm</strong>
-                            </h4>
-                            Times Square
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-list"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Chat with <strong>V.Kudinov</strong>
-                            </h4>
-                            Skype conference an 9 am
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-eye"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Watch <strong>Iron Man</strong>
-                            </h4>
-                            1998 Broadway
-                          </div>
-                        </li>
-                        <li>
-                          <div class="todo-icon fui-time"></div>
-                          <div class="todo-content">
-                            <h4 class="todo-name">
-                              Fix bug on a <strong>Website</strong>
-                            </h4>
-                            As soon as possible
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-            <!-- /to-do -->
-                </div>
-            </div>
-         </div>
-        </div>
-    </div>
 
-    
-  <div class="tab-pane" id="messages">
-      <br>
-      <div class="container">
-          <div class="list-group">
-              <a href="#" class="list-group-item active">Lorem ipsum</a>
-              <a href="#" class="list-group-item">Lorem ipsum</a>
-              <a href="#" class="list-group-item">Lorem ipsum</a>
-              <a href="#" class="list-group-item">Lorem ipsum</a>
-              <a href="#" class="list-group-item">Lorem ipsum</a>
+
+
+
+                    <!-- next day events -->
+                    <div class="col-xs-4">
+                        <div id="tomorrow-events">
+                            <div class="todo">
+                                <h4>Tomorrow's Meetings</h4>
+                              <ul id="user-tomorrow">
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <!-- outline for the yesterday -->
+                        <div class="col-xs-4">
+                            <div id="yesterday-outline">
+                            <div class="todo">
+                              <h4>Yesterday's Meetings</h4>
+                              <ul id="user-yesterday">
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
             </div>
-      
-      </div>
-      
-    
-    </div>
-    
-    <div class="tab-pane" id="user-calendar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id='calendar'></div>
+
+
+            <div class="tab-pane" id="messages">
+              <br>
+              <div class="container">
+                  <div class="list-group" id="user-meeting-invite">
+                  </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="user-calendar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id='pcalendar'></div>
+                        </div>
+                </div>  
                 </div>
-        </div>  
-        </div>
-    </div>
-        
+            </div>
+
 
       
-    </div>  
-  
+    </div>
+  </div>
 </section>
     
     <footer>

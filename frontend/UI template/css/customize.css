@@ -1,13 +1,118 @@
-/*#today-events-under {
-    background: #0372c0;
-    opacity: 0.5;
-    z-index: -1;
-    
+/* CSS for landing page */
+#intro { 
+    background: url(images/cover-bg.jpg) 50% 0 fixed; 
+    height: 70vh;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    padding: 100px 0;
+    text-align: center;
 }
-*/
+
+#intro .lead {
+    padding: 10px 0px 0px 0px;
+    color: #fff;
+}
+
+#intro .btn-default {
+    color: #fff;
+    border-radius: 5px;
+    border: 4px solid #b1d2eb;
+    background-color: transparent;
+}
+
+#intro .btn-default:hover {
+    border: 4px solid #7bd3a9;
+    background: #7bd3a9;
+}
+
+#intro .navbar-inner {
+    width: 30%;
+}
+#home {
+    color: #403f3f;
+    border-top: #fff 20px solid;
+    background: #ebebeb; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    padding: 100px 0;
+}
+  
+#home h2 {
+  color: #0372c0;
+}
+    
+#home .lead {
+    color: #333538;
+}
+
+
+/*p #home .lead {
+  margin-left: 50%;
+}*/
+.cover-heading {
+  font-size: 4.0em;
+}
+
+
 .lead {
     color: #fff;
 }
+
+
+/*-------------------------*/
+
+/* CSS for dashboard */ 
+#welcome-banner { 
+    background: url(images/dashboard-bg) 50% 0 fixed; 
+    height: 200px;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+    padding: 20px 0;
+    color: #fff;
+    padding: 1% 1% 1% 3%;
+}
+
+#welcome-banner h2 {
+    font-size: 5.0em;
+}
+
+/*-------------------------------*/
+.tab-content {
+    background: #ebebeb;
+}
+
+
+.nav-tabs > li > a {
+    background: #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    min-width: 250px;
+}
+dolp
+.nav-tabs > li > .active {
+  display: block;
+}
+}
+.nav-tabs > li > tab:active  {
+    background: #ebebeb;
+    color: #0372c0;
+}
+
+#events, #messages, #user-calendar, #groups {
+    min-height: 200px;
+}
+
+
+
+/*-----------------------------*/
 /*BEGIN footer styling*/
 
 footer {
@@ -73,103 +178,7 @@ footer p {
 }
 
 /* ---- /end footer ---- */
-/* CSS for landing page */
-#intro { 
-    background: url(images/cover-bg.jpg) 50% 0 fixed; 
-    height: 70vh;  
-    margin: 0 auto; 
-    width: 100%; 
-    position: relative; 
-    box-shadow: 0 0 50px rgba(0,0,0,0.1);
-    padding: 100px 0;
-    text-align: center;
-}
 
-#intro .lead {
-    padding: 10px 0px 0px 0px;
-    color: #fff;
-}
-
-#intro .btn-default {
-    color: #fff;
-    border-radius: 5px;
-    border: 4px solid #b1d2eb;
-    background-color: transparent;
-}
-
-#intro .btn-default:hover {
-    border: 4px solid #7bd3a9;
-    background: #7bd3a9;
-}
-
-#intro .navbar-inner {
-    width: 30%;
-}
-#home {
-    color: #403f3f;
-    border-top: #fff 20px solid;
-    background: #ebebeb; 
-    height: auto;  
-    margin: 0 auto; 
-    width: 100%; 
-    position: relative;
-    box-shadow: 0 0 50px rgba(0,0,0,0.3);
-    padding: 100px 0;
-}
-  
-#home h2 {
-  color: #0372c0;
-}
-    
-#home .lead {
-    color: #333538;
-}
-
-
-/*p #home .lead {
-  margin-left: 50%;
-}*/
-.cover-heading {
-  font-size: 4.0em;
-}
-
-/*-------------------------*/
-
-/* CSS for dashboard */ 
-#welcome-banner { 
-    background: url(images/dashboard-bg) 50% 0 fixed; 
-    height: 200px;  
-    margin: 0 auto; 
-    width: 100%; 
-    position: relative; 
-    /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
-    padding: 20px 0;
-    color: #fff;
-    padding: 1% 1% 1% 3%;
-}
-
-#welcome-banner h2 {
-    font-size: 5.0em;
-}
-
-/*-------------------------------*/
-.tab-content {
-    background: #ebebeb;
-}
-
-
-.nav-tabs > li > a {
-    background: #fff;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    min-width: 250px;
-}
-
-.nav-tabs > li > a:selected  {
-    background: #ebebeb;
-    color: #0372c0;
-}
 
 
 /* ==========================================================================
