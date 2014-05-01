@@ -27,9 +27,11 @@ $(document).ready(function(){
 		var id = $(obj).attr("id");
 		var tid = id.replace("cmt_edit_", "cmt_tedit_");
 		var input = $('<input />', { 'type': 'text', 'name': 'n' + tid, 'id': tid, 'class': 'text_box', 'value': $(obj).html() });
+		
 		$(obj).parent().append(input);
 		$(obj).remove();
 		input.focus();
+		$(input).css("color","black");
 	}
 	function RBox(obj) {
 		var value = $(obj).val();
@@ -71,7 +73,7 @@ $(document).ready(function(){
 		
 	for (var i = 0; i < apime["Groups"].length; i++) {
 		var img = '<img class="deletegroup" src="images/icons/png/delete.png" width="15" id="'+i+'" />';
-		$("#list-groups").append('<p class="list-group-item"><a href="#">'+img+'</a>'+ apime["Groups"][i].groupname+ '</p>');
+		$("#list-groups").append('<h3 class="list-group-item"><a href="#">'+img+'</a>'+ apime["Groups"][i].groupname+ '</h3>');
 	} 
 	
 	

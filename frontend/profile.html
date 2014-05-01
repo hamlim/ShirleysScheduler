@@ -96,7 +96,7 @@
               
 
             <div class="col-xs-10">
-                <h1 id="header-user-full-name">[header-user-full-name]</h1>
+                <h1 id="user-full-name">[user-full-name]</h1>
                
                     <div id="user-profile-description">
                         <img id="edit-description" width="15px" src="images/icons/png/edit.png">
@@ -123,30 +123,11 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xs-4">
-                        <span class="subtitle">Real Name:</span>
-                        <p id="user-full-name">[user-full-name]</p>
-                </div>
-                <div class="col-xs-4">
-                        <span class="subtitle">Username:</span>
-                        <p id="user-name2">[user-name]</p>
-                </div>
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                         <span class="subtitle">Google Email Address:</span>
                         <p id="user-email-address">[user-email-address]</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                        <span class="subtitle">Alias Email Address:</span>
-                        <p id="user-alias-address">[user-email-address]</p>
-                </div>
-
-                <div class="col-xs-4">
-                        <span class="subtitle">Date Joined:</span>
-                        <p id="user-date-joined">[user-date-joined]</p>
-                </div>
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                         <span class="subtitle">Google+ Profile:</span>
                         <p id="user-google-profile"><a href="#" target="_blank">[user-google-profile]</a></p>
                 </div>
@@ -180,32 +161,26 @@
   
   <div class="tab-pane active" id="groups">
 	  
-      <div class="container-fluid">
+      <div class="container">
 
-          <div class="list-group" id="list-groups">
-             <!-- <a href="#" class="list-group-item active">Lorem ipsum dolor</a>
-              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
-              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
-              <a href="#" class="list-group-item">Lorem ipsum dolor</a>
-              <a href="#" class="list-group-item">Lorem ipsum dolor</a> -->
-            </div>
+          <div class="list-group" id="list-groups"></div>
+
       
-
-      </div>
 	  <p id="notification"></p>
 	  <a href="#" class="btn btn-info" id = "addgroupbtn" >Add Group</a>
 	  <div id="addgroup" class="form-group" style="display:none;">
-		<strong>Group Name</strong>
+		<h4>Group Name</h4>
 		<p>Enter a dope name for your group.</p>
 		<div id="groupname">
 			<input id="groupnametext" type="text" value="" placeholder="Add group name" />
 		</div>
-		<strong>Invite Users</strong>
+		<h4>Invite Users</h4>
 		<p>Enter users who you want to invite to the group. They must have an @gmail.com email address.</p>
 		<div id="tags">
 			<input type="text" value="" placeholder="Add email address" />
 		</div>
 		<div><a href="#" class="btn btn-info" id = "submitgroup" >Submit Group</a></div>
+		</div>
 		</div>
     
     </div>
@@ -213,13 +188,9 @@
 
 	<div class="tab-pane" id="user-calendar">
      
-	 <div class="fluid-container">
+	 <div class="container">
 			<div class="row">
 				<div class="col-md-12" id ="user-events">
-				<!--
-					<div id='pcalendar'></div>
-				-->
-				<h4></h4>
 				</div>
 			</div>  
 		</div>
