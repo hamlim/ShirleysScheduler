@@ -72,20 +72,20 @@ $(document).ready(function(){
 		// attributes:
 		// 		invitees  - array of email addresses of people to be added to groups
 
-		$.ajax({
-				url: "https://shirleys-scheduler.com/api/me/group",
-				dataType: "json",
-				type: "POST",
-				data: users,
-				success: function(e){
-					console.log("Success!");
-				},
-				error: function(xhr, e){
-					console.log("Error!");
-					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
-				}
-		});
-		
+//		$.ajax({
+//				url: "https://shirleys-scheduler.com/api/me/group",
+//				dataType: "json",
+//				type: "POST",
+//				data: users,
+//				success: function(e){
+//					console.log("Success!");
+//				},
+//				error: function(xhr, e){
+//					console.log("Error!");
+//					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
+//				}
+//		});
+//		
 		apime["Groups"].push(users);
 		console.log(apime);
 		$("#notification").text("Added "+users.length+" new users to : "+groups["Groupname"]);
