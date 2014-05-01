@@ -95,21 +95,28 @@
 }
 
 
-.nav-tabs > li > a {
+/*.nav-tabs > li > a:link {
     background: #fff;
+}*/
+.nav-tabs > li > a {
+    /*background: #fff;*/
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     min-width: 250px;
 }
-dolp
-.nav-tabs > li > .active {
-  display: block;
-}
-}
-.nav-tabs > li > tab .active  {
+
+
+
+/*.nav-tabs > li > .active {
     background: #ebebeb;
+  display: block;
+}*/
+
+.nav-tabs > li.active  {
+    background: #ebebeb !important;
     color: #0372c0;
+   
 }
 
 #events, #messages, #user-calendar, #groups {
