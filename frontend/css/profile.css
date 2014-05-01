@@ -96,3 +96,9 @@ body {
 #tags input[type=text], #groupname input[type=text] {
   text-align: center;
 }
+
+.user-event {
+	font-weight: bold;
+	font-size: 110%;
+	margin-bottom:-5px;
+}

@@ -43,6 +43,7 @@ $(document).ready(function(){
 			//we want to isolate those events with and w/o a url
 
 			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
+			
 				//no url to worry about:
 
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
@@ -113,7 +114,9 @@ $(document).ready(function(){
 				}
 			};
 			blah();
-			if(calEvent.url != "" || calEvent.url != null){
+
+			if(typeof calEvent.url != 'undefined' && calEvent.url != "" && calEvent.url != null){
+				
 				if(calEvent.loc == null || calEvent.loc == ""){
 					$("#modal-title").text("Meeting Name: " + calEvent.title);
 					$("#group-name").text("Group Name: " + calEvent.gname);
@@ -133,6 +136,7 @@ $(document).ready(function(){
 				}
 			} else {
 				if(calEvent.loc == null || calEvent.loc == ""){
+					
 					$("#modal-title").text("Meeting Name: " + calEvent.title);
 					$("#group-name").text("Group Name: " + calEvent.gname);
 					$("#location").text("No location specified.");
