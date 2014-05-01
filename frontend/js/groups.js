@@ -41,8 +41,8 @@ $(document).ready(function(){
 			$("#list-users").append('<h5 class="list-group-item">'+groups["Users"][i].email+'</h5>');
 		}
 		for (var i = 0; i < groups["Events"].length; i++) {
-			$("#group-events").append("<div class='panel-heading'><h3 class='list-group-item'>"+groups["Events"][i].meetingname+"</h3></div><div class='todo'><em>Location:</em> " +groups["Events"][i].location+"<br/>" + 
-			"<em>Start: </em>"+new Date(groups["Events"][i].timebegin)+"<br/><em>End: </em>"+new Date(groups["Events"][i].timeend) +"</div>"
+			$("#group-events").append("<div class='row'><div class='col-xs-4 well'><h4>"+groups["Events"][i].meetingname+"</h5></div><div class='col-xs-8 well'><blockquote><em>Location:</em> " +groups["Events"][i].location+"<br/>" + 
+			"<em>Start: </em>"+new Date(groups["Events"][i].timebegin)+"<br/><em>End: </em>"+new Date(groups["Events"][i].timeend) +"</blockquote></div></div>"
 			);
 
 		}
