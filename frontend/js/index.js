@@ -21,14 +21,14 @@ $(document).ready(function(){
 		//the user clicked login
 		//ajax call to /auth/login
 		$.ajax({
-			url: "/auth/login",
+			url: "https://shirleys-scheduler.com/auth/login",
 			type: "GET",
 			success: function(toke){
 				console.log("it worked");
 				// now we have an invalid token
 				// token is stored in data
 				$.ajax({
-					url: "/auth/login_validate?token="+toke["token"],
+					url: "https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"],
 					type: "GET",
 					success: function(e){
 						console.log("It worked!");
