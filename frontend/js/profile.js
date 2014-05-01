@@ -184,4 +184,21 @@ $(document).ready(function(){
   	$("#tags").on("click",".tag",function(){
   	  if( confirm("Delete tag?") ) $(this).remove(); 
   	});
+	
+	// make list of events for the week.
+	// new Date(apime["Person"].datejoined * 1000);
+	// may 1 2014 00:00:00 - 1398916800
+	// var mid = 1398916800;
+	var date = new Date().getTime();
+	var endtime = date + 86400 * 7;
+	var keepprinting = true, i = 0;
+	while (keepprinting && i < apime["Calendar"].length) {
+		var event = apime["Calendar"][i];
+		if (event["timebegin"] >= endtime) keepprinting = false;
+		else {
+			$("#user-events").append(event["meetingname"]);
+		}
+		i++;
+	}
+	
 });
