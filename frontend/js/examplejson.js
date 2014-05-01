@@ -69,8 +69,8 @@ var apime = {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
             "location": "3rd floor, Union",
-            "timebegin": 1398870000,
-            "timeend": 1398877200,
+            "timebegin": 1399485600,
+            "timeend": 1399489200,
             "url": ""
         },
         {
@@ -89,14 +89,86 @@ var apime = {
             "timeend": 1399050000,
             "url": ""
         },
-	{
-	    "meetingname": "Chat with V. Kudinov",
-	    "groupname": "ACME inc",
-	    "location": "Skype conference",
-	    "timebegin": 1398934800,
-	    "timeend": 1398938400,
-	    "url": ""
-	}
+    	{
+    	    "meetingname": "Chat with V. Kudinov",
+    	    "groupname": "SS inc",
+    	    "location": "Skype conference",
+    	    "timebegin": 1398934800,
+    	    "timeend": 1398938400,
+    	    "url": ""
+    	},
+        {
+            "meetingname": "Meeting with Professor Hughes",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399474800,
+            "timeend": 1399482000,
+            "url": ""
+        },
+        {
+            "meetingname": "Study group meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1398934800,
+            "timeend": 1398938400,
+            "url": ""
+        },
+        {
+            "meetingname": "Last capstone meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399485600,
+            "timeend": 1398938400,
+            "url": ""
+        },
+        {
+            "meetingname": "MITR meeting",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1398934800,
+            "timeend": 1399496400,
+            "url": ""
+        },
+        {
+            "meetingname": "Google hangout meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399280400,
+            "timeend": 1399287600,
+            "url": ""
+        },
+        {
+            "meetingname": "Team meeting",
+            "groupname": "SS inc",
+            "location": "Skype conference",
+            "timebegin": 1399302000,
+            "timeend": 1399305600,
+            "url": ""
+        },
+        {
+            "meetingname": "Meeting with Professor Plotka",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399359600,
+            "timeend": 1399374000,
+            "url": ""
+        },
+        {
+            "meetingname": "Short MITR meeting",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1399399200,
+            "timeend": 1399402800,
+            "url": ""
+        },
+        {
+            "meetingname": "Comp Org study group",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1399622400,
+            "timeend": 1399626000,
+            "url": ""
+        }
     ],
     "Person": {
         "name": "Matt Hamlin",

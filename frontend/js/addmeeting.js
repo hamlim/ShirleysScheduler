@@ -81,6 +81,110 @@
         //object["Calendar"][i] is an event
         //we want to isolate those events with and w/o a url
 
+        if(object["Calendar"][i]["groupname"] === "ACME inc") {
+          if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
+
+          //no url to worry about:
+
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000)
+          var name = object["Calendar"][i]["meetingname"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            color: "#e74c3c"
+          });
+        } else {
+          //there is a url
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000);
+          var url = object["Calendar"][i]["url"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            url: url,
+            color: "#e74c3c"
+          });
+        };
+        }
+        if(object["Calendar"][i]["groupname"] === "Friends") {
+          if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
+
+          //no url to worry about:
+
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000)
+          var name = object["Calendar"][i]["meetingname"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            color: "#f1c40f"
+          });
+        } else {
+          //there is a url
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000);
+          var url = object["Calendar"][i]["url"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            url: url,
+            color: "#f1c40f"
+          });
+        };
+        }
+        if(object["Calendar"][i]["groupname"] === "SS inc") {
+          if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
+
+          //no url to worry about:
+
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000)
+          var name = object["Calendar"][i]["meetingname"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            color: "#9b59b6"
+          });
+        } else {
+          //there is a url
+          var start = new Date(object["Calendar"][i]["timebegin"]*1000);
+          var end = new Date(object["Calendar"][i]["timeend"]*1000);
+          var url = object["Calendar"][i]["url"];
+          var loc = object["Calendar"][i]["location"];
+          pubcalarr.push({
+            title: name,
+            start: start,
+            end: end,
+            location: loc,
+            gname: object["Calendar"][i]["groupname"],
+            url: url,
+            color: "#9b59b6"
+          });
+        };
+        }
+
+/*
         if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
 
           //no url to worry about:
@@ -111,6 +215,7 @@
             url: url
           });
         };
+    */
       };
       return pubcalarr;
     };
