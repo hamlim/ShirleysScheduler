@@ -36,7 +36,7 @@ $(document).ready(function(){
 		for (var i=0; i<object["Calendar"].length; i++){
 			//object["Calendar"][i] is an event
 			//we want to isolate those events with and w/o a url
-			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i] == null){
+			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
 				//no url to worry about:
 				var microarr = [];
 				console.log(microarr);
