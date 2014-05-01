@@ -103,6 +103,8 @@ $(document).ready(function(){
 			// week view
 
 			defaultView: 'agendaWeek',
+			firstHour: 4,
+			maxTime: 17,
 			allDayDefault: false,
 
 			header: {
