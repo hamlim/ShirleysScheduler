@@ -33,22 +33,20 @@ $(document).ready(function(){
 				Will be link to the meeting
 	*/
 	//here we make the api call
-//	$.ajax({
-//		type: "GET",
-//		url: "https://shirleys-scheduler.com/api/me",
-//		headers : { 'Authorization' : "zHjn1r0znDzB_mhEw1CtZLuV9QTVuyAKtnIqYV_q" },
-//		success: function(data){
-//			console.log("we have api me data");
-//			//store data as "apime" in localstorage
-//			localStorage.setItem("apime", JSON.stringify(data));
-//		},
-//		error: function(xhr, text, e){
-//
-//			console.log("AJAX Error: " + e);
-//
-//			//alert("Unable to access data from server!");
-//		}
-//	});
+	$.ajax({
+		type: "GET",
+		url: "https://shirleys-scheduler.com/api/me",
+		headers : { 'Authorization' : "b7c9d5TXu9BKew7kRuZE1sgpLtwPIX-qEdz1aJda" },
+		success: function(data){
+			console.log("we have api me data");
+			//store data as "apime" in localstorage
+			localStorage.setItem("apime", JSON.stringify(data)); 
+		},
+		error: function(xhr, text, e){
+			console.log("AJAX Error: " + e);
+			console.log("Unable to access data from server!"); //either the token is invalid or the token was not properly loaded from localstorage
+		}
+	});
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
