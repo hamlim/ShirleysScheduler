@@ -211,8 +211,8 @@ $(document).ready(function(){
 		for (var k = 0; k< apime["Invites"].length; k++){
 			var eventlink = "<a href='https://shirleys-scheduler.com/group.html' title='Event Information'>" + apime["Invites"][k].meetingname + "</a>";
 			var invite = "<h4>" + apime["Invites"][k].owner + " invited you! </h4>";
-            var buttonView = "<button id='accept-btn' type='button' class='btn btn-default'> Accep" +  apime["Invites"][k].meetingname + "</button>";
-			content += libegin + invite + eventlink + liend;
+            var buttonView = "<button id='accept-btn' type='button' class='btn btn-primary btn-sm'> Accep" +  apime["Invites"][k].meetingname + "</button>";
+			content += libegin + invite + eventlink + buttonView + liend;
 		};
 		if (content == ""){
 			content = "<h4>No one has invited you. :(</h4>";
