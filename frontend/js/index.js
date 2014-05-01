@@ -19,22 +19,23 @@ $(document).ready(function(){
 	login.on("click", function(){
 		//the user clicked login
 		//ajax call to /auth/login
-		$.ajax({
-			url: "https://shirleys-scheduler.com/auth/login",
-			type: "GET",
-			dataType: "JSON",
-			success: function(toke){
-				// now we have an invalid token
-				// token is stored in data
-				localStorage.setItem("token", toke["token"]);
-				console.log(toke);
-				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]);
-			},
-			error: function(xhr, status, error){
-				console.log("AJAX error: " + error);
-
-			}
-		})
+		window.location.replace("dashboard.html");
+//		$.ajax({
+//			url: "https://shirleys-scheduler.com/auth/login",
+//			type: "GET",
+//			dataType: "JSON",
+//			success: function(toke){
+//				// now we have an invalid token
+//				// token is stored in data
+//				localStorage.setItem("token", toke["token"]);
+//				console.log(toke);
+//				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]);
+//			},
+//			error: function(xhr, status, error){
+//				console.log("AJAX error: " + error);
+//
+//			}
+//		})
 	});
 	//-------------------------------------
 });
