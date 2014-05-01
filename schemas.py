@@ -31,9 +31,15 @@ class User(ClassBase):
   credentials = Column(String(8192))
   # The user's full name.
   name = Column(String(256))
+  profileimg = Column(String(256))
+  description = Column(String(1024))
+  googlelink = Column(String(256))
 
   def toJson(self):
     return json.dumps({
       'email': self.email,
-      'name': self.name
+      'name': self.name,
+      'profileimg': self.profileimg,
+      'description': self.description,
+      'googlelink': self.googlelink
     })
