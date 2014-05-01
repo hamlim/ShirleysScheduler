@@ -47,21 +47,21 @@ $(document).ready(function(){
 		//now we need to push the new value to the server
 		//for the api call we need the userid first:
 		
-		var uid = apime["Person"]["userid"];
+		var uid = apime["Person"]["userid"]; //this won't work with the new JSON stuff (no more uid)
 		//now we can make the post request
 		
-		$.ajax({
-			url: "/api/"+uid+"/settings",
-			type: "POST",
-			data: value,
-			success: function(e){
-				console.log("Success!");
-			},
-			error: function(xhr, e){
-				console.log("Error!");
-				alert("Error updating values, please try again, or email us: hamlim@outlook.com");
-			}
-		});
+//		$.ajax({
+//			url: "/api/"+uid+"/settings",
+//			type: "POST",
+//			data: value,
+//			success: function(e){
+//				console.log("Success!");
+//			},
+//			error: function(xhr, e){
+//				console.log("Error!");
+//				console.log("Error updating values, please try again, or email us: hamlim@outlook.com");
+//			}
+//		});
 		
 		$(obj).parent().append(input);
 		$(obj).remove();
