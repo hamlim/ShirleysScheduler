@@ -112,6 +112,7 @@ $(document).ready(function(){
 			editable: false,
 			events: eventarr(apime)
 		});
+		$('#pcalendar').fullCalendar('render');
 
 
 		//---------------------------------------------------------------------------------------------------------------------------
