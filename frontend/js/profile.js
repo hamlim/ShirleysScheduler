@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 	var obj = localStorage.getItem('apime');
+	if (obj == NULL || typeof obj == 'undefined') { window.location = 'index.html';}
+	else {
 	var apime = JSON.parse(obj);
 		
 	// populate fields via jQuery accessing JSON data
@@ -207,6 +209,6 @@ $(document).ready(function(){
 		}
 		i++;
 	}
-	
+	}
 });
 
