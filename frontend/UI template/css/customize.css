@@ -101,7 +101,7 @@ dolp
   display: block;
 }
 }
-.nav-tabs > li > tab:active  {
+.nav-tabs > li > tab .active  {
     background: #ebebeb;
     color: #0372c0;
 }

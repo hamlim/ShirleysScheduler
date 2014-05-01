@@ -3510,7 +3510,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #6f6f6f;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -5966,8 +5966,8 @@ label,
   border-color: transparent;
 }
 .nav-tabs > li > a {
-  background-color: #e7e7e7;
-  color: #222222;
+  /*background-color: #e7e7e7;
+  color: #222222;*/
 }
 .nav-tabs .caret {
   border-top-color: #222222;

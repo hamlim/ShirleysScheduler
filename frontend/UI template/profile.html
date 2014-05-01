@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Calendar.html</title>
+    <title>Profile.html</title>
     <meta name="description" content="Shirley's Scheduler: schedule meetings quickly. Synchronize. Connect. Meet. "/>
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
@@ -78,29 +78,34 @@
 <section id="welcome-banner" data-speed="3" data-type="background">
     
 <div class="fluid-container">
+    <div class="container">
     <div class="row">
         <div id="user-info">
-            <div class="col-xs-4">
+            <div class="col-xs-2">
                 <div id="user-image">
                     [user profile image]
                 
                </div>
             </div>
+              
 
-            <div class="col-xs-4">
-                &nbsp;
+            <div class="col-xs-10">
+                <h1 id="user-full-name">[user-full-name]</h1>
+               
+                    <div id="user-profile-description">
+                        <img id="edit-description" width="15px" src="images/icons/png/edit.png">
+                            <p id="cmt_edit_323" class="cmtedit lead">
+                               [user-profile-description]
+                            </p>
+                    </div>
+               
             </div>
 
-            <div class="col-xs-4">
-                <div id="name">
-                    &nbsp;
-                </div>
-            </div>
-        </div>
-        
        
     </div>
 </div>
+    </div>
+    </div>
     </section>
     
     <hr>
@@ -110,48 +115,48 @@
       
      
 
-<div class="container-fluid">
-    <div class="row">
-		<div class="col-xs-4">
-				<span class="subtitle">Real Name:</span>
-				<p id="user-full-name">[user-full-name]</p>
-		</div>
-		<div class="col-xs-4">
-				<span class="subtitle">Username:</span>
-				<p id="user-name2">[user-name]</p>
-		</div>
-		<div class="col-xs-4">
-				<span class="subtitle">Google Email Address:</span>
-				<p id="user-email-address">[user-email-address]</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-4">
-				<span class="subtitle">Alias Email Address:</span>
-				<p id="user-alias-address">[user-email-address]</p>
-		</div>
-		
-		<div class="col-xs-4">
-				<span class="subtitle">Date Joined:</span>
-				<p id="user-date-joined">[user-date-joined]</p>
-		</div>
-		<div class="col-xs-4">
-				<span class="subtitle">Google+ Profile:</span>
-				<p id="user-google-profile"><a href="#" target="_blank">[user-google-profile]</a></p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-				<span class="subtitle">Description:</span> 
-				
-				<div id="user-profile-description">
-					<img id="edit-description" width="15px" src="images/icons/png/edit.png" /><p id="cmt_edit_323" class="cmtedit">[user-profile-description]</p>
-				</div>
-		</div>
-	</div>
-	
-	
-	</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                        <span class="subtitle">Real Name:</span>
+                        <p id="user-full-name">[user-full-name]</p>
+                </div>
+                <div class="col-xs-4">
+                        <span class="subtitle">Username:</span>
+                        <p id="user-name2">[user-name]</p>
+                </div>
+                <div class="col-xs-4">
+                        <span class="subtitle">Google Email Address:</span>
+                        <p id="user-email-address">[user-email-address]</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                        <span class="subtitle">Alias Email Address:</span>
+                        <p id="user-alias-address">[user-email-address]</p>
+                </div>
+
+                <div class="col-xs-4">
+                        <span class="subtitle">Date Joined:</span>
+                        <p id="user-date-joined">[user-date-joined]</p>
+                </div>
+                <div class="col-xs-4">
+                        <span class="subtitle">Google+ Profile:</span>
+                        <p id="user-google-profile"><a href="#" target="_blank">[user-google-profile]</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="col-xs-12">
+                        <span class="subtitle">Description:</span> 
+
+                        <div id="user-profile-description">
+                            <img id="edit-description" width="15px" src="images/icons/png/edit.png" /><p id="cmt_edit_323" class="cmtedit">[user-profile-description]</p>
+                        </div>
+                </div>-->
+            </div>
+        </div>
+ 
 	
     
 <!-- Nav tabs -->
@@ -185,7 +190,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div id='calendar'>[calendar]</div>
+                    <div id="calendar">[calendar]</div>
                 </div>
         </div>  
         </div>
