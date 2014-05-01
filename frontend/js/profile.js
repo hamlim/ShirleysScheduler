@@ -66,7 +66,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			TBox(this);
 		});
-		console.log(JSON.stringify(apime));
+		console.log(apime);
 	}
 		
 	for (var i = 0; i < apime["Groups"].length; i++) {
