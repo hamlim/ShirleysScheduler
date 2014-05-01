@@ -43,48 +43,6 @@
       label {
         font-size: 16px;
       }
-      /* Invitees */
-      #tags {
-        float:left;
-        border:1px solid #ccc;
-        padding:4px;
-        font-family:Arial;
-        margin-bottom: 20px;
-        width: 100%;
-      }
-      #tags span.tag {
-        cursor:pointer;
-        display:block;
-        float:left;
-        color:#555;
-        background:#add;
-        padding:5px 10px;
-        padding-right:30px;
-        margin:4px;
-      }
-      #tags span.tag:hover {
-        opacity:0.7;
-      }
-      #tags span.tag:after {
-       position:absolute;
-       content:"×";
-       border:1px solid;
-       border-radius:10px;
-       padding:0 4px;
-       margin:3px 0 10px 7px;
-       font-size:10px;
-      }
-      #tags input {
-        background:#eee;
-        border:0;
-        margin:4px;
-        padding:7px;
-        width:98%;
-      }
-      #tags input[type=text], .input-group input[type=text] {
-          text-align: center;
-      }
-
       /* A little added responsive design */
       @media only screen and (max-width: 425px) {
         .row {
@@ -236,26 +194,44 @@
     
                     <!-- Invitees -->
                     <div class="form-group">
-                      <h4 class="sectionLabel"><strong>Invite Others</strong></h4>
-                      <div id="tags">
-                        <input type="text" value="" placeholder="Add email address or username" />
-                      </div>
+                      <h4 class="sectionLabel"><strong>Select Group</strong></h4>
+                      <label>
+                        <strong><em>*Which group? I wanna know</em></strong>
+                        <select class="form-control">
+                          <option value="one">Daily</option>
+                          <option value="two">Weekly</option>
+                          <option value="three">Three</option>
+                          <option value="four">Four</option>
+                          <option value="five">Five</option>
+                        </select>
+                      </label>
                     </div>
-                  
-                    <br><br>
+
+                    <div id='pcalendar'></div>
                     
                     <!-- Include repeat meeting option -->
                     <div class="form-group check">
                       <label class="checkbox" for="meeting-repeat">
-
-                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox"><strong><em>Repeat?</em></strong>
+                        <input type="checkbox" value="" id="meeting-repeat" data-toggle="checkbox">
+                        <strong><em>Repeat?</em></strong>
                       </label>
 
-                    </div>
-                  
-                    <div class="form-group">
+                      <div id="expand" style="display:none">
+                        <select class="form-control">
+                          <option value="daily">Daily</option>
+                          <option value="weekly">Weekly (once)</option>
+                          <option value="weekly2">Weekly (more than once)</option>
+                        </select>
+                      </div>
 
-                    </div>
+                     <!-- </label>-->
+                      
+
+                  </div>
+                  
+                  <div class="form-group">
+
+                  </div>
                   
                   <div class="form-group">
                       <a id="meetingButton" class="btn btn-primary btn-lg btn-block" href="#">Submit Meeting</a>
@@ -264,11 +240,6 @@
               
       </div>
     </div>
-  
-    <div class="container">
-        Start doing your next awesomeness here.
-    </div>
-
 
     <!-- Load JS here for greater good =============================-->
     <!--<script src="js/jquery-1.8.3.min.js"></script>-->
@@ -365,21 +336,16 @@
         $.when(load, animate).then(function () {
           // Do your thing here!
         });
-      */
+        */
 
-        // Adding invitees to meeting
-        $("#tags input").on("focusout", function() {    
-          var txt= this.value.replace(/[^a-zA-Z0-9\+\-\.\#]/g,""); // Allowed characters list
-          if(txt) $(this).before('<span class="tag">'+ txt +"</span>");
-          this.value="";
-        }).on('keyup',function( e ){
-          if(/(188|13)/.test(e.which)) { $(this).focusout(); } // On comma or enter
-        });
+        // Pick group for meeting
 
-        // Deleting invitees that were added
-        $("#tags").on("click",".tag",function(){
-          if( confirm("Delete tag?") ) $(this).remove(); 
+
+        // Show meeting day options
+        $("#meeting-repeat").change(function() {
+          $("#expand").slideToggle("fast");
         });
+        
 
         // When meeting form submitted..
         $("#meetingButton").click(function() {
@@ -387,12 +353,6 @@
           // Verify dates filled out
           var start = Date.parse($("#start.input-group.date input[type=text]").val())/1000;
           var end = Date.parse($("#end.input-group.date input[type=text]").val())/1000;
-
-          // Get invitees into an object
-          var invitees = new Array();
-          $("span.tag").each(function() {
-            invitees.push($(this).text());
-          });
 
           // Verify if checkbox checked?
           var isChecked = $("#meeting-repeat").is(":checked")?true:false;
