@@ -41,8 +41,6 @@ $(document).ready(function(){
 			//we want to isolate those events with and w/o a url
 			if(object["Calendar"][i]["url"] == "" || object["Calendar"][i]["url"] == null){
 				//no url to worry about:
-				var microarr = [];
-				console.log(microarr);
 				var start = new Date(object["Calendar"][i]["timebegin"]*1000);
 				var end = new Date(object["Calendar"][i]["timeend"]*1000)
 				var name = object["Calendar"][i]["meetingname"];
