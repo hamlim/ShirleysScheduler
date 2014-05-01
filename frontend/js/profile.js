@@ -66,7 +66,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			TBox(this);
 		});
-		console.log(apime);
+		console.log(JSON.stringify(apime));
 	}
 		
 	for (var i = 0; i < apime["Groups"].length; i++) {
@@ -80,7 +80,6 @@ $(document).ready(function(){
 		var x = "";
 		var r=confirm("Do you really want to delete the group though?!");
 		if (r==true) {
-			x="OK group has been deleted!";
 			var index = parseInt($(this).attr('id'));
 			apime["Groups"].splice(index, 1);
 			localStorage.setItem("apime", JSON.stringify(apime));
@@ -92,6 +91,7 @@ $(document).ready(function(){
 			var uid = apime["Person"]["userid"];
 			//now we can make the post request
 			
+			// call to remove the member from a group?!?
 			$.ajax({
 				url: "/api/"+uid+"/group",
 				type: "POST",
@@ -103,6 +103,7 @@ $(document).ready(function(){
 					console.log("Error!");
 					alert("Error updating values, please try again, or email us: hamlim@outlook.com");
 				}
+			x="OK group has been deleted!";
 		});
 		}
 		$("#notification").text(x);
@@ -156,7 +157,7 @@ $(document).ready(function(){
 		});
 		
 		apime["Groups"].push(newGroup);
-		console.log(JSON.stringify(apime));
+		console.log(apime);
 		$("#notification").text("Created new group: "+groupname);
 	});
 	
