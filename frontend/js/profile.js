@@ -97,7 +97,8 @@ $(document).ready(function(){
 			
 			// call to remove the member from a group?!?
 			$.ajax({
-				url: "/api/"+uid+"/group",
+				url: "https://shirleys-scheduler.com/api/"+uid+"/group",
+				dataType: "json",
 				type: "POST",
 				data: apime["Groups"],
 				success: function(e){
@@ -147,7 +148,8 @@ $(document).ready(function(){
 		newGroup["inivitees"] = invitees;
 		
 		$.ajax({
-				url: "/api/me/group",
+				url: "https://shirleys-scheduler.com/api/me/group",
+				dataType: "json",
 				type: "POST",
 				data: newGroup,
 				success: function(e){
