@@ -117,14 +117,23 @@ $(document).ready(function(){
 	//#user-today is on a Ul element
 	//each event will be an li element
 	var usertoday = $("#user-today"); //Store the location of the ul in a variable
-	var libegin = "<li>";
-	var liend = "</li>";
 	var content = "";
+	
 	//now we iterate through all the events in the today array
 	for (var i=0; i<apime["Today"].length; i++){
+		var dateb = new Date(apime["Today"][i].timebegin*1000);
+		var bh = dateb.getHours();
+		var bm = dateb.getMinutes();
+		var bs = dateb.getSeconds();
+		var timeb = bh + ":" + bm + ":" + bs;
+		var datee = new Date(apime["Today"][i].timeend*1000);
+		var eh = datee.getHours();
+		var em = datee.getMinutes();
+		var es = datee.getSeconds();
+		var timee = eh + ":" + em + ":" + es;
 		var meetingname = "<h4>" + apime["Today"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Today"][i].location + "</p>";
-		var times = "<p>" + apime["Today"][i].timebegin + " to " + apime["Today"][i].timeend + "</p>";
+		var times = "<p>" + timeb + " to " + timee + "</p>";
 		var groupname = "<p>" + apime["Today"][i].groupname + "</p>";
 		var div = "<div>" + meetingname + groupname + times + loc + "</div>";
 		content += libegin + div + liend;
@@ -140,9 +149,19 @@ $(document).ready(function(){
 	var usertomorrow = $("#user-tomorrow"); // store the location of the user-tomorrow ul in a var
 	content = ""; //clear out content's values for the new section
 	for(var i=0; i<apime["Tomorrow"].length; i++){
+		var dateb = new Date(apime["Tomorrow"][i].timebegin*1000);
+		var bh = dateb.gethours();
+		var bm = dateb.getMinutes();
+		var bs = dateb.getSeconds();
+		var timeb = bh + ":" + bm + ":" + bs;
+		var datee = new Date(apime["Tomorrow"][i].timeend*1000);
+		var eh = datee.getHours();
+		var em = datee.getMinutes();
+		var es = datee.getSeconds();
+		var timee = eh + ":" + em + ":" + es;
 		var meetingname = "<h4>" + apime["Tomorrow"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Tomorrow"][i].location + "</p>";
-		var times = "<p>" + apime["Tomorrow"][i].timebegin + " to " + apime["Tomorrow"][i].timeend + "</p>";
+		var times = "<p>" + timeb + " to " + timee + "</p>";
 		var groupname = "<p>" + apime["Tomorrow"][i].groupname + "</p>";
 		var div = "<div>" + meetingname + groupname + times+ loc + "</div>"
 		content += libegin + div + liend;
@@ -158,9 +177,19 @@ $(document).ready(function(){
 	var useryesterday = $("#user-yesterday");
 	content = "";
 	for ( var i=0; i<apime["Yesterday"].length; i++){
+		var dateb = new Date(apime["Yesterday"][i].timebegin*1000);
+		var bh = dateb.gethours();
+		var bm = dateb.getMinutes();
+		var bs = dateb.getSeconds();
+		var timeb = bh + ":" + bm + ":" + bs;
+		var datee = new Date(apime["Yesterday"][i].timeend*1000);
+		var eh = datee.getHours();
+		var em = datee.getMinutes();
+		var es = datee.getSeconds();
+		var timee = eh + ":" + em + ":" + es;
 		var meetingname = "<h4>" + apime["Yesterday"][i].meetingname + "</h4>";
 		var loc = "<p>" + apime["Yesterday"][i].location + "</p>";
-		var times = "<p>" + apime["Yesterday"][i].timebegin + " to " + apime["Yesterday"][i].timeend + "</p>";
+		var times = "<p>" + timeb + " to " + timee + "</p>";
 		var groupname = "<p>" + apime["Yesterday"][i].groupname + "</p>";
 		var div = "<div>" + meetingname + groupname + times+ loc + "</div>"
 		content += libegin + div + liend;
