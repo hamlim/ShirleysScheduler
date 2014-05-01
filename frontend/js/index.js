@@ -23,20 +23,22 @@ $(document).ready(function(){
 		$.ajax({
 			url: "https://shirleys-scheduler.com/auth/login", //this will go to Albert's API
 			type: "GET",
+			async: false,
 			dataType: "JSON", //this is important or else we won't be able to read in token
 			success: function(toke){
 				// now we have an invalid token
 				// token is stored in data
 				//toke is the name of the JSON storing the token association
-				localStorage.setItem("token", toke["token"]); //we commit this to local storage
+				localStorage.setItem("token", JSON.stringify(toke)); //we commit this to local storage
 				console.log(toke); //for some error checking
-				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
+				//window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
 			},
 			error: function(xhr, status, error){
 				console.log("AJAX error: " + error);
 
 			}
-		})
+		});
+	console.log("Local: " + JSON.parse(localStorage.getItem("toke"))["token"]);
 	});
 	//-------------------------------------
 });
