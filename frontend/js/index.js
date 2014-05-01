@@ -27,13 +27,8 @@ $(document).ready(function(){
 				console.log("it worked");
 				// now we have an invalid token
 				// token is stored in data
-				$.ajax({
-					url: "https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"],
-					type: "GET",
-					success: function(e){
-						console.log("It worked!");
-					}
-				});
+				localStorage.setItem("token", toke["token"]);
+				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke['token']);
 			},
 			error: function(xhr, status, error){
 				console.log("AJAX error: " + error);
