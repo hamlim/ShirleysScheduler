@@ -118,7 +118,8 @@ $(document).ready(function(){
 	//each event will be an li element
 	var usertoday = $("#user-today"); //Store the location of the ul in a variable
 	var content = "";
-	
+	var libegin = "<li>";
+	var liend = "</li>";
 	//now we iterate through all the events in the today array
 	for (var i=0; i<apime["Today"].length; i++){
 		var dateb = new Date(apime["Today"][i].timebegin*1000);
@@ -150,7 +151,7 @@ $(document).ready(function(){
 	content = ""; //clear out content's values for the new section
 	for(var i=0; i<apime["Tomorrow"].length; i++){
 		var dateb = new Date(apime["Tomorrow"][i].timebegin*1000);
-		var bh = dateb.gethours();
+		var bh = dateb.getHours();
 		var bm = dateb.getMinutes();
 		var bs = dateb.getSeconds();
 		var timeb = bh + ":" + bm + ":" + bs;
@@ -178,7 +179,7 @@ $(document).ready(function(){
 	content = "";
 	for ( var i=0; i<apime["Yesterday"].length; i++){
 		var dateb = new Date(apime["Yesterday"][i].timebegin*1000);
-		var bh = dateb.gethours();
+		var bh = dateb.getHours();
 		var bm = dateb.getMinutes();
 		var bs = dateb.getSeconds();
 		var timeb = bh + ":" + bm + ":" + bs;
