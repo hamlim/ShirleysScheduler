@@ -50,9 +50,9 @@ $(document).ready(function(){
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
-	if(apime == null || apime == 'undefined'){
-		window.location.replace("index.html");
-	} else {
+//	if(apime == null || apime == 'undefined'){
+//		window.location.replace("index.html");
+//	} else {
 		//---------------------------------------------------------------------------------------------------------------------------
 		// #user-calendar section of the dashboard.html file
 		// Uses FullCalendar
@@ -221,13 +221,5 @@ $(document).ready(function(){
 		};
 		var invitecontent = content;
 		invites.append(invitecontent);
-		
-		
-
-
-
-
-
-
-	};
+//	};
 });
