@@ -296,14 +296,10 @@
     <!-- Flat UI won't work with three different timepickers!! -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="js/moment.js"></script>
-  <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
     
-    <!-- Tag Input (Invite Users) -->
 
-
-
-    
     <script>
     $(document).ready(function(){												
        
@@ -339,6 +335,37 @@
         $("#start").datetimepicker();
         $("#end").datetimepicker();
 
+        // Can't repeat until date & time selected first
+        if (Date.parse($("#start.input-group.date input[type=text]").val()) <= 0 || Date.parse($("#end.input-group.date input[type=text]").val()) <= 0) {
+          document.getElementById("meeting-repeat").disabled=true;
+        }
+        
+        // Undisable checkbox if both date boxes are filled
+        // Need to fix bug - only one date filled and checkbox active again
+        $("#start.input-group.date input[type=text], #end.input-group.date input[type=text]").change(function() {
+          document.getElementById("meeting-repeat").disabled=false;
+        });
+
+        /*
+        var startFilled = $("#start .input-group.date input[type=text]").change(function() {
+
+        });
+
+        var endFilled = $("#end .input-group.date input[type=text]").change(function() {
+          
+        });
+
+        //Example followed deferring event trigger
+        var load = $.Deferred(function (dfd) {
+          $('#div1').load(…, dfd.resolve);
+        }).promise();
+
+        var animate = $('html,body').animate(…);
+
+        $.when(load, animate).then(function () {
+          // Do your thing here!
+        });
+      */
 
         // Adding invitees to meeting
         $("#tags input").on("focusout", function() {    
@@ -347,7 +374,6 @@
           this.value="";
         }).on('keyup',function( e ){
           if(/(188|13)/.test(e.which)) { $(this).focusout(); } // On comma or enter
-
         });
 
         // Deleting invitees that were added
@@ -369,7 +395,10 @@
           });
 
           // Verify if checkbox checked?
-          var isChecked = $("#meeting-repeat").is(":checked")?true:false;        
+          var isChecked = $("#meeting-repeat").is(":checked")?true:false;
+
+
+
           // Validate form input
           try {
           
