@@ -33,6 +33,8 @@ $(document).ready(function(){
 				Will be link to the meeting
 	*/
 	//here we make the api call
+	var tokenc = document.cookie;
+	console.log(tokenc);
 	$.ajax({
 		type: "GET",
 		url: "https://shirleys-scheduler.com/api/me",
