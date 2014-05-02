@@ -49,7 +49,7 @@ $(document).ready(function(){
 	console.log("Test token cookie: " + tokenc);
 	$.ajax({
 		type: "GET",
-		async: false,
+		contentType: "application/json; charset=utf-8",
 		url: "https://shirleys-scheduler.com/api/me",
 		headers : { 'Authorization' : toke },
 		success: function(data){
