@@ -47,21 +47,26 @@ $(document).ready(function(){
 	console.log("toke: " + toke);
 	var tokenc = document.cookie;
 	console.log("Test token cookie: " + tokenc);
-	$.ajax({
-		type: "GET",
-		contentType: "application/json; charset=utf-8",
-		dataType: "JSON",
-		url: "https://shirleys-scheduler.com/api/me",
-		headers : { 'Authorization' : toke },
-		success: function(data){
-			console.log("we have api me data");
-			//store data as "apime" in localstorage
-			localStorage.setItem("apime", JSON.stringify(data)); 
-		},
-		error: function(xhr, text, e){
-			console.log("AJAX Error: " + e);
-			console.log("Unable to access data from server!"); //either the token is invalid or the token was not properly loaded from localstorage
-		}
+	function getdata(callback){
+		return $.ajax({
+			type: "GET",
+			contentType: "application/json; charset=utf-8",
+			dataType: "JSON",
+			url: "https://shirleys-scheduler.com/api/me",
+			headers : { 'Authorization' : toke },
+			success: function(data){
+				console.log("we have api me data");
+				//store data as "apime" in localstorage
+				console.log(data);
+			},
+			error: function(xhr, text, e){
+				console.log("AJAX Error: " + e);
+				console.log("Unable to access data from server!"); //either the token is invalid or the token was not properly loaded from localstorage
+			}
+		});
+	};
+	getdata(function(data){
+		localStorage.setItem("apime", JSON.stringify(data)); 
 	});
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
