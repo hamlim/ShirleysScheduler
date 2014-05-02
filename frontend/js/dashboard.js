@@ -33,12 +33,25 @@ $(document).ready(function(){
 				Will be link to the meeting
 	*/
 	//here we make the api call
+	function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+	};
+	var toke = readCookie("token");
+	console.log("toke: " + toke);
 	var tokenc = document.cookie;
-	console.log(tokenc);
+	console.log("Test token cookie: " + tokenc);
 	$.ajax({
 		type: "GET",
+		async: false,
 		url: "https://shirleys-scheduler.com/api/me",
-		headers : { 'Authorization' : "b7c9d5TXu9BKew7kRuZE1sgpLtwPIX-qEdz1aJda" },
+		headers : { 'Authorization' : toke },
 		success: function(data){
 			console.log("we have api me data");
 			//store data as "apime" in localstorage

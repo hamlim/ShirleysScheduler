@@ -31,7 +31,7 @@ $(document).ready(function(){
 				localStorage.setItem("token", JSON.stringify(toke)); //we commit this to local storage
 				document.cookie = "token="+toke["token"];
 				console.log(toke); //for some error checking
-				//window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
+				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
 			},
 			error: function(xhr, status, error){
 				console.log("AJAX error: " + error);
