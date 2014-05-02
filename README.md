@@ -5,6 +5,8 @@ Let's face it Whenisgood, simply isn't good enough. Check out [Shirley's Schedul
 
 Originally developed as a term project for Web Science at RPI.
 
+[GitHub Repo](https://github.com/hamlim/ShirleysScheduler)
+
 -------
 
 ### File Structure
