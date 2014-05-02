@@ -1,7 +1,7 @@
 Shirley's Scheduler
 =====================
 
-A group scheduler that doesn't suck.
+Let's face it Whenisgood, simply isn't good enough. Check out [Shirley's Scheduler]([https://shirleys-scheduler.com/) to is the app live. 
 
 Originally developed as a term project for Web Science at RPI.
 
