@@ -12,6 +12,8 @@ from schemas import ClassBase
 
 def CORS():
   cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
+  cherrypy.response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE"
+  cherrypy.response.headers["Access-Control-Allow-Headers"] = "Authorization"
 
 class Root(object):
   def __init__(self, settings):
