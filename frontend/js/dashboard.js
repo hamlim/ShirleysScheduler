@@ -50,6 +50,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "GET",
 		contentType: "application/json; charset=utf-8",
+		dataType: "JSON",
 		url: "https://shirleys-scheduler.com/api/me",
 		headers : { 'Authorization' : toke },
 		success: function(data){
