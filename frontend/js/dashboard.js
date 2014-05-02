@@ -33,28 +33,42 @@ $(document).ready(function(){
 				Will be link to the meeting
 	*/
 	//here we make the api call
-//	$.ajax({
-//		type: "GET",
-//		url: "https://shirleys-scheduler.com/api/me",
-//		headers : { 'Authorization' : "zHjn1r0znDzB_mhEw1CtZLuV9QTVuyAKtnIqYV_q" },
-//		success: function(data){
-//			console.log("we have api me data");
-//			//store data as "apime" in localstorage
-//			localStorage.setItem("apime", JSON.stringify(data));
-//		},
-//		error: function(xhr, text, e){
-//
-//			console.log("AJAX Error: " + e);
-//
-//			//alert("Unable to access data from server!");
-//		}
-//	});
+	function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+	};
+	var toke = readCookie("token");
+	console.log("toke: " + toke);
+	var tokenc = document.cookie;
+	console.log("Test token cookie: " + tokenc);
+	$.ajax({
+		type: "GET",
+		contentType: "application/json; charset=utf-8",
+		dataType: "JSON",
+		url: "https://shirleys-scheduler.com/api/me",
+		headers : { 'Authorization' : toke },
+		success: function(data){
+			console.log("we have api me data");
+			//store data as "apime" in localstorage
+			localStorage.setItem("apime", JSON.stringify(data)); 
+		},
+		error: function(xhr, text, e){
+			console.log("AJAX Error: " + e);
+			console.log("Unable to access data from server!"); //either the token is invalid or the token was not properly loaded from localstorage
+		}
+	});
 	var obj = localStorage.getItem('apime');
 	var apime = JSON.parse(obj);
 	console.log(apime); //apime stores all the data from the database
-	if(apime == null || apime == 'undefined'){
-		window.location.replace("index.html");
-	} else {
+//	if(apime == null || apime == 'undefined'){
+//		window.location.replace("index.html");
+//	} else {
 		//---------------------------------------------------------------------------------------------------------------------------
 		// #user-calendar section of the dashboard.html file
 		// Uses FullCalendar
@@ -223,13 +237,5 @@ $(document).ready(function(){
 		};
 		var invitecontent = content;
 		invites.append(invitecontent);
-		
-		
-
-
-
-
-
-
-	};
+//	};
 });
