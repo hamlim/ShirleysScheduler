@@ -19,8 +19,7 @@ class AuthRoot(object):
         client_id=self.settings.get('google', 'client_id'),
         client_secret=self.settings.get('google', 'client_secret'),
         scope=self.settings.get('google', 'scopes'),
-        redirect_uri=self.settings.get('google', 'redirect_uri')
-    )
+        redirect_uri=self.settings.get('google', 'redirect_uri'))
 
   @cherrypy.expose
   def login(self):
@@ -46,8 +45,7 @@ class AuthRoot(object):
         client_secret=self.settings.get('google', 'client_secret'),
         scope=self.settings.get('google', 'scopes'),
         redirect_uri=self.settings.get('google', 'redirect_uri'),
-        state=tokenPair.validator
-    )
+        state=tokenPair.validator)
     raise cherrypy.HTTPRedirect(validateFlow.step1_get_authorize_url())
 
   @cherrypy.expose
@@ -75,17 +73,20 @@ class AuthRoot(object):
     email = filter(
         lambda x: x['type'] == 'account', googleUser['emails'])[0]['value']
 
-    user = session.query(schemas.User).get(email)
+    user = session.query(schemas.User).filter(
+        schemas.User.email == email).first()
     if user is None:
       newUser = schemas.User(
           email=email, name=googleUser['displayName'],
           credentials=credentials.to_json(), googlelink=googleUser['url'],
           profileimg=googleUser['image']['url'])
       session.add(newUser)
+      session.commit() # Commit so that the user is assigned a numeric ID.
+      user = session.query(schemas.User).filter(
+          schemas.User.email == email).first()
 
-    # Add Gmail adddress to stored token
-    tokenPair.email = email
-
+    # Add user ID to stored token
+    tokenPair.objectId = user.objectId
     session.commit()
 
     # Success. Redirect the user to the dashboard.
