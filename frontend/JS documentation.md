@@ -130,6 +130,7 @@ window.location.replace( 'index.html' );
 * Need to parse the date format from unix timestamps [simply multiply by 1000]
 
 ```Javascript
+//This file will have an example API/me return JS Object "JSON"
 var apime = {
     "Today": [
         {
@@ -138,7 +139,7 @@ var apime = {
             "location" : "Times Square",
             "timebegin" : 1398967200,
             "timeend" : 1398970800,
-	    "url" : ""
+			"url" : ""
         }
     ],
     "Tomorrow": [
@@ -186,22 +187,22 @@ var apime = {
             "groupname": "SS inc",
             "groupid": 12345
         },
-	{
-	    "groupname": "Friends",
-	    "groupid": 12346
-	},
-	{
-	    "groupname": "ACME inc",
-	    "groupid": 12347
-	}
+				{
+	    		"groupname": "Friends",
+	    		"groupid": 12346
+				},
+				{
+						"groupname": "ACME inc",
+						"groupid": 12347
+				}
     ],
     "Calendar": [ 
         {
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
             "location": "3rd floor, Union",
-            "timebegin": 1398870000,
-            "timeend": 1398877200,
+            "timebegin": 1399485600,
+            "timeend": 1399489200,
             "url": ""
         },
         {
@@ -220,21 +221,93 @@ var apime = {
             "timeend": 1399050000,
             "url": ""
         },
-	{
-	    "meetingname": "Chat with V. Kudinov",
-	    "groupname": "ACME inc",
-	    "location": "Skype conference",
-	    "timebegin": 1398934800,
-	    "timeend": 1398938400,
-	    "url": ""
-	}
+    	{
+    	    "meetingname": "Chat with V. Kudinov",
+    	    "groupname": "SS inc",
+    	    "location": "Skype conference",
+    	    "timebegin": 1398934800,
+    	    "timeend": 1398938400,
+    	    "url": ""
+    	},
+        {
+            "meetingname": "Meeting with Professor Hughes",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399474800,
+            "timeend": 1399482000,
+            "url": ""
+        },
+        {
+            "meetingname": "Study group meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1398934800,
+            "timeend": 1398938400,
+            "url": ""
+        },
+        {
+            "meetingname": "Last capstone meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399485600,
+            "timeend": 1398938400,
+            "url": ""
+        },
+        {
+            "meetingname": "MITR meeting",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1398934800,
+            "timeend": 1399496400,
+            "url": ""
+        },
+        {
+            "meetingname": "Google hangout meeting",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399280400,
+            "timeend": 1399287600,
+            "url": ""
+        },
+        {
+            "meetingname": "Team meeting",
+            "groupname": "SS inc",
+            "location": "Skype conference",
+            "timebegin": 1399302000,
+            "timeend": 1399305600,
+            "url": ""
+        },
+        {
+            "meetingname": "Meeting with Professor Plotka",
+            "groupname": "ACME inc",
+            "location": "Skype conference",
+            "timebegin": 1399359600,
+            "timeend": 1399374000,
+            "url": ""
+        },
+        {
+            "meetingname": "Short MITR meeting",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1399399200,
+            "timeend": 1399402800,
+            "url": ""
+        },
+        {
+            "meetingname": "Comp Org study group",
+            "groupname": "Friends",
+            "location": "Skype conference",
+            "timebegin": 1399622400,
+            "timeend": 1399626000,
+            "url": ""
+        }
     ],
     "Person": {
-        "name": "Jaime Lannister",
-        "email": "jlannister@gmail.com",
-        "profileimg": "http://i.imgur.com/sx67gNb.jpg",
-        "description": "Knight from the house of Lannister, moved to Albany for an amazing job.",
-        "googlelink": ""
+        "name": "Matt Hamlin",
+        "email": "hamlinmatt212@gmail.com",
+        "profileimg": "https://lh5.googleusercontent.com/-vxyqgji3NqU/UuBNQ5TZGHI/AAAAAAAAMew/8uVx5bZVA5s/s231-no/7ef72ecb-fb60-41ed-83ea-767a3534579a.jpg",
+        "description": "Entrepreneur and Student of Life.",
+        "googlelink": "https://plus.google.com/+MattHamlinisawesome"
     }
 }
 ```
