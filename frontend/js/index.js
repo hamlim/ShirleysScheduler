@@ -20,23 +20,23 @@ $(document).ready(function(){
 	login.on("click", function(){
 		//the user clicked login
 		//ajax call to /auth/login
-		$.ajax({
+		var drequest = $.ajax({
 			url: "https://shirleys-scheduler.com/auth/login", //this will go to Albert's API
 			type: "GET",
-			dataType: "JSON", //this is important or else we won't be able to read in token
-			success: function(toke){
-				// now we have an invalid token
-				// token is stored in data
-				//toke is the name of the JSON storing the token association
-				localStorage.setItem("token", JSON.stringify(toke)); //we commit this to local storage
-				document.cookie = "token="+toke["token"];
-				console.log(toke); //for some error checking
-				window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
-			},
-			error: function(xhr, status, error){
+			dataType: "JSON" //this is important or else we won't be able to read in token
+		});
+		drequest.done(function(toke){
+			// now we have an invalid token
+			// token is stored in data
+			//toke is the name of the JSON storing the token association
+			localStorage.setItem("token", JSON.stringify(toke)); //we commit this to local storage
+			document.cookie = "token="+toke["token"];
+			console.log(toke); //for some error checking
+			window.location.replace("https://shirleys-scheduler.com/auth/login_validate?token="+toke["token"]); // now we pass that token on to be validated by the server
+		});
+		drequest.fail(function(xhr, status, error){
 				console.log("AJAX error: " + error);
 
-			}
 		});
 	});
 	//-------------------------------------
