@@ -1,5 +1,4 @@
-# Javascript Assorted Notes and Documentation For
-ShirleysScheduler
+# Javascript Assorted Notes and Documentation For When Is Better
 
 [Shirleys-scheduler.com](https://shirleys-scheduler.com)
 -----------------
@@ -187,13 +186,13 @@ var apime = {
             "groupname": "SS inc",
             "groupid": 12345
         },
-				{
-	    		"groupname": "Friends",
-	    		"groupid": 12346
+        {
+						"groupname": "Friends",
+	    			"groupid": 12346
 				},
 				{
-						"groupname": "ACME inc",
-						"groupid": 12347
+	    			"groupname": "ACME inc",
+	    			"groupid": 12347
 				}
     ],
     "Calendar": [ 
