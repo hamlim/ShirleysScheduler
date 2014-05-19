@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
 	var obj = localStorage.getItem('apime');
-		if (obj == null || typeof obj == 'undefined') {window.location.replace( 'index.html' );}
+	console.log(obj);
+	if (obj == null || typeof obj == 'undefined') {window.location.replace( 'index.html' );}
 	else {
 		var apime = JSON.parse(obj);
 
