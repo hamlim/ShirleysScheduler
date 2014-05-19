@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$("#user-full-name").text(apime["Person"].name);
 		$("#user-email-address").text(apime["Person"].email);
 		$("#user-alias-address").text(apime["Person"].aliasemail);
-		$("#user-date-joined").text(new Date(apime["Person"].datejoined * 1000));
+//		$("#user-date-joined").text(new Date(apime["Person"].datejoined * 1000));
 		$("#user-image").html('<img src="'+apime["Person"].profileimg+'" width="125px" />');
 		$("#user-google-profile").href = apime["Person"].googlelink;
 		$("#user-google-profile").text(apime["Person"].name);
