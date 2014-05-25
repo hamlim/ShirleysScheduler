@@ -145,8 +145,8 @@ window.location.replace( 'index.html' );
         * When the meeting occurs
         * Group name
     * Meeting Notes section:
-        * Documents associated with the meeting (Drive)
-        * Meeting notes ( "evernote plugin")
+        * Documents associated with the meeting (Dropbox)
+        * Meeting notes ("evernote plugin")
         * ToDo lists associated with the meeting (Trello)
 
 #### Fields:
@@ -169,9 +169,9 @@ window.location.replace( 'index.html' );
 
 * [Evernote Dev](http://dev.evernote.com/)
 
-### Drive:
+### Dropbox:
 
-* [Google Drive Dev](https://developers.google.com/drive/)
+* [Dropbox](https://www.dropbox.com/developers)
 
 
 ### Trello:
