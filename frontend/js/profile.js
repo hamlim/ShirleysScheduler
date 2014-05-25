@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 	var obj = localStorage.getItem('apime');
-	console.log(obj);
-	if (obj == null || typeof obj == 'undefined') {window.location.replace( 'index.html' );}
+	var apime = JSON.parse(obj);
+	console.log(apime);
+	if (apime == null || typeof apime == 'undefined') {window.location.replace( 'index.html' );}
 	else {
-		var apime = JSON.parse(obj);
 
 		// populate fields via jQuery accessing JSON data
 		$("#user-name2").text(apime["Person"].username);
