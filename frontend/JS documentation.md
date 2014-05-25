@@ -173,6 +173,9 @@ window.location.replace( 'index.html' );
 
 * [Dropbox](https://www.dropbox.com/developers)
 
+### Google Drive:
+
+* [Google Drive Dev](https://developers.google.com/drive/web/quickstart/quickstart-js)
 
 ### Trello:
 
