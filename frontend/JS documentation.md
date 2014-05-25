@@ -123,7 +123,62 @@ window.location.replace( 'index.html' );
     * Add Phone #: `#phone-number`
         * Button: `#phone-btn`
 
-## API return results ideally:
+### Meeting Page (`meeting.html`)
+
+#### Notes:
+
+* Research:
+    * Evernote API
+        * Allow users to make a new note on the website, edit it there if possible, and then share with the rest of the group
+    * Drive API
+        * Allow users to make a folder of content for the meeting in a group directory, then allow users to upload documents to that folder.
+    * Trello API
+        * Grab the group's organization and allow the user to add todo's to a generic meeting board in the organization to TODO list
+
+
+* What we want to display:
+    * Meeting information:
+        * Meeting name
+        * Who is going to the meeting
+        * Who isn't going to the meeting
+        * where the meeting is
+        * When the meeting occurs
+        * Group name
+    * Meeting Notes section:
+        * Documents associated with the meeting (Drive)
+        * Meeting notes ( "evernote plugin")
+        * ToDo lists associated with the meeting (Trello)
+
+#### Fields:
+
+* What fields we need to populate:
+    * title w/ meeting name: `title`
+    * meeting name: `#meeting-name`
+    * meeting time: `#meeting-time`
+    * people going: `#p-going`
+    * people not going: `#not-p-going`
+    * meeting location: `#meeting-location`
+    * group name: `#group-name`
+    * documents: `#document-list`
+    * To Do lists: `#todo-list`
+    * Notes: `#meeting-notes`
+
+## Foreign API's:
+
+### Evernote:
+
+* [Evernote Dev](http://dev.evernote.com/)
+
+### Drive:
+
+* [Google Drive Dev](https://developers.google.com/drive/)
+
+
+### Trello:
+
+* [Trell Dev](https://trello.com/docs/)
+
+## Ideal WhenIsBetter API return results:
 
 #### Notes:
 * Need to parse the date format from unix timestamps [simply multiply by 1000]
@@ -187,13 +242,13 @@ var apime = {
             "groupid": 12345
         },
         {
-						"groupname": "Friends",
-	    			"groupid": 12346
-				},
-				{
-	    			"groupname": "ACME inc",
-	    			"groupid": 12347
-				}
+	    "groupname": "Friends",
+	    "groupid": 12346
+	},
+	{
+	    "groupname": "ACME inc",
+	    "groupid": 12347
+	}
     ],
     "Calendar": [ 
         {
