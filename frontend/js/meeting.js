@@ -34,12 +34,14 @@ $(document).ready(function(){
 				console.log(file.link);
 				// Here we want to save the link to local storage
 				var dropfiles = {
-					"links": {
-						"previewLink": file.link,
-						"fileName": file.name
+					"file": {
+						"link": file.link,
+						"name": file.name
 					}
 				};
-				localStorage.setItem('dropfiles', JSON.stringify(dropfiles));
+				//need to insert the dropfiles arr into apime
+				var cal_arr = apime.Calendar;
+				var 
 			},
 			cancel: function() {
 				console.log("User cancled file upload");

@@ -266,6 +266,7 @@ var apime = {
     ],
     "Calendar": [ 
         {
+            "meetingid": 12345656,
             "meetingname": "Team Meeting",
             "groupname": "SS inc",
             "location": "3rd floor, Union",
@@ -280,6 +281,7 @@ var apime = {
             }
         },
         {
+            "meetingid": 12345657,
             "meetingname": "Meeting with Adrian",
             "groupname": "Friends",
             "location": "Times Square",
@@ -288,6 +290,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345658,
             "meetingname": "Team Meeting",
             "groupname": "Schedulr Team",
             "location": "McNeil Room, Union",
@@ -296,6 +299,7 @@ var apime = {
             "url": ""
         },
     	{
+            "meetingid": 12345659,
     	    "meetingname": "Chat with V. Kudinov",
     	    "groupname": "SS inc",
     	    "location": "Skype conference",
@@ -304,6 +308,7 @@ var apime = {
     	    "url": ""
     	},
         {
+            "meetingid": 12345650,
             "meetingname": "Meeting with Professor Hughes",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -312,6 +317,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345751,
             "meetingname": "Study group meeting",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -320,6 +326,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345752,
             "meetingname": "Last capstone meeting",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -328,6 +335,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345752,
             "meetingname": "MITR meeting",
             "groupname": "Friends",
             "location": "Skype conference",
@@ -336,6 +344,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345753,
             "meetingname": "Google hangout meeting",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -344,6 +353,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345754,
             "meetingname": "Team meeting",
             "groupname": "SS inc",
             "location": "Skype conference",
@@ -352,6 +362,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345755,
             "meetingname": "Meeting with Professor Plotka",
             "groupname": "ACME inc",
             "location": "Skype conference",
@@ -360,6 +371,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345756,
             "meetingname": "Short MITR meeting",
             "groupname": "Friends",
             "location": "Skype conference",
@@ -368,6 +380,7 @@ var apime = {
             "url": ""
         },
         {
+            "meetingid": 12345757,
             "meetingname": "Comp Org study group",
             "groupname": "Friends",
             "location": "Skype conference",
