@@ -173,6 +173,17 @@ window.location.replace( 'index.html' );
 
 * [Dropbox](https://www.dropbox.com/developers)
 
+#### Notes:
+
+* allow users to link docs to a meeting
+    * With Dropbox this is the Chooser API
+    * This link to the doc will then be saved in local storage
+* Allow users to save docs from a meeting to their storage
+    * With Dropbox this is the saver API
+    * the doc url will be pulled from the local storage
+
+Should save both the direct link and the dropbox link
+
 ### Google Drive:
 
 * [Google Drive Dev](https://developers.google.com/drive/web/quickstart/quickstart-js)
@@ -260,7 +271,10 @@ var apime = {
             "location": "3rd floor, Union",
             "timebegin": 1399485600,
             "timeend": 1399489200,
-            "url": ""
+            "url": "",
+            "links": {
+                "link": "https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"
+            }
         },
         {
             "meetingname": "Meeting with Adrian",

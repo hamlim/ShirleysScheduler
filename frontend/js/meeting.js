@@ -19,6 +19,43 @@ $(document).ready(function(){
 		var trelloTreeHead = $("#todo-list");
 		var evernoteTreeHead = $("#meeting-notes");
 		var googleDriveTreeHead = $("#documents");
+		var dropboxTreeHead = $("#dropbox");
+		
+		
+		// The following segment will tackle the Dropbox API
+		//we want to allow users to share files: Chooser API
+		// we want to save those files to local storage
+		//   we want to save both the direct and indirect links
+		//we want to allow users to save files: Saver API
+		// we will pull the links from localStorage
+		// CHOOSER API
+		var options = {
+			success: function(files){
+				console.log(files[0].link);
+				// Here we want to save the link to local storage
+				var dropfiles = {
+					"info": {
+						"previewLink": files[0].link,
+						"fileName": files[0].name
+					}
+				};
+				localStorage.setItem('dropfiles', JSON.stringify(dropfiles));
+			},
+			cancel: function() {
+				console.log("User cancled file upload");
+			},
+			linkType: "preview",
+			multiselect: false,
+			extensions: ['video','images', 'audio', 'documents', 'text'],
+		};
+		var button = Dropbox.createChooseButton(options);
+		document.getElementById("#chooser").appendChild(button);
+		
+		// SAVER API
+		var objstring = localStorage.getItem('dropfiles');
+		var droplinkobj = JSON.parse(objstring);
+		var droplink = 
+		var saverLink = "<a class='dropbox-saver' href='"+
 		
 	}
 });
