@@ -272,8 +272,11 @@ var apime = {
             "timebegin": 1399485600,
             "timeend": 1399489200,
             "url": "",
-            "links": {
-                "link": "https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"
+            "files": {
+                "file": {
+                    "link": "http://goo.gl/rGbuIm",
+                    "name": "advice.png"
+                }
             }
         },
         {

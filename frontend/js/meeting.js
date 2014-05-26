@@ -30,13 +30,13 @@ $(document).ready(function(){
 		// we will pull the links from localStorage
 		// CHOOSER API
 		var options = {
-			success: function(files){
-				console.log(files[0].link);
+			success: function(file){
+				console.log(file.link);
 				// Here we want to save the link to local storage
 				var dropfiles = {
-					"info": {
-						"previewLink": files[0].link,
-						"fileName": files[0].name
+					"links": {
+						"previewLink": file.link,
+						"fileName": file.name
 					}
 				};
 				localStorage.setItem('dropfiles', JSON.stringify(dropfiles));
